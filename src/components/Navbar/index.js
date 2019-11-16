@@ -7,6 +7,15 @@ import PureButton from '../PureButton';
 export default function Navbar(props) {
     const projectLink = <PureLink to='/projects'>Projects</PureLink>;
     const contactLink = <PureButton to='/contact'>Contact</PureButton>;
+    const crossLink = <PureLink to='/'><img src='/assets/cross.svg' height='20' alt='Cross'/></PureLink>;
+
+    let links;
+    const path = window.location.pathname;
+    if (path === '/projects' || path === '/contact') {
+        links = crossLink;
+    } else {
+        links = <>{contactLink}{projectLink}</>;
+    }
 
     return (
         <>
@@ -18,8 +27,7 @@ export default function Navbar(props) {
                     </Link>
                 </div>
                 <div className='navbar-menu d-none d-sm-none d-lg-flex w-100 flex-row-reverse align-items-center'>
-                    {contactLink}
-                    {projectLink}
+                    {links}
                 </div>
                 <button className="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#middleMenu" aria-controls="middleMenu"
@@ -29,9 +37,8 @@ export default function Navbar(props) {
                 </button>
             </div>
             <div id='middleMenu' className='collapse w-100 d-lg-none'>
-                <div className='d-flex flex-column justify-content-center align-items-center'>
-                    {projectLink}
-                    {contactLink}
+                <div className='d-flex flex-column-reverse justify-content-center align-items-center'>
+                    {links}
                 </div>
             </div>
         </>
