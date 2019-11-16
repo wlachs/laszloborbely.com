@@ -1,7 +1,13 @@
 import * as React from 'react';
-import {Link} from "react-router-dom";
+import './index.css';
+import {Link} from 'react-router-dom';
+import PureLink from '../PureLink';
+import PureButton from '../PureButton';
 
 export default function Navbar(props) {
+    const projectLink = <PureLink to='/projects'>Projects</PureLink>;
+    const contactLink = <PureButton to='/contact'>Contact</PureButton>;
+
     return (
         <>
             <div className='col-lg-10 m-lg-auto pt-4 d-flex navbar navbar-expand-lg'>
@@ -12,8 +18,8 @@ export default function Navbar(props) {
                     </Link>
                 </div>
                 <div className='navbar-menu d-none d-sm-none d-lg-flex w-100 flex-row-reverse align-items-center'>
-                    Projects
-                    Contact
+                    {contactLink}
+                    {projectLink}
                 </div>
                 <button className="navbar-toggler" type="button" data-toggle="collapse"
                         data-target="#middleMenu" aria-controls="middleMenu"
@@ -24,8 +30,8 @@ export default function Navbar(props) {
             </div>
             <div id='middleMenu' className='collapse w-100 d-lg-none'>
                 <div className='d-flex flex-column justify-content-center align-items-center'>
-                    <div>Projects</div>
-                    <div>Contact</div>
+                    {projectLink}
+                    {contactLink}
                 </div>
             </div>
         </>
