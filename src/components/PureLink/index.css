@@ -5,6 +5,7 @@
     font-weight: 300;
     text-decoration: none !important;
     transition: 0.2s;
+    padding: 8px 12px;
 }
 
 .link:hover {

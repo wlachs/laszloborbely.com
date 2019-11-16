@@ -1,0 +1,24 @@
+@import '../global.css';
+
+.link {
+    text-decoration: none !important;
+    padding: 8px 12px;
+}
+
+.button-link {
+    font-weight: 400;
+    padding: .4rem 1.2rem;
+
+    color: var(--primary-color);
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+
+    box-sizing: border-box;
+    border-radius: 22px;
+    transition: 0.2s;
+}
+
+.button-link:hover {
+    color: var(--background-color);
+    background-color: var(--primary-color);
+}
