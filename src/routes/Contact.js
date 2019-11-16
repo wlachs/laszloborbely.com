@@ -1,7 +1,10 @@
 import * as React from 'react';
+import Frame from '../components/Frame';
 
 export default function Contact(props) {
     return (
-        <div>Contact</div>
+        <Frame>
+            <div>Contact</div>
+        </Frame>
     );
 };
