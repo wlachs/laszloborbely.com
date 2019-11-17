@@ -1,30 +1,22 @@
 import * as React from 'react';
 import './index.css';
-import {Link} from 'react-router-dom';
 import PureLink from '../PureLink';
-import PureButton from '../PureButton';
+import {routes} from '../../routes';
 
 export default function Navbar(props) {
-    const projectLink =
-        <PureLink to='/projects'>Projects</PureLink>;
-
-    const contactLink =
-        <PureLink to='/contact'>
-            <PureButton>Contact</PureButton>
-        </PureLink>;
+    const path = window.location.pathname;
 
     const crossLink =
         <PureLink to='/'>
             <img src='/assets/cross.svg' height='20' alt='Cross'/>
         </PureLink>;
 
-    const links =
-        <>
-            {contactLink}
-            {projectLink}
-        </>;
+    const links = routes.filter(route => route.display).map(route => {
+        return <PureLink key={route.id} to={route.path}>
+            <route.nav>{route.name}</route.nav>
+        </PureLink>;
 
-    const path = window.location.pathname;
+    });
 
     if (path === '/') {
         return (
@@ -59,10 +51,10 @@ function CommonNavbar(props) {
     return (
         <div className='col-lg-10 m-lg-auto pt-4 d-flex navbar navbar-expand-lg'>
             <div className='navbar-brand'>
-                <Link to='/'>
+                <PureLink to='/'>
                     <img src='./assets/logo.svg' height='50'
                          alt='Laszlo Borbely | MSc Student, Front-end & Back-end Developer'/>
-                </Link>
+                </PureLink>
             </div>
             {props.children}
         </div>
