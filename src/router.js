@@ -1,23 +1,16 @@
 import * as React from 'react';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
-
-import Contact from "./routes/Contact";
-import Projects from "./routes/Projects";
-import Welcome from "./routes/Welcome";
+import {routes} from './routes';
 
 export default function Router(props) {
     return (
         <BrowserRouter>
             <Switch>
-                <Route path="/contact">
-                    <Contact {...props} />
-                </Route>
-                <Route path="/projects">
-                    <Projects {...props} />
-                </Route>
-                <Route path="/">
-                    <Welcome {...props} />
-                </Route>
+                {routes.map(route =>
+                    <Route path={route.path}>
+                        {route.view}
+                    </Route>
+                )}
             </Switch>
         </BrowserRouter>
     );
