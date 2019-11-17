@@ -7,7 +7,7 @@ export default function Router(props) {
         <BrowserRouter>
             <Switch>
                 {routes.map(route =>
-                    <Route path={route.path}>
+                    <Route key={route.id} path={route.path}>
                         {route.view}
                     </Route>
                 )}
