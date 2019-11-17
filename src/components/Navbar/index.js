@@ -7,16 +7,23 @@ import PureButton from '../PureButton';
 export default function Navbar(props) {
     const projectLink =
         <PureLink to='/projects'>Projects</PureLink>;
+
     const contactLink =
         <PureLink to='/contact'>
             <PureButton>Contact</PureButton>
         </PureLink>;
+
     const crossLink =
         <PureLink to='/'>
             <img src='/assets/cross.svg' height='20' alt='Cross'/>
         </PureLink>;
 
-    const links = <>{contactLink}{projectLink}</>;
+    const links =
+        <>
+            {contactLink}
+            {projectLink}
+        </>;
+
     const path = window.location.pathname;
 
     if (path === '/') {
