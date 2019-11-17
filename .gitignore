@@ -3,3 +3,6 @@ node_modules/
 
 # Ignore IDE files
 .idea/
+
+# Ignore production build
+build/
