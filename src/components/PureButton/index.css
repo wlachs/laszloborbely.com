@@ -1,10 +1,5 @@
 @import '../global.css';
 
-.link {
-    text-decoration: none !important;
-    padding: 8px 12px;
-}
-
 .button-link {
     font-weight: 400;
     padding: .4rem 1.2rem;
