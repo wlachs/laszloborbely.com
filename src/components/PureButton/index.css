@@ -11,6 +11,9 @@
     box-sizing: border-box;
     border-radius: 22px;
     transition: 0.2s;
+
+    display: inline-block;
+    cursor: pointer;
 }
 
 .button-link:hover {
