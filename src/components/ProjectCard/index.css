@@ -2,7 +2,6 @@
 
 .project-card {
     width: 300px;
-
     color: var(--off-color);
 }
 
@@ -13,7 +12,7 @@
 }
 
 .project-description {
-    color: inherit;
-    font-weight: 200;
+    color: var(--secondary-color);
+    font-weight: 300;
     font-size: .8rem;
 }
