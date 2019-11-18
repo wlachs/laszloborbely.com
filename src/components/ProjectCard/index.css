@@ -1,28 +1,19 @@
 @import '../global.css';
 
 .project-card {
-    width: 262px;
-    height: 208px;
-    border-radius: 44px;
+    width: 300px;
 
-    transition: 0.2s;
-    border: 2px solid var(--off-color);
-    box-sizing: border-box;
+    color: var(--off-color);
+}
 
-    font-size: 1.5rem;
+.project-name {
+    color: inherit;
     font-weight: 300;
-    cursor: pointer;
-
-    text-decoration: none !important;
-    color: var(--off-color);
+    font-size: 1.5rem;
 }
 
-.project-card:hover {
-    background-color: var(--off-color);
-    color: var(--background-color);
-}
-
-.project-card:active {
-    background-color: var(--off-color);
-    color: var(--off-color);
+.project-description {
+    color: inherit;
+    font-weight: 200;
+    font-size: .8rem;
 }
