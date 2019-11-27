@@ -1,3 +1,7 @@
 .navbar-toggler {
     outline: none !important;
 }
+
+.navbar-logo {
+    margin: 10px 0;
+}
