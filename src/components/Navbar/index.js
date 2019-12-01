@@ -3,7 +3,7 @@ import './index.css';
 import PureLink from '../PureLink';
 import {routes} from '../../routes';
 
-function getLinks() {
+function Links() {
     return routes.filter(route => route.display).map(route => {
         return (
             <PureLink key={route.id} to={route.path}>
@@ -13,21 +13,19 @@ function getLinks() {
     });
 }
 
-export default function Navbar(props) {
+export default function Navbar() {
     const path = window.location.pathname;
-    const links = getLinks();
 
     const crossLink =
         <PureLink to='/'>
             <img src='/assets/cross.svg' height='20' alt='Cross'/>
         </PureLink>;
 
-
     if (path === '/') {
         return (
             <CommonNavbar>
                 <div className='d-none d-lg-flex w-100 flex-row-reverse align-items-center'>
-                    {links}
+                    <Links/>
                 </div>
                 <button className="navbar-toggler d-block d-lg-none" type="button" data-toggle="collapse"
                         data-target="#middleMenu" aria-controls="middleMenu"
@@ -47,7 +45,6 @@ export default function Navbar(props) {
 };
 
 function CommonNavbar(props) {
-    const links = getLinks();
     return (
         <>
             <div className='col-12 col-lg-10 m-auto pt-4 d-flex justify-content-between align-items-center'>
@@ -62,7 +59,7 @@ function CommonNavbar(props) {
             </div>
             <div id='middleMenu' className='collapse w-100 d-lg-none'>
                 <div className='d-flex flex-column-reverse justify-content-center align-items-center'>
-                    {links}
+                    <Links/>
                 </div>
             </div>
         </>
