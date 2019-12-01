@@ -3,6 +3,7 @@
 .button-link {
     font-weight: 400;
     padding: .4rem 1.2rem;
+    margin: .5rem .7rem;
 
     color: var(--primary-color);
     background-color: transparent;
