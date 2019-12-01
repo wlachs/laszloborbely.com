@@ -6,9 +6,7 @@ import {routes} from '../../routes';
 function Links() {
     return routes.filter(route => route.display).map(Route => {
         return (
-            <PureLink key={Route.id} to={Route.path}>
-                <Route.nav>{Route.name}</Route.nav>
-            </PureLink>
+            <Route.Nav key={Route.id} to={Route.path}>{Route.name}</Route.Nav>
         );
     });
 }

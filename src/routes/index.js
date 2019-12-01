@@ -1,7 +1,7 @@
-import {Fragment} from 'react';
 import Contact from './Contact';
 import Projects from './Projects';
 import PureButton from '../components/PureButton';
+import PureLink from "../components/PureLink";
 import Welcome from './Welcome';
 
 export const routes = [
@@ -9,24 +9,24 @@ export const routes = [
         id: 0,
         display: true,
         name: 'Contact',
-        nav: PureButton,
+        Nav: PureButton,
         path: '/contact',
-        view: Contact,
+        View: Contact,
     },
     {
         id: 1,
         display: true,
         name: 'Projects',
-        nav: Fragment,
+        Nav: PureLink,
         path: '/projects',
-        view: Projects,
+        View: Projects,
     },
     {
         id: 2,
         display: false,
         name: 'Welcome',
-        nav: Fragment,
+        Nav: PureLink,
         path: '/',
-        view: Welcome,
+        View: Welcome,
     },
 ];
