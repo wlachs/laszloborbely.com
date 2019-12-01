@@ -1,14 +1,1 @@
 @import '../global.css';
-
-.link {
-    color: var(--secondary-color);
-    font-weight: 300;
-    text-decoration: none !important;
-    transition: 0.2s;
-    margin: 0 .7rem;
-    padding: .4rem 0;
-}
-
-.link:hover {
-    color: var(--primary-color);
-}
