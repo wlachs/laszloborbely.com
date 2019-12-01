@@ -4,22 +4,25 @@ import PureLink from '../PureLink';
 import {routes} from '../../routes';
 
 function Links() {
-    return routes.filter(route => route.display).map(route => {
+    return routes.filter(route => route.display).map(Route => {
         return (
-            <PureLink key={route.id} to={route.path}>
-                <route.nav>{route.name}</route.nav>
+            <PureLink key={Route.id} to={Route.path}>
+                <Route.nav>{Route.name}</Route.nav>
             </PureLink>
         );
     });
 }
 
-export default function Navbar() {
-    const path = window.location.pathname;
-
-    const crossLink =
+function CrossLink() {
+    return (
         <PureLink to='/'>
             <img src='/assets/cross.svg' height='20' alt='Cross'/>
-        </PureLink>;
+        </PureLink>
+    );
+}
+
+export default function Navbar() {
+    const path = window.location.pathname;
 
     if (path === '/') {
         return (
@@ -38,7 +41,7 @@ export default function Navbar() {
     } else {
         return (
             <CommonNavbar>
-                {crossLink}
+                <CrossLink/>
             </CommonNavbar>
         );
     }
