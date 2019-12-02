@@ -49,13 +49,11 @@ function CommonNavbar(props) {
     return (
         <>
             <div className='col-12 col-lg-10 m-auto pt-4 d-flex justify-content-between align-items-center'>
-                <div className='navbar-brand'>
-                    <PureLink to='/'>
-                        <img src='./assets/logo.svg' height='40'
-                             className='navbar-logo'
-                             alt='Laszlo Borbely | MSc Student, Front-end & Back-end Developer'/>
-                    </PureLink>
-                </div>
+                <PureLink to='/'>
+                    <img src='./assets/logo.svg' height='40'
+                         className='navbar-logo'
+                         alt='Laszlo Borbely | MSc Student, Front-end & Back-end Developer'/>
+                </PureLink>
                 {props.children}
             </div>
             <div id='middleMenu' className='collapse w-100 d-lg-none'>
