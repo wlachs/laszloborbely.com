@@ -3,12 +3,12 @@ import './index.css';
 
 export default function ProjectCard(props) {
     return (
-        <div className='project-card d-flex flex-row justify-content-around align-items-center'>
-            <a href={props.link}><img src={props.image} alt='project' height='100px'/></a>
-            <div className='d-flex flex-column justify-content-around h-100 p-2'>
+        <a href={props.link} className='project-card d-flex flex-row align-items-center p-2'>
+            <img className='flex-1 project-image' src={props.image} alt='project'/>
+            <div className='flex-1 d-flex flex-column justify-content-start ml-3'>
                 <div className='project-name'>{props.name}</div>
                 <div className='project-description'>{props.description}</div>
             </div>
-        </div>
+        </a>
     );
 };

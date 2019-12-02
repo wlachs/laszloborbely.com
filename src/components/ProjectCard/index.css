@@ -1,18 +1,36 @@
 @import '../global.css';
 
-.project-card {
+a.project-card {
     width: 19rem;
+    height: 6rem;
     color: var(--off-color);
+
+    transition: 0.2s;
+}
+
+a.project-card:hover {
+    text-decoration: none;
+    box-shadow: 0 0 0 2px var(--off-color);
+    border-radius: 1.3rem;
 }
 
 .project-name {
-    color: inherit;
-    font-weight: 300;
-    font-size: 1.5rem;
+    color: var(--off-color);
+    font-weight: 400;
+    font-size: 1.2rem;
 }
 
 .project-description {
     color: var(--secondary-color);
     font-weight: 300;
     font-size: .8rem;
+}
+
+.project-image {
+    height: 5rem;
+    width: 5rem;
+    padding: .8rem;
+
+    background-color: var(--off-color);
+    border-radius: 100%;
 }
