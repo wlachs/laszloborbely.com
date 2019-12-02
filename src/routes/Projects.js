@@ -2,7 +2,7 @@ import * as React from 'react';
 import Frame from '../components/Frame';
 import ProjectCard from '../components/ProjectCard';
 
-export default function Projects(props) {
+export default function Projects() {
     return (
         <Frame>
             <h1>My recent work</h1>
