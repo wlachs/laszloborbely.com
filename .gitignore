@@ -6,6 +6,7 @@ node_modules/
 
 # Ignore production build
 build/
+dist/
 
 # Others
 .DS_Store
