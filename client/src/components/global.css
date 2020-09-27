@@ -17,3 +17,7 @@
 .link:hover {
     color: var(--primary-color);
 }
+
+.link_active {
+    color: var(--primary-color);
+}
