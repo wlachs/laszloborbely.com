@@ -6,7 +6,7 @@ import Frame from './components/Frame';
 function Router() {
   const routeMap = routes.map((Route) => (
     <ReactRoute key={Route.id} path={Route.path}>
-      {Route.View}
+      <Route.View />
     </ReactRoute>
   ));
 

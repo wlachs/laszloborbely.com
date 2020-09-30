@@ -1,7 +1,8 @@
 import * as React from 'react';
+import './index.css';
 
 export default function Error() {
   return (
-    <h1>Error :(</h1>
+    <h2>Error :(</h2>
   );
 }
