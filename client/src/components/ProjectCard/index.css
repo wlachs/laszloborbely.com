@@ -5,13 +5,7 @@ a.project-card {
     height: 6rem;
     color: var(--off-color);
 
-    transition: 0.2s;
-}
-
-a.project-card:hover {
-    text-decoration: none;
-    box-shadow: 0 0 0 2px var(--off-color);
-    border-radius: 1.3rem;
+    transition: 0.3s;
 }
 
 .project-name {
@@ -33,6 +27,7 @@ a.project-card:hover {
     max-width: 5rem;
     padding: .8rem;
 
-    background-color: var(--off-color);
-    border-radius: 100%;
+    border: 2px solid var(--off-color);
+    border-radius: .6rem;
+    transition: inherit;
 }
