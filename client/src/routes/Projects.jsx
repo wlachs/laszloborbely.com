@@ -9,7 +9,7 @@ import Loading from '../components/Loading';
 function ProjectBody(props) {
   const { loading, error, data } = props;
   if (error) {
-    return <Error />;
+    return <Error what={error} />;
   }
   if (loading) {
     return <Loading />;
@@ -28,7 +28,7 @@ function ProjectBody(props) {
 
 ProjectBody.propTypes = {
   loading: PropTypes.bool,
-  error: PropTypes.bool,
+  error: PropTypes.objectOf(PropTypes.any),
   data: PropTypes.objectOf(PropTypes.any),
 };
 
