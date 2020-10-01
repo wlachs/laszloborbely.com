@@ -19,7 +19,7 @@ function Navbar() {
         aria-expanded="false"
         aria-label="Toggle navigation"
       >
-        <img src="./assets/burger.svg" height="20" alt="Hamburger menu" />
+        <img src="/assets/burger.svg" height="20" alt="Hamburger menu" />
       </button>
     </CommonNavbar>
   );
@@ -32,7 +32,7 @@ function CommonNavbar(props) {
       <div className="col-12 col-lg-10 m-auto pt-4 d-flex justify-content-between align-items-center">
         <PureLink to="/">
           <img
-            src="./assets/logo.svg"
+            src="/assets/logo.svg"
             height="40"
             className="navbar-logo"
             alt="Laszlo Borbely | MSc Student, Front-end & Back-end Developer"

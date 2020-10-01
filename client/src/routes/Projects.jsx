@@ -17,6 +17,7 @@ function ProjectBody(props) {
   return data.projects.map(
     (project) => (
       <ProjectCard
+        key={project.name}
         link={project.pageLink}
         image={project.imageLink}
         name={project.name}
