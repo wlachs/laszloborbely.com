@@ -23,11 +23,11 @@ async function initGraphQL(app) {
 
   const schema = new GraphQLSchema({
     query: RootQueryType,
-    mutation: RootMutationType,
+    /* mutation: RootMutationType, */
   });
 
   app.use('/graphql', graphqlHTTP({
-    graphiql: true,
+    graphiql: process.env.NODE_ENV !== 'production',
     schema,
   }));
 }
