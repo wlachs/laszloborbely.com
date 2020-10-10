@@ -41,7 +41,7 @@ function MiddleMenu(props) {
 }
 
 MiddleMenu.propTypes = {
-  children: PropTypes.arrayOf(PropTypes.element),
+  children: PropTypes.oneOfType([PropTypes.arrayOf(PropTypes.element), PropTypes.element]),
   isExpanded: PropTypes.bool,
 };
 

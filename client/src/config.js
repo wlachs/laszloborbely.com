@@ -1,9 +1,9 @@
 const liveConfiguration = {
-  serverUri: '/graphql',
+  serverUri: '',
 };
 
 const devConfiguration = {
-  serverUri: 'http://localhost:4000/graphql',
+  serverUri: 'http://localhost:4000',
 };
 
 function getCurrentConfiguration() {
@@ -18,5 +18,9 @@ function getCurrentConfiguration() {
       return devConfiguration;
   }
 }
+
+export const guestEndpoint = '/graphql/guest';
+export const adminEndpoint = '/graphql/admin';
+export const authEndpoint = '/auth';
 
 export default getCurrentConfiguration;

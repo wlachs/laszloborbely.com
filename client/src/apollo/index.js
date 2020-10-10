@@ -1,9 +1,12 @@
 import { ApolloClient, InMemoryCache } from '@apollo/client';
-import getCurrentConfiguration from '../config';
+import getCurrentConfiguration, { adminEndpoint, guestEndpoint } from '../config';
 
-const client = new ApolloClient({
-  uri: getCurrentConfiguration().serverUri,
+export const guestClient = new ApolloClient({
+  uri: getCurrentConfiguration().serverUri + guestEndpoint,
   cache: new InMemoryCache(),
 });
 
-export default client;
+export const adminClient = new ApolloClient({
+  uri: getCurrentConfiguration().serverUri + adminEndpoint,
+  cache: new InMemoryCache(),
+});

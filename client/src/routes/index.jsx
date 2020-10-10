@@ -1,6 +1,7 @@
 import Contact from './Contact';
 import Projects from './Projects';
 import Welcome from './Welcome';
+import Admin from './Admin';
 
 export default [
   {
@@ -23,5 +24,12 @@ export default [
     name: 'Welcome',
     path: '/',
     View: Welcome,
+  },
+  {
+    id: 3,
+    display: false,
+    name: 'Admin',
+    path: '/admin',
+    View: Admin,
   },
 ];
