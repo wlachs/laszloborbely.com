@@ -1,6 +1,6 @@
 {
   "name": "core.laszloborbely.com",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "scripts": {
     "start": "node dist/index.js",
     "dev": "babel-node src/index.js",
