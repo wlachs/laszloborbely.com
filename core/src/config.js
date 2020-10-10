@@ -2,12 +2,14 @@ const liveConfiguration = {
   port: 4000,
   graphiql: false,
   cors: false,
+  auth: true,
 };
 
 const devConfiguration = {
   port: 4000,
   graphiql: true,
   cors: true,
+  auth: true,
 };
 
 function getCurrentConfiguration() {

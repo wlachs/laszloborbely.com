@@ -10,3 +10,5 @@ dist/
 
 # Others
 .DS_Store
+
+secrets.js

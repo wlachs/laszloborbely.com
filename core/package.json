@@ -1,6 +1,6 @@
 {
   "name": "core.laszloborbely.com",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "scripts": {
     "start": "node dist/index.js",
     "dev": "babel-node src/index.js",
@@ -12,6 +12,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "express-graphql": "^0.11.0",
+    "express-jwt": "^6.0.0",
     "graphql": "^15.3.0",
     "mongoose": "^5.10.7"
   },
