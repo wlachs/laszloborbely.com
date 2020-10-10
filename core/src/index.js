@@ -3,27 +3,41 @@ import cors from 'cors';
 import path from 'path';
 import { connect, initDB } from './models/mongo';
 import initGraphQL from './models/graphql';
+import getCurrentConfiguration from './config';
 
-function initRoutes(app) {
-  {
-    app.use(express.static(path.join(__dirname, 'client')));
-    app.get('*', (req, res) => {
-      res.sendFile(path.join(`${__dirname}/client/index.html`));
-    });
-  }
-  app.listen(4000);
+function initStaticRoutes(app) {
+  app.use(express.static(path.join(__dirname, 'client')));
+  app.get('*', (req, res) => {
+    res.sendFile(path.join(`${__dirname}/client/index.html`));
+  });
 }
 
-async function init() {
+async function run() {
+  /* Get current environment */
+  const configuration = getCurrentConfiguration();
+
+  /* Connect to DB */
+  await connect();
+
+  /* Initialize DB */
+  await initDB();
+
+  /* Initialize express */
   const app = express();
-  if (process.env.NODE_ENV !== 'production') {
+  if (configuration.cors) {
     app.use(cors());
   }
-  await initDB();
-  await initGraphQL(app);
-  initRoutes(app);
+
+  /* Initialize GraphQL */
+  initGraphQL(app, configuration);
+
+  /* Initialize routes */
+  initStaticRoutes(app);
+
+  /* Start listening on predefined port */
+  app.listen(configuration.port);
 }
 
-connect()
-  .then(init)
+run()
+  .then()
   .catch();

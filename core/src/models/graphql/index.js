@@ -3,7 +3,7 @@ import { graphqlHTTP } from 'express-graphql';
 import { configMutation } from './config';
 import { projectMutation, projectQuery } from './project';
 
-async function initGraphQL(app) {
+function initGraphQL(app, configuration) {
   const RootQueryType = new GraphQLObjectType({
     name: 'Query',
     description: 'Root query type',
@@ -27,7 +27,7 @@ async function initGraphQL(app) {
   });
 
   app.use('/graphql', graphqlHTTP({
-    graphiql: process.env.NODE_ENV !== 'production',
+    graphiql: configuration.graphiql,
     schema,
   }));
 }
