@@ -1,18 +1,27 @@
 import { GraphQLObjectType } from 'graphql';
 import { projectMutation, projectQuery } from './project';
-import { configMutation } from './config';
+import { configMutation, configQuery } from './config';
 
-export const RootQueryType = new GraphQLObjectType({
+export const GuestQueryType = new GraphQLObjectType({
   name: 'Query',
-  description: 'Root query type',
+  description: 'Guest query type',
   fields: () => ({
     ...projectQuery,
   }),
 });
 
-export const RootMutationType = new GraphQLObjectType({
+export const AdminQueryType = new GraphQLObjectType({
+  name: 'Query',
+  description: 'Admin query type',
+  fields: () => ({
+    ...projectQuery,
+    ...configQuery,
+  }),
+});
+
+export const AdminMutationType = new GraphQLObjectType({
   name: 'Mutation',
-  description: 'Root mutation type',
+  description: 'Admin mutation type',
   fields: () => ({
     ...configMutation,
     ...projectMutation,

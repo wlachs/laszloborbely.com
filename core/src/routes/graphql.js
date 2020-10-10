@@ -5,18 +5,18 @@ import jwt from 'express-jwt';
 import { jwtSecret } from '../secrets';
 import { conditionalMW } from '../utils/express-utils';
 import getCurrentConfiguration from '../config';
-import { RootMutationType, RootQueryType } from '../models/graphql';
+import { AdminMutationType, AdminQueryType, GuestQueryType } from '../models/graphql';
 
 const router = new Router();
 const configuration = getCurrentConfiguration();
 
 const querySchema = new GraphQLSchema({
-  query: RootQueryType,
+  query: GuestQueryType,
 });
 
 const adminSchema = new GraphQLSchema({
-  query: RootQueryType,
-  mutation: RootMutationType,
+  query: AdminQueryType,
+  mutation: AdminMutationType,
 });
 
 router.use('/admin',
