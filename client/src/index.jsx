@@ -8,7 +8,7 @@ import 'typeface-roboto';
 import './components/global.css';
 
 ReactDOM.render(
-  <ApolloProvider client={guestClient}>
+  <ApolloProvider client={guestClient()}>
     <Router />
   </ApolloProvider>,
   document.getElementById('root'),

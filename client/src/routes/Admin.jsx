@@ -1,9 +1,37 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { ApolloProvider, useQuery } from '@apollo/client';
 import Login from '../components/Login';
 import getCurrentConfiguration, { authEndpoint } from '../config';
 import Error from '../components/Error';
 import Loading from '../components/Loading';
+import { adminClient } from '../apollo';
+import { ADMIN_DATA } from '../apollo/queries/config';
+
+function AdminPageContent() {
+  const { loading, error, data } = useQuery(ADMIN_DATA);
+  const PageContent = () => {
+    if (error) {
+      return <Error what={error} />;
+    }
+    if (loading) {
+      return <Loading />;
+    }
+    return (
+      <>
+        <div>
+          <b>Admin username: </b>
+          {data.adminData.adminUserName}
+        </div>
+        <div>
+          <b>Admin password hash: </b>
+          {data.adminData.adminPassword}
+        </div>
+      </>
+    );
+  };
+  return <PageContent />;
+}
 
 async function authRequest(email, password) {
   /* Get configuration */
@@ -45,7 +73,11 @@ function Admin() {
       return <Loading />;
     }
     if (loggedIn) {
-      return <div>{token}</div>;
+      return (
+        <ApolloProvider client={adminClient(token)}>
+          <AdminPageContent />
+        </ApolloProvider>
+      );
     }
     return <Login callback={handleAuth} />;
   };
