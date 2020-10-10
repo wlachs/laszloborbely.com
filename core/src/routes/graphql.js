@@ -22,7 +22,7 @@ const adminSchema = new GraphQLSchema({
 router.use('/admin',
   conditionalMW(configuration.auth, jwt({
     secret: jwtSecret,
-    algorithms: ['HS256'],
+    algorithms: [configuration.jwtAlgorithm],
 
   })),
   graphqlHTTP({

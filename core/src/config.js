@@ -3,6 +3,8 @@ const liveConfiguration = {
   graphiql: false,
   cors: false,
   auth: true,
+  jwtAlgorithm: 'HS256',
+  jwtExpire: '1h',
 };
 
 const devConfiguration = {
@@ -10,6 +12,8 @@ const devConfiguration = {
   graphiql: true,
   cors: true,
   auth: true,
+  jwtAlgorithm: 'HS256',
+  jwtExpire: '1h',
 };
 
 function getCurrentConfiguration() {
