@@ -1,15 +1,15 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { ApolloProvider } from '@apollo/client';
-import { guestClient } from './apollo';
+import { Provider } from 'react-redux';
 import Router from './router';
 import 'typeface-roboto';
 import './components/global.css';
+import { store } from './redux/index';
 
 ReactDOM.render(
-  <ApolloProvider client={guestClient()}>
+  <Provider store={store}>
     <Router />
-  </ApolloProvider>,
+  </Provider>,
   document.getElementById('root'),
 );
