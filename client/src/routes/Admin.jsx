@@ -1,68 +1,33 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import { ApolloProvider, useQuery } from '@apollo/client';
+import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import Login from '../components/Login';
-import getCurrentConfiguration, { authEndpoint } from '../config';
 import Error from '../components/Error';
 import Loading from '../components/Loading';
-import { adminClient } from '../apollo';
-import { ADMIN_DATA } from '../apollo/queries/config';
+import { sendTokenRequest } from '../redux/actions/commonActions';
 
-function AdminPageContent() {
-  const { loading, error, data } = useQuery(ADMIN_DATA);
-  const PageContent = () => {
-    if (error) {
-      return <Error what={error} />;
-    }
-    if (loading) {
-      return <Loading />;
-    }
-    return (
-      <>
-        <div>
-          <b>Admin username: </b>
-          {data.adminData.adminUserName}
-        </div>
-        <div>
-          <b>Admin password hash: </b>
-          {data.adminData.adminPassword}
-        </div>
-      </>
-    );
-  };
-  return <PageContent />;
+function AdminPageContent(props) {
+  const { apiToken } = props;
+  return (
+    <>
+      <div>
+        <b>Admin token: </b>
+      </div>
+      <div className="small m-auto">
+        {apiToken}
+      </div>
+    </>
+  );
 }
 
-async function authRequest(email, password) {
-  /* Get configuration */
-  const configuration = getCurrentConfiguration();
+AdminPageContent.propTypes = {
+  apiToken: PropTypes.string.isRequired,
+};
 
-  /* Get url */
-  const url = configuration.serverUri + authEndpoint;
-
-  /* Send request */
-  return axios.post(url, {
-    email,
-    password,
-  });
-}
-
-function Admin() {
-  const [loggedIn, setLoggedIn] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const [token, setToken] = useState('');
-
-  const handleAuth = (email, password) => {
-    setLoading(true);
-    authRequest(email, password)
-      .then((t) => {
-        setToken(t.data.token);
-        setLoggedIn(true);
-        setLoading(false);
-      })
-      .catch((err) => setError(err));
-  };
+function Admin(props) {
+  const {
+    error, loading, apiToken, sendTokenRequest_,
+  } = props;
 
   const PageTitle = () => <h1>Admin</h1>;
   const PageContent = () => {
@@ -72,14 +37,12 @@ function Admin() {
     if (loading) {
       return <Loading />;
     }
-    if (loggedIn) {
+    if (apiToken) {
       return (
-        <ApolloProvider client={adminClient(token)}>
-          <AdminPageContent />
-        </ApolloProvider>
+        <AdminPageContent apiToken={apiToken} />
       );
     }
-    return <Login callback={handleAuth} />;
+    return <Login callback={sendTokenRequest_} />;
   };
 
   return (
@@ -92,4 +55,30 @@ function Admin() {
   );
 }
 
-export default Admin;
+Admin.propTypes = {
+  apiToken: PropTypes.string,
+  error: PropTypes.string,
+  loading: PropTypes.bool,
+  sendTokenRequest_: PropTypes.func,
+};
+
+Admin.defaultProps = {
+  apiToken: null,
+  error: null,
+  loading: true,
+  sendTokenRequest_: () => ({}),
+};
+
+function mapStateToProps(state) {
+  return {
+    apiToken: state.common.apiToken,
+    error: state.common.error,
+    loading: state.common.loading,
+  };
+}
+
+const mapDispatchToProps = {
+  sendTokenRequest_: sendTokenRequest,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Admin);

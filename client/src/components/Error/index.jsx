@@ -13,7 +13,7 @@ function Error(props) {
 }
 
 Error.propTypes = {
-  what: PropTypes.objectOf(PropTypes.any).isRequired,
+  what: PropTypes.oneOfType([PropTypes.objectOf(PropTypes.any), PropTypes.string]).isRequired,
 };
 
 export default Error;

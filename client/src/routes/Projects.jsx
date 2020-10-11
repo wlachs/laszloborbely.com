@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useQuery } from '@apollo/client';
+import { connect } from 'react-redux';
 import ProjectCard from '../components/ProjectCard';
-import { PROJECTS } from '../apollo/queries/project';
 import Error from '../components/Error';
 import Loading from '../components/Loading';
+import { getProjectList } from '../redux/actions/projectActions';
 
 function ProjectBody(props) {
   const { loading, error, data } = props;
@@ -14,7 +14,7 @@ function ProjectBody(props) {
   if (loading) {
     return <Loading />;
   }
-  return data.projects.map(
+  return data.map(
     (project) => (
       <ProjectCard
         key={project.name}
@@ -29,12 +29,19 @@ function ProjectBody(props) {
 
 ProjectBody.propTypes = {
   loading: PropTypes.bool,
-  error: PropTypes.objectOf(PropTypes.any),
-  data: PropTypes.objectOf(PropTypes.any),
+  error: PropTypes.string,
+  data: PropTypes.arrayOf(PropTypes.any),
 };
 
-function Projects() {
-  const { loading, error, data } = useQuery(PROJECTS);
+function Projects(props) {
+  const {
+    loading, error, data, getProjectList_,
+  } = props;
+
+  useEffect(() => {
+    getProjectList_();
+  }, [getProjectList_]);
+
   return (
     <>
       <h1>My recent work</h1>
@@ -46,4 +53,30 @@ function Projects() {
   );
 }
 
-export default Projects;
+Projects.propTypes = {
+  data: PropTypes.arrayOf(PropTypes.object),
+  error: PropTypes.string,
+  loading: PropTypes.bool,
+  getProjectList_: PropTypes.func,
+};
+
+Projects.defaultProps = {
+  data: [],
+  error: null,
+  loading: true,
+  getProjectList_: () => ({}),
+};
+
+function mapStateToProps(state) {
+  return {
+    data: state.projects.projectList,
+    error: state.projects.error,
+    loading: state.projects.loading,
+  };
+}
+
+const mapDispatchToProps = {
+  getProjectList_: getProjectList,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Projects);
