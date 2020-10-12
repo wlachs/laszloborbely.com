@@ -21,7 +21,7 @@ function Welcome(props) {
       <h2>Simple, high-quality solutions.</h2>
       <img
         src="/assets/drawing.svg"
-        className="col-8 col-md-6 col-lg-4 mt-4"
+        className="col-8 col-md-6 col-lg-4 mt-5"
         alt="Drawing"
       />
     </Content>
