@@ -25,6 +25,11 @@ export const configQuery = {
     description: 'Admin email address and password hash',
     resolve: async () => ConfigModel.findOne(),
   },
+  coreVersion: {
+    type: GraphQLNonNull(GraphQLString),
+    description: 'core.laszloborbely.com package version number',
+    resolve: () => process.env.npm_package_version,
+  },
 };
 
 export const configMutation = {
