@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './index.css';
-import Links from '../../routes/Links';
+import Links from '../Links';
 import PureLinkHighlight from '../PureLinkHighlight';
 
 function Navbar() {

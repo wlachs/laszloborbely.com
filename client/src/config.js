@@ -22,5 +22,6 @@ function getCurrentConfiguration() {
 export const guestEndpoint = '/graphql/guest';
 export const adminEndpoint = '/graphql/admin';
 export const authEndpoint = '/auth';
+export const pageTitlePrefix = 'Laszlo Borbely | ';
 
 export default getCurrentConfiguration;

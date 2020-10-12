@@ -1,24 +1,32 @@
+// React imports
 import React from 'react';
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
 import { Helmet } from 'react-helmet';
+
+// Redux imports
+import { connect } from 'react-redux';
+import { sendTokenRequest } from '../redux/actions/commonActions';
+
+// Component imports
 import Login from '../components/Login';
 import Error from '../components/Error';
 import Loading from '../components/Loading';
-import { sendTokenRequest } from '../redux/actions/commonActions';
 import Content from '../components/Content';
+
+// Config imports
+import { pageTitlePrefix } from '../config';
 
 function AdminPageContent(props) {
   const { apiToken } = props;
   return (
-    <Content>
+    <>
       <div>
         <b>Admin token: </b>
       </div>
       <div className="small m-auto">
         {apiToken}
       </div>
-    </Content>
+    </>
   );
 }
 
@@ -28,41 +36,40 @@ AdminPageContent.propTypes = {
 
 function Admin(props) {
   const {
-    error, loading, apiToken, sendTokenRequest_,
+    name, error, loading, apiToken, sendTokenRequest_,
   } = props;
+  const pageTitle = pageTitlePrefix + name;
 
   return (
-    <>
+    <Content>
       {/* Page title */}
       <Helmet>
-        <title>Laszlo Borbely | Admin</title>
+        <title>{pageTitle}</title>
       </Helmet>
       {/* Page header */}
       <h1>Admin</h1>
-      {/* Page content */}
       {/* Error handling */}
       {
-        error
-          ? <Error what="Incorrect username or password!" />
-          : null
-      }
+          error
+            && <Error what="Incorrect username or password!" />
+        }
       {/* Display loading spinner */}
       {
-        loading
-          ? <Loading />
-          : null
-      }
+          loading
+            && <Loading />
+        }
       {/* Display page content */}
       {
-        apiToken
-          ? <AdminPageContent apiToken={apiToken} />
-          : <Login callback={sendTokenRequest_} />
-      }
-    </>
+          apiToken
+            ? <AdminPageContent apiToken={apiToken} />
+            : <Login callback={sendTokenRequest_} />
+        }
+    </Content>
   );
 }
 
 Admin.propTypes = {
+  name: PropTypes.string.isRequired,
   apiToken: PropTypes.string,
   error: PropTypes.string,
   loading: PropTypes.bool,
