@@ -2,13 +2,15 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import './index.css';
 import Navbar from '../Navbar';
+import Footer from '../Footer';
 
 function Frame(props) {
   const { children } = props;
   return (
-    <div className="container col-12 col-sm-12 m-0 m-sm-0 p-0 h-100">
+    <div className="container col-12 m-0 p-0 min-vh-100 py-4">
       <Navbar />
       {children}
+      <Footer />
     </div>
   );
 }

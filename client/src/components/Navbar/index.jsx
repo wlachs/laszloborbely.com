@@ -55,7 +55,7 @@ function CommonNavbar(props) {
 
   return (
     <>
-      <div className="col-12 col-lg-10 m-auto pt-4 d-flex justify-content-between align-items-center">
+      <div className="col-12 col-lg-10 m-auto d-flex justify-content-between align-items-center">
         <PureLink to="/">
           <img
             src="/assets/logo.svg"

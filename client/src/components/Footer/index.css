@@ -1,0 +1,9 @@
+@import '../global.css';
+
+.bottom {
+    position: absolute;
+    bottom: 0;
+    color: var(--off-color);
+    font-size: x-small;
+    opacity: .6;
+}
