@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import './index.css';
-import PureLink from '../PureLink';
 import Links from '../../routes/Links';
+import PureLinkHighlight from '../PureLinkHighlight';
 
 function Navbar() {
   const [isExpanded, expand] = useState(false);
@@ -56,14 +56,14 @@ function CommonNavbar(props) {
   return (
     <>
       <div className="col-12 col-lg-10 m-auto d-flex justify-content-between align-items-center">
-        <PureLink to="/">
+        <PureLinkHighlight to="/">
           <img
             src="/assets/logo.svg"
             height="40"
             className="navbar-logo"
             alt="Laszlo Borbely | MSc Student, Front-end & Back-end Developer"
           />
-        </PureLink>
+        </PureLinkHighlight>
         {children}
       </div>
       <MiddleMenu isExpanded={isExpanded}>
