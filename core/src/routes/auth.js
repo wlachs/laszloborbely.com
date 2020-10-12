@@ -18,7 +18,7 @@ async function authenticateUser(request, response) {
   /* Verify admin email and password */
   const config = await ConfigModel.findOne();
   if (config.adminUserName !== email || !bcrypt.compareSync(password, config.adminPassword)) {
-    return response.status(402).json({ error: 'Incorrect email or password!' });
+    return response.status(403).json({ error: 'Incorrect email or password!' });
   }
 
   /* Get configuration */
