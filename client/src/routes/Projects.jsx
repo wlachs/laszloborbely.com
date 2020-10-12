@@ -9,6 +9,7 @@ import ProjectCard from '../components/ProjectCard';
 import Error from '../components/Error';
 import Loading from '../components/Loading';
 import Content from '../components/Content';
+import ContentRow from '../components/ContentRow';
 
 // Config imports
 import { getProjectList } from '../redux/actions/projectActions';
@@ -17,9 +18,10 @@ import { pageTitlePrefix } from '../config';
 function ProjectList(props) {
   const { data } = props;
   return (
-    <div className="d-flex align-items-center mt-5 flex-column">
-      {/* Render project list */}
-      {
+    <ContentRow>
+      <div className="d-flex align-items-center flex-column">
+        {/* Render project list */}
+        {
         data.map((project) => (
           <ProjectCard
             key={project.name}
@@ -30,7 +32,8 @@ function ProjectList(props) {
           />
         ))
       }
-    </div>
+      </div>
+    </ContentRow>
   );
 }
 
@@ -55,8 +58,12 @@ function Projects(props) {
         <title>{pageTitle}</title>
       </Helmet>
       {/* Page header */}
-      <h1>My recent work</h1>
-      <h2>Check out my latest contributions.</h2>
+      <ContentRow>
+        <h1>My recent work</h1>
+      </ContentRow>
+      <ContentRow>
+        <h2>Check out my latest contributions.</h2>
+      </ContentRow>
       {/* Error handling */}
       {
         error
@@ -64,7 +71,7 @@ function Projects(props) {
       }
       {/* Display loading spinner */}
       {
-        loading && !data
+        loading && data.length === 0
           && <Loading />
       }
       {/* Display page content */}

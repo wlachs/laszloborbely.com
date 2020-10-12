@@ -28,7 +28,7 @@ function MiddleMenu(props) {
   const { children, isExpanded } = props;
   if (isExpanded) {
     return (
-      <div className="w-100 d-lg-none">
+      <div className="w-100 d-lg-none mb-5">
         {children}
       </div>
     );
@@ -55,7 +55,7 @@ function CommonNavbar(props) {
 
   return (
     <>
-      <div className="col-12 col-lg-10 m-auto d-flex justify-content-between align-items-center">
+      <div className="col-12 col-lg-10 mx-auto mb-lg-5 d-flex justify-content-between align-items-center">
         <PureLinkHighlight to="/">
           <img
             src="/assets/logo.svg"

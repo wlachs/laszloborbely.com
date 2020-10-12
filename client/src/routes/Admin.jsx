@@ -12,6 +12,7 @@ import Login from '../components/Login';
 import Error from '../components/Error';
 import Loading from '../components/Loading';
 import Content from '../components/Content';
+import ContentRow from '../components/ContentRow';
 
 // Config imports
 import { pageTitlePrefix } from '../config';
@@ -20,12 +21,12 @@ function AdminPageContent(props) {
   const { apiToken } = props;
   return (
     <>
-      <div>
+      <ContentRow>
         <b>Admin token: </b>
-      </div>
-      <div className="small m-auto">
-        {apiToken}
-      </div>
+        <div className="small">
+          {`${apiToken.substr(0, 20)}...`}
+        </div>
+      </ContentRow>
     </>
   );
 }
@@ -47,7 +48,9 @@ function Admin(props) {
         <title>{pageTitle}</title>
       </Helmet>
       {/* Page header */}
-      <h1>Admin</h1>
+      <ContentRow>
+        <h1>Admin</h1>
+      </ContentRow>
       {/* Error handling */}
       {
           error
@@ -61,9 +64,13 @@ function Admin(props) {
       {/* Display page content */}
       {
           apiToken
-            ? <AdminPageContent apiToken={apiToken} />
-            : <Login callback={sendTokenRequest_} />
+            && <AdminPageContent apiToken={apiToken} />
         }
+      {/* Display login is token is not available */}
+      {
+        !loading && !apiToken
+          && <Login callback={sendTokenRequest_} />
+      }
     </Content>
   );
 }

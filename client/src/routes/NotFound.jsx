@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet';
 
 // Component imports
 import Content from '../components/Content';
+import ContentRow from '../components/ContentRow';
 
 // Config imports
 import { pageTitlePrefix } from '../config';
@@ -19,8 +20,12 @@ function NotFound(props) {
         <title>{pageTitle}</title>
       </Helmet>
       {/* Page content */}
-      <h1>Oh no...</h1>
-      <h2>The page you are looking for doesn&apos;t exist!</h2>
+      <ContentRow>
+        <h1>Oh no...</h1>
+      </ContentRow>
+      <ContentRow>
+        <h2>The page you are looking for doesn&apos;t exist!</h2>
+      </ContentRow>
     </Content>
   );
 }

@@ -1,23 +1,25 @@
+// React imports
 import React from 'react';
 import PropTypes from 'prop-types';
 
-function Content(props) {
+function ContentRow(props) {
   const { children } = props;
   return (
-    <div className="d-flex flex-column align-items-center m-auto">
+    <div className="col-12 d-flex flex-row justify-content-center align-items-center my-3">
+      {/* Render row content */}
       {children}
     </div>
   );
 }
 
-Content.propTypes = {
+ContentRow.propTypes = {
   children: PropTypes.oneOfType(
     [PropTypes.string, PropTypes.object, PropTypes.element, PropTypes.any],
   ),
 };
 
-Content.defaultProps = {
+ContentRow.defaultProps = {
   children: null,
 };
 
-export default Content;
+export default ContentRow;
