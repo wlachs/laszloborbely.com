@@ -7,7 +7,7 @@ function Login(props) {
   const [password, setPassword] = useState('');
 
   return (
-    <div className="d-flex flex-column col-8 col-md-5 col-lg-4 col-xl-3 m-auto">
+    <form className="d-flex flex-column col-8 col-md-5 col-lg-4 col-xl-3 m-auto">
       <input
         id="email"
         type="email"
@@ -31,7 +31,7 @@ function Login(props) {
       >
         Login
       </button>
-    </div>
+    </form>
   );
 }
 
