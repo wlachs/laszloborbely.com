@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Login from '../components/Login';
 import Error from '../components/Error';
 import Loading from '../components/Loading';
-import { sendTokenRequest } from '../redux/actions/commonActions';
+import { reset, sendTokenRequest } from '../redux/actions/commonActions';
 
 function AdminPageContent(props) {
   const { apiToken } = props;
@@ -26,13 +26,13 @@ AdminPageContent.propTypes = {
 
 function Admin(props) {
   const {
-    error, loading, apiToken, sendTokenRequest_,
+    error, loading, apiToken, sendTokenRequest_, reset_,
   } = props;
 
   const PageTitle = () => <h1>Admin</h1>;
   const PageContent = () => {
     if (error) {
-      return <Error what="Incorrect username or password!" />;
+      return <Error what="Incorrect username or password!" callback={reset_} />;
     }
     if (loading) {
       return <Loading />;
@@ -60,13 +60,15 @@ Admin.propTypes = {
   error: PropTypes.string,
   loading: PropTypes.bool,
   sendTokenRequest_: PropTypes.func,
+  reset_: PropTypes.func,
 };
 
 Admin.defaultProps = {
   apiToken: null,
   error: null,
   loading: true,
-  sendTokenRequest_: () => ({}),
+  sendTokenRequest_: null,
+  reset_: null,
 };
 
 function mapStateToProps(state) {
@@ -79,6 +81,7 @@ function mapStateToProps(state) {
 
 const mapDispatchToProps = {
   sendTokenRequest_: sendTokenRequest,
+  reset_: reset,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Admin);

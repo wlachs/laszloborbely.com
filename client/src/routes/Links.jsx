@@ -1,10 +1,10 @@
 import * as React from 'react';
 import routes from './index';
-import PureLink from '../components/PureLink';
+import PureLinkHighlight from '../components/PureLinkHighlight';
 
 function Links() {
   return routes.filter((route) => route.display).map((Route) => (
-    <PureLink key={Route.id} to={Route.path}>{Route.name}</PureLink>
+    <PureLinkHighlight key={Route.id} to={Route.path}>{Route.name}</PureLinkHighlight>
   ));
 }
 
