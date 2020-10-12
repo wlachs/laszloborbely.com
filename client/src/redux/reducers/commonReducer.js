@@ -1,7 +1,7 @@
 import {
   REQUEST_API_TOKEN_ERROR,
   REQUEST_API_TOKEN_START,
-  REQUEST_API_TOKEN_SUCCESS,
+  REQUEST_API_TOKEN_SUCCESS, RESET,
 } from '../actionTypes/commonActionTypes';
 
 const commonInitialState = {
@@ -31,6 +31,8 @@ export default (state = commonInitialState, action) => {
         error: action.value,
         loading: false,
       };
+    case RESET:
+      return commonInitialState;
     default:
       return state;
   }
