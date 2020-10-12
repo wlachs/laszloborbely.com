@@ -8,7 +8,7 @@ import getCurrentConfiguration from '../config';
 import { AdminMutationType, AdminQueryType, GuestQueryType } from '../models/graphql';
 
 const router = new Router();
-const configuration = getCurrentConfiguration();
+const { auth, graphiql } = getCurrentConfiguration();
 
 const querySchema = new GraphQLSchema({
   query: GuestQueryType,
@@ -20,19 +20,19 @@ const adminSchema = new GraphQLSchema({
 });
 
 router.use('/admin',
-  conditionalMW(configuration.auth, jwt({
+  conditionalMW(auth.enabled, jwt({
     secret: jwtSecret,
-    algorithms: [configuration.jwtAlgorithm],
+    algorithms: [auth.jwtAlgorithm],
 
   })),
   graphqlHTTP({
-    graphiql: configuration.graphiql,
+    graphiql,
     schema: adminSchema,
   }));
 
 router.use('/guest',
   graphqlHTTP({
-    graphiql: configuration.graphiql,
+    graphiql,
     schema: querySchema,
   }));
 

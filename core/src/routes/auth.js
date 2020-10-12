@@ -22,15 +22,15 @@ async function authenticateUser(request, response) {
   }
 
   /* Get configuration */
-  const configuration = getCurrentConfiguration();
+  const { auth } = getCurrentConfiguration();
 
   /* Generate token */
   const token = jwt.sign({
     email,
   },
   jwtSecret, {
-    algorithm: configuration.jwtAlgorithm,
-    expiresIn: configuration.jwtExpire,
+    algorithm: auth.jwtAlgorithm,
+    expiresIn: auth.jwtExpire,
   });
 
   return response.status(202).json({ token });

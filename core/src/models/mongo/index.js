@@ -1,10 +1,10 @@
 import mongoose from 'mongoose';
 import ConfigModel from './config';
+import getCurrentConfiguration from '../../config';
 
 export async function connect() {
-  const connectionString = process.env.NODE_ENV === 'production'
-    ? 'mongodb://db.laszloborbely.com:27017/laszloborbely_com'
-    : 'mongodb://laszlo:123@localhost:27017/laszloborbely_com';
+  const { db } = getCurrentConfiguration();
+  const connectionString = `mongodb://${db.host}:${db.port}/${db.dbName}`;
   return mongoose.connect(connectionString,
     {
       autoIndex: false,

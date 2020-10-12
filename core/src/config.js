@@ -1,19 +1,35 @@
+import { dbCredentials } from './secrets';
+
 const liveConfiguration = {
   port: 4000,
   graphiql: false,
   cors: false,
-  auth: true,
-  jwtAlgorithm: 'HS256',
-  jwtExpire: '1h',
+  auth: {
+    enabled: true,
+    jwtAlgorithm: 'HS256',
+    jwtExpire: '1h',
+  },
+  db: {
+    host: 'db.laszloborbely.com',
+    port: 27017,
+    dbName: 'laszloborbely_com',
+  },
 };
 
 const devConfiguration = {
   port: 4000,
   graphiql: true,
   cors: true,
-  auth: true,
-  jwtAlgorithm: 'HS256',
-  jwtExpire: '1h',
+  auth: {
+    enabled: true,
+    jwtAlgorithm: 'HS256',
+    jwtExpire: '1h',
+  },
+  db: {
+    host: `${dbCredentials.dev.userName}:${dbCredentials.dev.password}@localhost`,
+    port: 5000,
+    dbName: 'laszloborbely_com',
+  },
 };
 
 function getCurrentConfiguration() {
