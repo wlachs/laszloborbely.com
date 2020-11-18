@@ -13,6 +13,7 @@ import { pageTitlePrefix } from '../config';
 function Welcome(props) {
   const { name } = props;
   const pageTitle = pageTitlePrefix + name;
+
   return (
     <Content>
       {/* Page title */}
@@ -26,13 +27,13 @@ function Welcome(props) {
       <ContentRow>
         <h2>Simple, high-quality solutions.</h2>
       </ContentRow>
-      <ContentRow>
+      <Content>
         <img
           src="/assets/drawing.svg"
-          className="col-8 col-md-6 col-lg-4"
+          className="col-8 col-md-6 col-lg-4 m-auto"
           alt="Drawing"
         />
-      </ContentRow>
+      </Content>
     </Content>
   );
 }

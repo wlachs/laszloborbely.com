@@ -7,7 +7,7 @@ import Footer from '../Footer';
 function Frame(props) {
   const { children } = props;
   return (
-    <div className="container col-12 m-0 p-0 min-vh-100 py-4">
+    <div className="container col-12 m-0 p-0 min-vh-100 py-4 d-flex flex-column">
       <Navbar />
       {children}
       <Footer />

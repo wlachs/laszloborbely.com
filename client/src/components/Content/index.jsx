@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 function Content(props) {
   const { children } = props;
   return (
-    <div className="d-flex flex-column align-items-center m-auto">
+    <div className="d-flex flex-column align-items-center h-100 w-100 flex-grow-1">
       {children}
     </div>
   );
