@@ -1,6 +1,6 @@
 {
   "name": "client.laszloborbely.com",
-  "version": "1.7.9",
+  "version": "1.7.10",
   "private": true,
   "dependencies": {
     "axios": "^0.20.0",
