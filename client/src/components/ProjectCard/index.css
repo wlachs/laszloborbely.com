@@ -1,7 +1,7 @@
 @import '../global.css';
 
 a.project-card {
-    width: 19rem;
+    width: 20rem;
     height: 6rem;
     color: var(--off-color);
 
