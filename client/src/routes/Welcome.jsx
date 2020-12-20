@@ -22,10 +22,10 @@ function Welcome(props) {
       </Helmet>
       {/* Page content */}
       <ContentRow>
-        <h1>MSc Student, Full-Stack Developer</h1>
+        <h1>László Borbély</h1>
       </ContentRow>
       <ContentRow>
-        <h2>Simple, high-quality solutions.</h2>
+        <h2>Software Systems Engineering M.Sc.</h2>
       </ContentRow>
       <Content>
         <img
