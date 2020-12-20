@@ -27,7 +27,7 @@ const devConfiguration = {
   },
   db: {
     host: `${dbCredentials.dev.userName}:${dbCredentials.dev.password}@localhost`,
-    port: 5000,
+    port: 27017,
     dbName: 'laszloborbely_com',
   },
 };
