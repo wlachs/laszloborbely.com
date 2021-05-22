@@ -42,3 +42,29 @@ export function getProjectList() {
       });
   };
 }
+
+export function sample() {
+  return (dispatch) => {
+    dispatch({
+      type: 'REQUEST_START',
+    });
+
+    axios.post('requestUri', 'query')
+      .then((response) => {
+        if (response.status === 200) {
+          dispatch({
+            type: 'REQUEST_SUCCESS',
+          });
+        } else {
+          dispatch({
+            type: 'REQUEST_ERROR',
+          });
+        }
+      })
+      .catch(() => {
+        dispatch({
+          type: 'REQUEST_ERROR',
+        });
+      });
+  };
+}
