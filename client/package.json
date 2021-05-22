@@ -3,7 +3,7 @@
   "version": "1.7.12",
   "private": true,
   "dependencies": {
-    "axios": "^0.20.0",
+    "axios": "^0.21.1",
     "bootstrap": "^4.5.2",
     "gql-query-builder": "^3.5.0",
     "graphql": "^15.3.0",
