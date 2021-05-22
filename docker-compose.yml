@@ -1,0 +1,21 @@
+version: '3'
+services:
+    core.laszloborbely.com:
+        container_name: "core.laszloborbely.com"
+        build: .
+        environment:
+            - TZ=Europe/Amsterdam
+            - NODE_ENV=production
+        ports:
+            - "4000:4000"
+        links:
+            - db.laszloborbely.com
+    db.laszloborbely.com:
+        container_name: "db.laszloborbely.com"
+        image: mongo:latest
+        ports:
+            - "5000:27017"
+        volumes:
+            - volume.laszloborbely.com:/data/db
+volumes:
+    volume.laszloborbely.com:
