@@ -63,7 +63,7 @@ function CommonNavbar(props: {
 						src={logo}
 						height='40'
 						className='navbar-logo'
-						alt='Laszlo Borbely | MSc Student, Front-end & Back-end Developer'
+						alt='László Borbély - Full-Stack Software Engineer'
 					/>
 				</PureLinkHighlight>
 				{children}

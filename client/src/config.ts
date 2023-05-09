@@ -1,1 +1,1 @@
-export const pageTitlePrefix = 'Laszlo Borbely | ';
+export const pageTitlePrefix = 'László Borbély | ';
