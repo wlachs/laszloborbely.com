@@ -1,13 +1,8 @@
-FROM node:latest
-WORKDIR /usr/src/app
-COPY . .
-WORKDIR /usr/src/app/client
+FROM node:18 as builder
+WORKDIR /build
+COPY client .
 RUN npm install
 RUN npm run build
-WORKDIR /usr/src/app/core
-RUN npm install
-RUN npm run build
-WORKDIR /usr/src/app
-RUN mv client/build core/client
-WORKDIR /usr/src/app/core
-CMD [ "npm", "start" ]
+
+FROM nginx:alpine
+COPY --from=builder /build/dist/ /usr/share/nginx/html

@@ -1,3 +1,5 @@
+@import '../global.css';
+
 .navbar-toggler {
     outline: none !important;
 }
