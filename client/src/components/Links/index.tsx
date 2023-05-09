@@ -1,18 +1,19 @@
+import React from 'react';
 import PureLinkHighlight from '../PureLinkHighlight/index.jsx';
-import {IRoute, routes} from "../../routes";
+import {type RouteProps, routes} from '../../routes';
 
 function Links() {
-    const elements = routes
-        .filter((route: IRoute) => route.display)
-        .map((Route: IRoute) => (
-            <PureLinkHighlight key={Route.id} to={Route.path}>{Route.name}</PureLinkHighlight>
-        ));
+	const elements = routes
+		.filter((route: RouteProps) => route.display)
+		.map((Route: RouteProps) => (
+			<PureLinkHighlight key={Route.id} to={Route.path}>{Route.name}</PureLinkHighlight>
+		));
 
-    return (
-        <>
-            {elements}
-        </>
-    );
+	return (
+		<React.Fragment>
+			{elements}
+		</React.Fragment>
+	);
 }
 
 export default Links;

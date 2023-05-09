@@ -9,25 +9,25 @@ import ContentRow from '../components/ContentRow/index.jsx';
 import {pageTitlePrefix} from '../config.js';
 
 function NotFound(props: {
-    name: string
+	name: string;
 }) {
-    const {name} = props;
-    const pageTitle = pageTitlePrefix + name;
-    return (
-        <Content>
-            {/* Page title */}
-            <Helmet>
-                <title>{pageTitle}</title>
-            </Helmet>
-            {/* Page content */}
-            <ContentRow>
-                <h1>Oh no...</h1>
-            </ContentRow>
-            <ContentRow>
-                <h2>The page you are looking for doesn&apos;t exist!</h2>
-            </ContentRow>
-        </Content>
-    );
+	const {name} = props;
+	const pageTitle = pageTitlePrefix + name;
+	return (
+		<Content>
+			{/* Page title */}
+			<Helmet>
+				<title>{pageTitle}</title>
+			</Helmet>
+			{/* Page content */}
+			<ContentRow>
+				<h1>Oh no...</h1>
+			</ContentRow>
+			<ContentRow>
+				<h2>The page you are looking for doesn&apos;t exist!</h2>
+			</ContentRow>
+		</Content>
+	);
 }
 
 export default NotFound;
