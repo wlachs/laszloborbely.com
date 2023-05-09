@@ -7,4 +7,4 @@ services:
             - TZ=Europe/Amsterdam
             - NODE_ENV=production
         ports:
-            - "4000:4000"
+            - "4000:80"
