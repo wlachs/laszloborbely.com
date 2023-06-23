@@ -57,7 +57,7 @@ function CommonNavbar(props: {
 
 	return (
 		<>
-			<div className='col-12 col-lg-10 mx-auto px-1 mb-lg-5 d-flex justify-content-between align-items-center'>
+			<div className='col-12 col-lg-10 px-1 w-100 mb-lg-5 px-5 d-flex justify-content-between align-items-center'>
 				<PureLinkHighlight to='/'>
 					<img
 						src={logo}

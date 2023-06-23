@@ -2,6 +2,7 @@ import type React from 'react';
 import Contact from './Contact.jsx';
 import Welcome from './Welcome.jsx';
 import NotFound from './NotFound.tsx';
+import Blog from './Blog.tsx';
 
 export type RouteProps = {
 	id: number;
@@ -32,5 +33,12 @@ export const routes: RouteProps[] = [
 		name: 'Welcome',
 		path: '/',
 		View: Welcome,
+	},
+	{
+		id: 3,
+		display: true,
+		name: 'Blog',
+		path: '/blog',
+		View: Blog,
 	},
 ];

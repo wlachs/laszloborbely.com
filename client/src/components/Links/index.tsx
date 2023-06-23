@@ -4,6 +4,7 @@ import {type RouteProps, routes} from '../../routes';
 
 function Links() {
 	const elements = routes
+		.sort((a, b) => b.id - a.id)
 		.filter((route: RouteProps) => route.display)
 		.map((Route: RouteProps) => (
 			<PureLinkHighlight key={Route.id} to={Route.path}>{Route.name}</PureLinkHighlight>
