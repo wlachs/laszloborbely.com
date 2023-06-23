@@ -4,12 +4,10 @@ import {Helmet} from 'react-helmet-async';
 // Component imports
 import Content from '../components/Content/index.jsx';
 import ContentRow from '../components/ContentRow/index.jsx';
+import Drawing from '../components/Drawing';
 
 // Config imports
 import {pageTitlePrefix} from '../config.js';
-
-// Assets
-import drawing from '../assets/drawing.svg';
 
 function Welcome() {
 	const name = 'Welcome';
@@ -29,11 +27,7 @@ function Welcome() {
 				<h2>Full-Stack Software Engineer</h2>
 			</ContentRow>
 			<Content>
-				<img
-					src={drawing}
-					className='col-8 col-md-6 col-lg-4 m-auto'
-					alt='Drawing'
-				/>
+				<Drawing/>
 			</Content>
 		</Content>
 	);
