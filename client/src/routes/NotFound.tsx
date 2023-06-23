@@ -8,10 +8,8 @@ import ContentRow from '../components/ContentRow/index.jsx';
 // Config imports
 import {pageTitlePrefix} from '../config.js';
 
-function NotFound(props: {
-	name: string;
-}) {
-	const {name} = props;
+function NotFound() {
+	const name = '404';
 	const pageTitle = pageTitlePrefix + name;
 	return (
 		<Content>
@@ -25,6 +23,9 @@ function NotFound(props: {
 			</ContentRow>
 			<ContentRow>
 				<h2>The page you are looking for doesn&apos;t exist!</h2>
+			</ContentRow>
+			<ContentRow>
+				<p><i>Finger weg, Clemens!</i></p>
 			</ContentRow>
 		</Content>
 	);
