@@ -1,15 +1,24 @@
+import type React from 'react';
 import Contact from './Contact.jsx';
 import Welcome from './Welcome.jsx';
+import NotFound from './NotFound.tsx';
 
 export type RouteProps = {
 	id: number;
 	display: boolean;
 	name: string;
 	path: string;
-	View: () => JSX.Element;
+	View: () => React.JSX.Element;
 };
 
 export const routes: RouteProps[] = [
+	{
+		id: -1,
+		display: false,
+		name: '404',
+		path: '/not-found',
+		View: NotFound,
+	},
 	{
 		id: 0,
 		display: true,
