@@ -2,6 +2,7 @@
 import {Helmet} from 'react-helmet-async';
 
 // Component imports
+import Container from '../components/Container';
 import Content from '../components/Content/index.jsx';
 import ContentRow from '../components/ContentRow/index.jsx';
 
@@ -12,22 +13,24 @@ function NotFound() {
 	const name = '404';
 	const pageTitle = pageTitlePrefix + name;
 	return (
-		<Content>
+		<Container>
 			{/* Page title */}
 			<Helmet>
 				<title>{pageTitle}</title>
 			</Helmet>
 			{/* Page content */}
-			<ContentRow>
-				<h1>Oh no...</h1>
-			</ContentRow>
-			<ContentRow>
-				<h2>The page you are looking for doesn&apos;t exist!</h2>
-			</ContentRow>
-			<ContentRow>
-				<p><i>Finger weg, Clemens!</i></p>
-			</ContentRow>
-		</Content>
+			<Content>
+				<ContentRow>
+					<h1>Oh no...</h1>
+				</ContentRow>
+				<ContentRow>
+					<h2>The page you are looking for doesn&apos;t exist!</h2>
+				</ContentRow>
+				<ContentRow>
+					<p><i>Finger weg, Clemens!</i></p>
+				</ContentRow>
+			</Content>
+		</Container>
 	);
 }
 

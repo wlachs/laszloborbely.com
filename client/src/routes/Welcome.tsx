@@ -2,6 +2,7 @@
 import {Helmet} from 'react-helmet-async';
 
 // Component imports
+import Container from '../components/Container';
 import Content from '../components/Content/index.jsx';
 import ContentRow from '../components/ContentRow/index.jsx';
 import Drawing from '../components/Drawing';
@@ -14,22 +15,24 @@ function Welcome() {
 	const pageTitle = pageTitlePrefix + name;
 
 	return (
-		<Content>
+		<Container>
 			{/* Page title */}
 			<Helmet>
 				<title>{pageTitle}</title>
 			</Helmet>
 			{/* Page content */}
-			<ContentRow>
-				<h1>László Borbély</h1>
-			</ContentRow>
-			<ContentRow>
-				<h2>Full-Stack Software Engineer</h2>
-			</ContentRow>
 			<Content>
-				<Drawing/>
+				<ContentRow>
+					<h1>László Borbély</h1>
+				</ContentRow>
+				<ContentRow>
+					<h2>Full-Stack Software Engineer</h2>
+				</ContentRow>
+				<Container>
+					<Drawing/>
+				</Container>
 			</Content>
-		</Content>
+		</Container>
 	);
 }
 

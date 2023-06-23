@@ -5,7 +5,7 @@ function Drawing() {
 	return (
 		<img
 			src={drawing}
-			className='col-8 col-md-6 col-lg-4 m-auto'
+			className='col-12 col-md-10 col-lg-8 m-auto'
 			alt='Drawing'
 		/>
 	);

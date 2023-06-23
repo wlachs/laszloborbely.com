@@ -2,6 +2,7 @@
 import {Helmet} from 'react-helmet-async';
 
 // Component imports
+import Container from '../components/Container';
 import PureButton from '../components/PureButton/index.jsx';
 import Content from '../components/Content/index.jsx';
 import ContentRow from '../components/ContentRow/index.jsx';
@@ -14,22 +15,24 @@ function Contact() {
 	const pageTitle = pageTitlePrefix + name;
 
 	return (
-		<Content>
+		<Container>
 			{/* Page title */}
 			<Helmet>
 				<title>{pageTitle}</title>
 			</Helmet>
 			{/* Page content */}
-			<ContentRow>
-				<h1>Thanks for taking the time to reach out. </h1>
-			</ContentRow>
-			<ContentRow>
-				<h2>Feel free to send me a mail.</h2>
-			</ContentRow>
-			<ContentRow>
-				<a href='mailto:hello@laszloborbely.com'><PureButton>hello@laszloborbely.com</PureButton></a>
-			</ContentRow>
-		</Content>
+			<Content>
+				<ContentRow>
+					<h1>Thanks for taking the time to reach out. </h1>
+				</ContentRow>
+				<ContentRow>
+					<h2>Feel free to send me a mail.</h2>
+				</ContentRow>
+				<ContentRow>
+					<a href='mailto:hello@laszloborbely.com'><PureButton>hello@laszloborbely.com</PureButton></a>
+				</ContentRow>
+			</Content>
+		</Container>
 	);
 }
 
