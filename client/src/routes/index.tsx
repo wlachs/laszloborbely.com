@@ -21,6 +21,13 @@ export const routes: RouteProps[] = [
 	},
 	{
 		id: '0',
+		display: false,
+		name: 'Welcome',
+		path: '/',
+		element: <Welcome/>,
+	},
+	{
+		id: '1',
 		display: true,
 		name: 'Contact',
 		path: '/contact',
@@ -28,13 +35,6 @@ export const routes: RouteProps[] = [
 	},
 	{
 		id: '2',
-		display: false,
-		name: 'Welcome',
-		path: '/',
-		element: <Welcome/>,
-	},
-	{
-		id: '3',
 		display: true,
 		name: 'Blog',
 		path: '/blog',
