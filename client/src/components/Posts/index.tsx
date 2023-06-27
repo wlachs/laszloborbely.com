@@ -1,6 +1,7 @@
+
 function Posts() {
 	return (
-		<div>posts</div>
+		<div>loading...</div>
 	);
 }
 

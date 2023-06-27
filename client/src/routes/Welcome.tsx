@@ -9,30 +9,33 @@ import Drawing from '../components/Drawing';
 
 // Config imports
 import {pageTitlePrefix} from '../config.js';
+import Frame from '../components/Frame';
 
 function Welcome() {
 	const name = 'Welcome';
 	const pageTitle = pageTitlePrefix + name;
 
 	return (
-		<Container>
-			{/* Page title */}
-			<Helmet>
-				<title>{pageTitle}</title>
-			</Helmet>
-			{/* Page content */}
-			<Content>
-				<ContentRow>
-					<h1>László Borbély</h1>
-				</ContentRow>
-				<ContentRow>
-					<h2>Full-Stack Software Engineer</h2>
-				</ContentRow>
-				<Container>
-					<Drawing/>
-				</Container>
-			</Content>
-		</Container>
+		<Frame>
+			<Container>
+				{/* Page title */}
+				<Helmet>
+					<title>{pageTitle}</title>
+				</Helmet>
+				{/* Page content */}
+				<Content>
+					<ContentRow>
+						<h1>László Borbély</h1>
+					</ContentRow>
+					<ContentRow>
+						<h2>Full-Stack Software Engineer</h2>
+					</ContentRow>
+					<Container>
+						<Drawing/>
+					</Container>
+				</Content>
+			</Container>
+		</Frame>
 	);
 }
 
