@@ -1,10 +1,10 @@
-import {type BlogPost} from '../../types/blog.ts';
+import {type BlogPostData} from '../../types/blog.ts';
 import './index.css';
 import moment from 'moment';
 import {NavLink} from 'react-router-dom';
 
 function Post({post}: {
-	post: BlogPost;
+	post: BlogPostData;
 }) {
 	const link = `/blog/${post.urlHandle}`;
 
@@ -22,7 +22,7 @@ function Post({post}: {
 }
 
 function Posts(props: {
-	posts: BlogPost[];
+	posts: BlogPostData[];
 }) {
 	const posts = props.posts.map(p => <Post key={p.urlHandle} post={p}/>);
 

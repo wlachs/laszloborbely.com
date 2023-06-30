@@ -4,6 +4,7 @@ import Welcome from './Welcome.jsx';
 import NotFound from './NotFound.tsx';
 import Blog from './Blog.tsx';
 import {type RouteObject} from 'react-router-dom';
+import BlogPost from './BlogPost.tsx';
 
 export type RouteProps = {
 	display: boolean;
@@ -41,6 +42,16 @@ export const routes: RouteProps[] = [
 		element: <Blog/>,
 		async loader() {
 			return fetch('/api/blog/posts');
+		},
+	},
+	{
+		id: '3',
+		display: false,
+		name: 'Blog',
+		path: '/blog/:postId',
+		element: <BlogPost/>,
+		async loader(args) {
+			return fetch(`/api/blog/posts/${args.params.postId ?? ''}`);
 		},
 	},
 ];

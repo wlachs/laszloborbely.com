@@ -1,4 +1,4 @@
-export type BlogPost = {
+export type BlogPostData = {
 	urlHandle: string;
 	title: string;
 	author: string;

@@ -6,19 +6,22 @@ import {useLoaderData} from 'react-router-dom';
 
 // Component imports
 import Container from '../components/Container';
-import Content from '../components/Content/index.jsx';
 import ContentRow from '../components/ContentRow/index.jsx';
-import Posts from '../components/Posts';
+import MarkdownRenderer from '../components/MarkdownRenderer';
 
 // Config imports
 import {pageTitlePrefix} from '../config.js';
 import Frame from '../components/Frame';
 import {type BlogPostData} from '../types/blog.ts';
 
-function Blog() {
-	const name = 'Blog';
-	const pageTitle = pageTitlePrefix + name;
-	const posts: BlogPostData[] = useLoaderData() as BlogPostData[];
+// Other imports
+import moment from 'moment';
+import Content from '../components/Content';
+
+function BlogPost() {
+	const post: BlogPostData = useLoaderData() as BlogPostData;
+	const pageTitle = pageTitlePrefix + post.title;
+	const timestamp = moment(post.creationTime).calendar();
 
 	return (
 		<Frame>
@@ -29,14 +32,14 @@ function Blog() {
 				</Helmet>
 				{/* Page content */}
 				<ContentRow>
-					<h1>Hey, this is my blog!</h1>
+					<h1>{post.title}</h1>
 				</ContentRow>
 				<ContentRow>
-					<h2>Check out the latest posts!</h2>
+					<h2>{timestamp}</h2>
 				</ContentRow>
 				<Content>
 					<ContentRow>
-						<Posts posts={posts}/>
+						<MarkdownRenderer content={post.body}/>
 					</ContentRow>
 				</Content>
 			</Container>
@@ -44,4 +47,4 @@ function Blog() {
 	);
 }
 
-export default Blog;
+export default BlogPost;
