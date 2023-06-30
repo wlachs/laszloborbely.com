@@ -1,0 +1,10 @@
+@import '../global.css';
+
+.markdown {
+  font-weight: 300;
+  color: unset;
+}
+
+.markdown > h1, .markdown > h2, .markdown > h3 {
+  font-weight: 400;
+}
