@@ -39,5 +39,8 @@ export const routes: RouteProps[] = [
 		name: 'Blog',
 		path: '/blog',
 		element: <Blog/>,
+		async loader() {
+			return fetch('/api/blog/posts');
+		},
 	},
 ];

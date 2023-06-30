@@ -1,6 +1,9 @@
 // React imports
 import {Helmet} from 'react-helmet-async';
 
+// Router imports
+import {useLoaderData} from 'react-router-dom';
+
 // Component imports
 import Container from '../components/Container';
 import Content from '../components/Content/index.jsx';
@@ -10,10 +13,12 @@ import Posts from '../components/Posts';
 // Config imports
 import {pageTitlePrefix} from '../config.js';
 import Frame from '../components/Frame';
+import {type BlogPost} from '../types/blog.ts';
 
 function Blog() {
 	const name = 'Blog';
 	const pageTitle = pageTitlePrefix + name;
+	const posts: BlogPost[] = useLoaderData() as BlogPost[];
 
 	return (
 		<Frame>
@@ -31,7 +36,7 @@ function Blog() {
 				</ContentRow>
 				<Content>
 					<ContentRow>
-						<Posts/>
+						<Posts posts={posts}/>
 					</ContentRow>
 				</Content>
 			</Container>

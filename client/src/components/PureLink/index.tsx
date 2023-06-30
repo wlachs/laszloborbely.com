@@ -1,10 +1,10 @@
+import React from 'react';
 import {NavLink} from 'react-router-dom';
 
-function PureLink(props: {
+function PureLink({to, children}: {
 	to: string;
-	children?: JSX.Element | string;
+	children?: React.JSX.Element | string;
 }) {
-	const {to, children} = props;
 	return (
 		<NavLink to={to} className='link'>
 			{children}
