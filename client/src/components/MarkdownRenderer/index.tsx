@@ -6,7 +6,7 @@ function MarkdownRenderer({content}: {
 	content: string;
 }) {
 	return (
-		<ReactMarkdown className='d-flex flex-column markdown' remarkPlugins={[remarkGfm]}>
+		<ReactMarkdown className='d-flex flex-column markdown col-11 col-lg-12' remarkPlugins={[remarkGfm]}>
 			{content}
 		</ReactMarkdown>
 	);
