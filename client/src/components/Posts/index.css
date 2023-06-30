@@ -9,8 +9,7 @@
 }
 
 .post:hover {
-  background-color: var(--primary-color);
-  color: var(--background-color)
+  color: var(--primary-color);
 }
 
 .left-segment {
