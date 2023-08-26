@@ -29,10 +29,10 @@ function Blog() {
 				</Helmet>
 				{/* Page content */}
 				<ContentRow>
-					<h1>Hey, this is my blog!</h1>
+					<h1>László Borbély</h1>
 				</ContentRow>
 				<ContentRow>
-					<h2>Check out the latest posts!</h2>
+					<h2>Full-Stack Software Engineer</h2>
 				</ContentRow>
 				<Content>
 					<ContentRow>
