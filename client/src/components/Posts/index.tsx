@@ -28,9 +28,9 @@ function Posts(props: {
 
 	return (
 		<div className='posts w-100'>
-			{posts
+			{posts.length > 0
 				? posts
-				: 'No posts found, come back later!'
+				: <p className='text-center mt-3'>No posts found, come back later!</p>
 			}
 		</div>
 	);
