@@ -18,7 +18,7 @@ import {type BlogPostData} from '../types/blog.ts';
 function Blog() {
 	const name = 'Blog';
 	const pageTitle = pageTitlePrefix + name;
-	const posts: BlogPostData[] = useLoaderData() as BlogPostData[];
+	const posts: BlogPostData[] = (useLoaderData() || []) as BlogPostData[];
 
 	return (
 		<Frame>
