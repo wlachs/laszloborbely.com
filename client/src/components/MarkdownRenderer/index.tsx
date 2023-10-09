@@ -7,12 +7,12 @@ function MarkdownRenderer({content}: {
 	content: string;
 }) {
 	return (
-		<ReactMarkdown className='d-flex flex-column markdown col-11 col-lg-12'
+		<ReactMarkdown className='markdown-body col-11 col-xxl-8'
 			remarkPlugins={[remarkGfm]}
 			components={{
-				code({node, inline, className, children, ...props}) {
+				code({node, className, children, ...props}) {
 					const match = /language-(\w+)/.exec(className ?? '');
-					return !inline && match ? (
+					return match ? (
 						<SyntaxHighlighter
 							language={match[1]}>
 							{String(children).replace(/\n$/, '')}
