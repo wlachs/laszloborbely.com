@@ -26,7 +26,11 @@ export const routes: RouteProps[] = [
 		path: '/',
 		element: <Blog/>,
 		async loader() {
-			return fetch('/api/blog/posts');
+			try {
+				return await fetch('/api/blog/posts');
+			} catch (ignored) {
+				return [];
+			}
 		},
 	},
 	{
