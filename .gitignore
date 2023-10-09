@@ -10,5 +10,6 @@ dist/
 
 # Others
 .DS_Store
+.envrc
 
 secrets.js

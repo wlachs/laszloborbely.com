@@ -1,10 +1,10 @@
 import './index.css';
 import {NavLink} from 'react-router-dom';
-import {type ReactNode} from 'react';
+import React, {type ReactNode} from 'react';
 
 function PureButton(props: {
 	to?: string;
-	children?: JSX.Element | ReactNode | string;
+	children?: React.JSX.Element | ReactNode | string;
 	onClick?: () => void;
 }) {
 	const {to, children, onClick} = props;

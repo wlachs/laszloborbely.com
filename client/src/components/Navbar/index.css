@@ -1,9 +1,5 @@
 @import '../global.css';
 
-.navbar-toggler {
-    outline: none !important;
-}
-
 .navbar-logo {
     margin: .6rem 0;
 }

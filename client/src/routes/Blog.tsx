@@ -1,18 +1,25 @@
 // React imports
 import {Helmet} from 'react-helmet-async';
 
+// Router imports
+import {useLoaderData} from 'react-router-dom';
+
 // Component imports
 import Container from '../components/Container';
 import Content from '../components/Content/index.jsx';
 import ContentRow from '../components/ContentRow/index.jsx';
+import Posts from '../components/Posts';
 
 // Config imports
 import {pageTitlePrefix} from '../config.js';
 import Frame from '../components/Frame';
+import {type BlogPostData} from '../types/blog.ts';
 
-function NotFound() {
-	const name = '404';
+function Blog() {
+	const name = 'Blog';
 	const pageTitle = pageTitlePrefix + name;
+	const posts: BlogPostData[] = (useLoaderData() || []) as BlogPostData[];
+
 	return (
 		<Frame>
 			<Container>
@@ -21,15 +28,15 @@ function NotFound() {
 					<title>{pageTitle}</title>
 				</Helmet>
 				{/* Page content */}
+				<ContentRow>
+					<h1>László Borbély</h1>
+				</ContentRow>
+				<ContentRow>
+					<h2>Full-Stack Software Engineer</h2>
+				</ContentRow>
 				<Content>
 					<ContentRow>
-						<h1>Oh no...</h1>
-					</ContentRow>
-					<ContentRow>
-						<h2>The page you are looking for doesn&apos;t exist!</h2>
-					</ContentRow>
-					<ContentRow>
-						<p><i>Finger weg, Clemens!</i></p>
+						<Posts posts={posts}/>
 					</ContentRow>
 				</Content>
 			</Container>
@@ -37,4 +44,4 @@ function NotFound() {
 	);
 }
 
-export default NotFound;
+export default Blog;
