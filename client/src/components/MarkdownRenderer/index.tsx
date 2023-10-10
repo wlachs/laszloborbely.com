@@ -7,7 +7,7 @@ function MarkdownRenderer({content}: {
 	content: string;
 }) {
 	return (
-		<ReactMarkdown className='markdown-body col-11 col-xxl-8'
+		<ReactMarkdown className='markdown-body col-12 col-xxl-8'
 			remarkPlugins={[remarkGfm]}
 			components={{
 				code({node, className, children, ...props}) {

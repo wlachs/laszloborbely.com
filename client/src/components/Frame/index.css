@@ -39,6 +39,10 @@ p {
     h2 {
         font-size: 1.5rem !important;
     }
+
+    h3 {
+        font-size: 1.25rem !important;
+    }
 }
 
 @media (max-width: 1199px) {
@@ -49,14 +53,27 @@ p {
     h2 {
         font-size: 1.25rem !important;
     }
+
+    h3 {
+        font-size: 1rem !important;
+    }
 }
 
 @media (max-width: 991px) {
     h1 {
         font-size: 2rem !important;
+        text-align: center;
     }
 
     h2 {
-        font-size: 1.25rem !important;
+        font-size: 1.1rem !important;
+    }
+
+    h3 {
+        font-size: 1rem !important;
+    }
+
+    .frame-container {
+        font-size: 1rem;
     }
 }

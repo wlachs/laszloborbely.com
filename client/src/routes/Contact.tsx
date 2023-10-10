@@ -23,17 +23,15 @@ function Contact() {
 					<title>{pageTitle}</title>
 				</Helmet>
 				{/* Page content */}
-				<Content>
-					<ContentRow>
-						<h1>Thanks for taking the time to reach out. </h1>
-					</ContentRow>
-					<ContentRow>
-						<h2>Feel free to send me a mail.</h2>
-					</ContentRow>
-					<ContentRow>
-						<a href='mailto:hello@laszloborbely.com'><PureButton>hello@laszloborbely.com</PureButton></a>
-					</ContentRow>
-				</Content>
+				<ContentRow>
+					<h1>Thanks for taking the time to reach out. </h1>
+				</ContentRow>
+				<ContentRow>
+					<h2>Feel free to send me a mail.</h2>
+				</ContentRow>
+				<ContentRow>
+					<a href='mailto:hello@laszloborbely.com'><PureButton>hello@laszloborbely.com</PureButton></a>
+				</ContentRow>
 			</Container>
 		</Frame>
 	);

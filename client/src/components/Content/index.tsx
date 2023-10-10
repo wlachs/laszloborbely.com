@@ -5,7 +5,7 @@ function Content(props: {
 }) {
 	const {children} = props;
 	return (
-		<div className='d-flex flex-column align-items-center h-100 col-lg-8 col-12 flex-grow-1'>
+		<div className='d-flex flex-column align-items-center h-100 col-lg-8 col-12 flex-grow-1 mt-5'>
 			{children}
 		</div>
 	);
