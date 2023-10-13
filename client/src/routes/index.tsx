@@ -21,7 +21,7 @@ export const routes: RouteProps[] = [
 	},
 	{
 		id: '0',
-		display: false,
+		display: true,
 		name: 'Blog',
 		path: '/',
 		element: <Blog/>,
