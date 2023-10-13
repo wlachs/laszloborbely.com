@@ -6,8 +6,8 @@ function Links() {
 	const elements = routes
 		.sort((a, b) => Number(b.id) - Number(a.id))
 		.filter((route: RouteProps) => route.display)
-		.map((Route: RouteProps) => (
-			<PureLinkHighlight key={Route.id} to={Route.path}>{Route.name}</PureLinkHighlight>
+		.map((route: RouteProps) => (
+			<PureLinkHighlight key={route.id} to={route.path}>{route.name}</PureLinkHighlight>
 		));
 
 	return (

@@ -23,6 +23,7 @@
   flex-direction: column;
   justify-content: space-between;
   text-align: right;
+  white-space: nowrap;
 }
 
 .post:not(:last-child) {
