@@ -2,7 +2,7 @@ import React from 'react';
 import Contact from './Contact.jsx';
 import NotFound from './NotFound.tsx';
 import Blog from './Blog.tsx';
-import {type RouteObject} from 'react-router-dom';
+import {Navigate, type RouteObject} from 'react-router-dom';
 import BlogPost from './BlogPost.tsx';
 
 export type RouteProps = {
@@ -23,7 +23,7 @@ export const routes: RouteProps[] = [
 		id: '0',
 		display: true,
 		name: 'Blog',
-		path: '/',
+		path: '/blog',
 		element: <Blog/>,
 		async loader() {
 			try {
@@ -49,5 +49,12 @@ export const routes: RouteProps[] = [
 		name: 'Contact',
 		path: '/contact',
 		element: <Contact/>,
+	},
+	{
+		id: '3',
+		display: false,
+		name: '',
+		path: '*',
+		element: <Navigate to='/blog'/>,
 	},
 ];
