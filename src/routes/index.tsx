@@ -1,5 +1,7 @@
 import React from 'react';
 import {Navigate, type RouteObject} from 'react-router-dom';
+import queryClient from '../network';
+import {getPost, getPosts} from '../network/queries.ts';
 import Blog from './Blog.tsx';
 import BlogPost from './BlogPost.tsx';
 import Contact from './Contact.jsx';
@@ -26,11 +28,9 @@ export const routes: RouteProps[] = [
 		path: '/blog',
 		element: <Blog/>,
 		async loader() {
-			try {
-				return await fetch('/api/blog/posts');
-			} catch (ignored) {
-				return [];
-			}
+			return queryClient.fetchQuery(['posts'], getPosts(), {
+				staleTime: 3_600_000, // 1 hour
+			});
 		},
 	},
 	{
@@ -39,8 +39,10 @@ export const routes: RouteProps[] = [
 		name: 'Blog',
 		path: '/blog/:postId',
 		element: <BlogPost/>,
-		async loader(args) {
-			return fetch(`/api/blog/posts/${args.params.postId ?? ''}`);
+		async loader({params}) {
+			return queryClient.fetchQuery([`posts/${params.postId}`], getPost(params.postId ?? ''), {
+				staleTime: 3_600_000, // 1 hour
+			});
 		},
 	},
 	{
