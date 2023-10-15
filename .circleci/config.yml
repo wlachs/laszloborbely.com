@@ -12,14 +12,32 @@ jobs:
       - node/install-packages:
           pkg-manager: npm
       - run:
-          command: npm run build
           name: Build app
+          command: npm run build
       - persist_to_workspace:
           root: ~/project
           paths:
             - dist
+  deploy:
+    machine:
+      image: ubuntu-2204:2023.07.2
+    steps:
+      - attach_workspace:
+          at: ~/project
+      - run:
+          name: Copy over SSH
+          command: |
+            scp -r ~/project/dist $SSH_USER@$SSH_HOST:~
+      - run:
+          name: Deploy over SSH
+          command: |
+            ssh $SSH_USER@$SSH_HOST "laszloborbely.com/deploy.sh"
+
 
 workflows:
-  build-and-deploy-workflow:
+  build-and-deploy:
     jobs:
       - build
+      - deploy:
+          requires:
+            - build
