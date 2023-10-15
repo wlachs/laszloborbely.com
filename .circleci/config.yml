@@ -27,7 +27,7 @@ jobs:
       - run:
           name: Copy over SSH
           command: |
-            scp -r ~/project/dist $SSH_USER@$SSH_HOST:~
+            ls -la ~/project
       - run:
           name: Deploy over SSH
           command: |
