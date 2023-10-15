@@ -27,7 +27,7 @@ jobs:
       - run:
           name: Copy over SSH
           command: |
-            ls -la ~/project
+            ls -la ~/project/dist
       - run:
           name: Deploy over SSH
           command: |
