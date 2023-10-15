@@ -1,7 +1,7 @@
-import './index.css';
 import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
 import {Prism as SyntaxHighlighter} from 'react-syntax-highlighter';
+import remarkGfm from 'remark-gfm';
+import './index.css';
 
 function MarkdownRenderer({content}: {
 	content: string;

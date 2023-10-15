@@ -1,5 +1,5 @@
-import {NavLink} from 'react-router-dom';
 import {type ReactNode} from 'react';
+import {NavLink} from 'react-router-dom';
 
 function PureLinkHighlight(props: {
 	to: string;

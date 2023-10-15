@@ -1,9 +1,9 @@
 import React from 'react';
+import {Navigate, type RouteObject} from 'react-router-dom';
+import Blog from './Blog.tsx';
+import BlogPost from './BlogPost.tsx';
 import Contact from './Contact.jsx';
 import NotFound from './NotFound.tsx';
-import Blog from './Blog.tsx';
-import {Navigate, type RouteObject} from 'react-router-dom';
-import BlogPost from './BlogPost.tsx';
 
 export type RouteProps = {
 	display: boolean;

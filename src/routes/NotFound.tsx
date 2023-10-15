@@ -5,10 +5,10 @@ import {Helmet} from 'react-helmet-async';
 import Container from '../components/Container';
 import Content from '../components/Content/index.jsx';
 import ContentRow from '../components/ContentRow/index.jsx';
+import Frame from '../components/Frame';
 
 // Config imports
 import {pageTitlePrefix} from '../config.js';
-import Frame from '../components/Frame';
 
 function NotFound() {
 	const name = '404';

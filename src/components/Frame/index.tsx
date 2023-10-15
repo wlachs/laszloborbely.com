@@ -1,6 +1,6 @@
 import {type ReactNode} from 'react';
-import './index.css';
 import Navbar from '../Navbar/index.jsx';
+import './index.css';
 
 function Frame(props: {children?: ReactNode}) {
 	const {children} = props;

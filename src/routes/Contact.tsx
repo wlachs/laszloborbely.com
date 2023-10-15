@@ -3,13 +3,12 @@ import {Helmet} from 'react-helmet-async';
 
 // Component imports
 import Container from '../components/Container';
-import PureButton from '../components/PureButton/index.jsx';
-import Content from '../components/Content/index.jsx';
 import ContentRow from '../components/ContentRow/index.jsx';
+import Frame from '../components/Frame';
+import PureButton from '../components/PureButton/index.jsx';
 
 // Config imports
 import {pageTitlePrefix} from '../config.js';
-import Frame from '../components/Frame';
 
 function Contact() {
 	const name = 'Contact';

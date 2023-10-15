@@ -8,12 +8,12 @@ import {useLoaderData} from 'react-router-dom';
 import Container from '../components/Container';
 import Content from '../components/Content/index.jsx';
 import ContentRow from '../components/ContentRow/index.jsx';
+import Frame from '../components/Frame';
 import Posts from '../components/Posts';
 
 // Config imports
 import {pageTitlePrefix} from '../config.js';
-import Frame from '../components/Frame';
-import {type BlogPostData} from '../types/blog.ts';
+import {type BlogPostData} from '../network/types/blog.ts';
 
 function Blog() {
 	const name = 'Blog';
