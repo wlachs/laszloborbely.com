@@ -27,11 +27,11 @@ jobs:
       - run:
           name: Copy over SSH
           command: |
-            ls -la ~/project/dist
+            rsync -r ~/project/dist $SSH_USER@$SSH_HOST:~
       - run:
           name: Deploy over SSH
           command: |
-            ssh $SSH_USER@$SSH_HOST "laszloborbely.com/deploy.sh"
+            ssh $SSH_USER@$SSH_HOST "portfolio/deploy.sh"
 
 
 workflows:
