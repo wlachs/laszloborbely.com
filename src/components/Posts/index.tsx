@@ -1,7 +1,7 @@
-import {type BlogPostData} from '../../types/blog.ts';
-import './index.css';
 import moment from 'moment';
 import {NavLink} from 'react-router-dom';
+import {type BlogPostData} from '../../network/types/blog.ts';
+import './index.css';
 
 function Post({post}: {
 	post: BlogPostData;

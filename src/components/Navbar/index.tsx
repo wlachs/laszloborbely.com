@@ -1,16 +1,16 @@
 import {type ReactNode} from 'react';
-import './index.css';
-import Links from '../Links/index.jsx';
-import PureLinkHighlight from '../PureLinkHighlight/index.jsx';
 
 // Assets
 import logo from '../../assets/logo.svg';
+import Links from '../Links/index.jsx';
+import PureLinkHighlight from '../PureLinkHighlight/index.jsx';
+import './index.css';
 
 function Navbar() {
 	return (
 		<CommonNavbar>
 			<div className='d-flex w-100 flex-row-reverse align-items-center'>
-				<Links />
+				<Links/>
 			</div>
 		</CommonNavbar>
 	);

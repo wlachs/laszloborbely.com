@@ -1,6 +1,6 @@
-import './index.css';
-import {NavLink} from 'react-router-dom';
 import React, {type ReactNode} from 'react';
+import {NavLink} from 'react-router-dom';
+import './index.css';
 
 function PureButton(props: {
 	to?: string;

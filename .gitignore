@@ -16,6 +16,7 @@ pnpm-debug.log*
 lerna-debug.log*
 
 # Editor directories and files
+.vite/
 .vscode/*
 .DS_Store
 .envrc

@@ -1,23 +1,23 @@
 :root {
-    --primary-color: #66CC33;
-    --off-color: #141C3A;
-    --secondary-color: #0A0A0A;
-    --background-color: #FFFFFF;
+  --primary-color: #66CC33;
+  --off-color: #141C3A;
+  --secondary-color: #0A0A0A;
+  --background-color: #FFFFFF;
 }
 
 .link {
-    color: var(--secondary-color);
-    font-weight: 300;
-    text-decoration: none !important;
-    transition: 0.2s;
-    margin: 0 .7rem;
-    padding: .4rem 0;
+  color: var(--secondary-color);
+  font-weight: 300;
+  text-decoration: none !important;
+  transition: 0.2s;
+  margin: 0 .7rem;
+  padding: .4rem 0;
 }
 
 .link:hover {
-    color: var(--primary-color);
+  color: var(--primary-color);
 }
 
 .link_active {
-    color: var(--primary-color);
+  color: var(--primary-color);
 }

@@ -1,4 +1,6 @@
 // React imports
+// Other imports
+import moment from 'moment';
 import {Helmet} from 'react-helmet-async';
 
 // Router imports
@@ -6,17 +8,14 @@ import {useLoaderData} from 'react-router-dom';
 
 // Component imports
 import Container from '../components/Container';
+import Content from '../components/Content';
 import ContentRow from '../components/ContentRow/index.jsx';
+import Frame from '../components/Frame';
 import MarkdownRenderer from '../components/MarkdownRenderer';
 
 // Config imports
 import {pageTitlePrefix} from '../config.js';
-import Frame from '../components/Frame';
-import {type BlogPostData} from '../types/blog.ts';
-
-// Other imports
-import moment from 'moment';
-import Content from '../components/Content';
+import {type BlogPostData} from '../network/types/blog.ts';
 
 function BlogPost() {
 	const post: BlogPostData = useLoaderData() as BlogPostData;

@@ -1,6 +1,6 @@
 import React from 'react';
-import PureLinkHighlight from '../PureLinkHighlight/index.jsx';
 import {type RouteProps, routes} from '../../routes';
+import PureLinkHighlight from '../PureLinkHighlight/index.jsx';
 
 function Links() {
 	const elements = routes
