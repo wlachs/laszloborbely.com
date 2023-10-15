@@ -23,7 +23,7 @@ function CommonNavbar(props: {
 
 	return (
 		<div className='col-12 col-lg-10 px-1 px-lg-5 w-100 mb-5 mb-lg-5 d-flex justify-content-between align-items-center'>
-			<PureLinkHighlight to='/'>
+			<PureLinkHighlight to='/blog'>
 				<img
 					src={logo}
 					height='40'
