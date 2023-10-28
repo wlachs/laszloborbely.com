@@ -8,7 +8,7 @@ function PostMetadata({post}: {
 	const dateFormat = 'DD.MM.YYYY, HH:mm';
 	const timestamp = moment(post.creationTime).format(dateFormat);
 	return (
-		<div className='small d-inline'>
+		<div className='small'>
 			{timestamp} - <NavLink to='/contact'>{post.author}</NavLink>
 		</div>
 	);
