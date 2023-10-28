@@ -38,6 +38,10 @@ function Contact() {
                             Feel free to <a href='mailto:hello@laszloborbely.com'>send me an e-mail</a> if you have any questions, comments,
                             or suggestions.
 						</p>
+						<p>
+                            You can also find me on <a href='https://github.com/wlchs' target='_blank' rel='noreferrer'>GitHub</a> or <a
+								href='https://www.linkedin.com/in/lászló-borbély-678a34138/' target='_blank' rel='noreferrer'>LinkedIn</a>.
+						</p>
 					</ContentRow>
 				</Content>
 			</Container>
