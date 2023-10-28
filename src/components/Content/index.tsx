@@ -10,12 +10,7 @@ function Content(props: {
 		'align-items-center',
 		'h-100',
 		'flex-grow-1',
-		/* Responsive */
 		'col-12',
-		'col-md-10',
-		'col-lg-8',
-		'col-xl-7',
-		'col-xxl-5',
 	].join(' ');
 	return (
 		<div className={classes}>

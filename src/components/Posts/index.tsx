@@ -9,12 +9,12 @@ function Post({post}: {
 	const link = `/blog/${post.urlHandle}`;
 
 	return (
-		<NavLink className='post w-100 py-3 px-3 px-lg-2' to={link}>
+		<NavLink className='post w-100 py-3' to={link}>
 			<div className='left-segment'>
 				<h3 className='title mb-1'>{post.title}</h3>
-				<div className='summary mt-1 fst-italic small'>{post.summary}</div>
+				<div className='summary mt-1'>{post.summary}</div>
 			</div>
-			<div className='right-segment small d-none d-md-block'>
+			<div className='right-segment d-none d-md-block'>
 				<div>{moment(post.creationTime).fromNow()}</div>
 			</div>
 		</NavLink>

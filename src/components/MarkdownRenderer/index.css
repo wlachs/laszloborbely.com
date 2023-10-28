@@ -2,4 +2,11 @@
 
 .markdown-body {
   width: 100%;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 991px) {
+  .markdown-body {
+    font-size: 1rem;
+  }
 }

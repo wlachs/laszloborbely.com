@@ -6,14 +6,13 @@ import Container from '../components/Container';
 import Content from '../components/Content';
 import ContentRow from '../components/ContentRow/index.jsx';
 import Frame from '../components/Frame';
-import PureButton from '../components/PureButton/index.jsx';
 
 // Config imports
-import {pageTitlePrefix} from '../config.js';
+import {pageTitleSuffix} from '../config.js';
 
 function Contact() {
 	const name = 'Contact';
-	const pageTitle = pageTitlePrefix + name;
+	const pageTitle = name + pageTitleSuffix;
 
 	return (
 		<Frame>
@@ -24,14 +23,25 @@ function Contact() {
 				</Helmet>
 				{/* Page content */}
 				<Content>
-					<ContentRow center>
-						<h1>Hey!</h1>
+					<ContentRow>
+						<h1>Contact</h1>
 					</ContentRow>
-					<ContentRow center>
-						<h2>Feel free to send me a mail.</h2>
-					</ContentRow>
-					<ContentRow center>
-						<a href='mailto:hello@laszloborbely.com'><PureButton>hello@laszloborbely.com</PureButton></a>
+					<ContentRow>
+						<p>
+							<h2>László Borbély</h2>
+						</p>
+						<p>
+                            Full-Stack Software Engineer @ mgm technology partners
+						</p>
+						<p>
+                            Mainly working with Spring and React, but always eager to learn new things! <br/>
+                            Feel free to <a href='mailto:hello@laszloborbely.com'>send me an e-mail</a> if you have any questions, comments,
+                            or suggestions.
+						</p>
+						<p>
+                            You can also find me on <a href='https://github.com/wlchs' target='_blank' rel='noreferrer'>GitHub</a> or <a
+								href='https://www.linkedin.com/in/lászló-borbély-678a34138/' target='_blank' rel='noreferrer'>LinkedIn</a>.
+						</p>
 					</ContentRow>
 				</Content>
 			</Container>

@@ -1,5 +1,7 @@
+import './index.css';
+
 function Separator() {
-	return (<div className='w-100 border-1 border-bottom'/>);
+	return (<div className='separator w-100 mb-3'/>);
 }
 
 export default Separator;
