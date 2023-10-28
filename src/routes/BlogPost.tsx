@@ -30,13 +30,13 @@ function BlogPost() {
 					<title>{pageTitle}</title>
 				</Helmet>
 				{/* Page content */}
-				<ContentRow>
-					<h1>{post.title}</h1>
-				</ContentRow>
-				<ContentRow>
-					<h2>{timestamp}</h2>
-				</ContentRow>
 				<Content>
+					<ContentRow>
+						<h1>{post.title}</h1>
+					</ContentRow>
+					<ContentRow>
+						<h2>{timestamp}</h2>
+					</ContentRow>
 					<ContentRow>
 						<MarkdownRenderer content={post.body}/>
 					</ContentRow>

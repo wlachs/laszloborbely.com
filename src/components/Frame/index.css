@@ -62,7 +62,6 @@ p {
 @media (max-width: 991px) {
   h1 {
     font-size: 2rem !important;
-    text-align: center;
   }
 
   h2 {

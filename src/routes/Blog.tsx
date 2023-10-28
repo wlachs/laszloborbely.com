@@ -28,10 +28,10 @@ function Blog() {
 					<title>{pageTitle}</title>
 				</Helmet>
 				{/* Page content */}
-				<ContentRow>
+				<ContentRow center>
 					<h1>László Borbély</h1>
 				</ContentRow>
-				<ContentRow>
+				<ContentRow center>
 					<h2>Full-Stack Software Engineer</h2>
 				</ContentRow>
 				<Content>
