@@ -13,7 +13,6 @@ import Frame from '../components/Frame';
 import MarkdownRenderer from '../components/MarkdownRenderer';
 import PostMetadata from '../components/PostMetadata';
 import PostTitle from '../components/PostTitle';
-import Separator from '../components/Separator';
 
 // Config imports
 import {pageTitleSuffix} from '../config.js';
@@ -37,9 +36,6 @@ function BlogPost() {
 					</ContentRow>
 					<ContentRow>
 						<PostMetadata post={post}/>
-					</ContentRow>
-					<ContentRow>
-						<Separator/>
 					</ContentRow>
 					<ContentRow>
 						<MarkdownRenderer content={post.body}/>

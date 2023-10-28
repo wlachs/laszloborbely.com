@@ -9,7 +9,7 @@ function Post({post}: {
 	const link = `/blog/${post.urlHandle}`;
 
 	return (
-		<NavLink className='post w-100 py-3 px-3 px-lg-2' to={link}>
+		<NavLink className='post w-100 py-3' to={link}>
 			<div className='left-segment'>
 				<h3 className='title mb-1'>{post.title}</h3>
 				<div className='summary mt-1 fst-italic small'>{post.summary}</div>
