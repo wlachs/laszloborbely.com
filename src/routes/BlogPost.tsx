@@ -38,7 +38,9 @@ function BlogPost() {
 					<ContentRow>
 						<PostMetadata post={post}/>
 					</ContentRow>
-					<Separator/>
+					<ContentRow>
+						<Separator/>
+					</ContentRow>
 					<ContentRow>
 						<MarkdownRenderer content={post.body}/>
 					</ContentRow>
