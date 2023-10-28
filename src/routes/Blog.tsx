@@ -28,8 +28,11 @@ function Blog() {
 					<title>{pageTitle}</title>
 				</Helmet>
 				{/* Page content */}
-				<ContentRow center>
-					<h1>László&apos;s DevBlog</h1>
+				<ContentRow>
+					<p><h1>László&apos;s developer blog</h1></p>
+					<p>
+                        Feel free to check out my latest posts. Who knows, perhaps you&apos;ll find something interesting.
+					</p>
 				</ContentRow>
 				<Content>
 					<ContentRow>

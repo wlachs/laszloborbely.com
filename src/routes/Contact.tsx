@@ -35,7 +35,7 @@ function Contact() {
 						</p>
 						<p>
                             Mainly working with Spring and React, but always eager to learn new things! <br/>
-                            Feel free to <a href='mailto:hello@laszloborbely.com'>send me an e-mail</a> if you have any questions, comments
+                            Feel free to <a href='mailto:hello@laszloborbely.com'>send me an e-mail</a> if you have any questions, comments,
                             or suggestions.
 						</p>
 					</ContentRow>
