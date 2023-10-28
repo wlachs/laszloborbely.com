@@ -1,6 +1,5 @@
 // React imports
 // Other imports
-import moment from 'moment';
 import {Helmet} from 'react-helmet-async';
 
 // Router imports
@@ -12,6 +11,9 @@ import Content from '../components/Content';
 import ContentRow from '../components/ContentRow/index.jsx';
 import Frame from '../components/Frame';
 import MarkdownRenderer from '../components/MarkdownRenderer';
+import PostMetadata from '../components/PostMetadata';
+import PostTitle from '../components/PostTitle';
+import Separator from '../components/Separator';
 
 // Config imports
 import {pageTitlePrefix} from '../config.js';
@@ -20,7 +22,6 @@ import {type BlogPostData} from '../network/types/blog.ts';
 function BlogPost() {
 	const post: BlogPostData = useLoaderData() as BlogPostData;
 	const pageTitle = pageTitlePrefix + post.title;
-	const timestamp = moment(post.creationTime).calendar();
 
 	return (
 		<Frame>
@@ -32,11 +33,12 @@ function BlogPost() {
 				{/* Page content */}
 				<Content>
 					<ContentRow>
-						<h1>{post.title}</h1>
+						<PostTitle post={post}/>
 					</ContentRow>
 					<ContentRow>
-						<h2>{timestamp}</h2>
+						<PostMetadata post={post}/>
 					</ContentRow>
+					<Separator/>
 					<ContentRow>
 						<MarkdownRenderer content={post.body}/>
 					</ContentRow>
