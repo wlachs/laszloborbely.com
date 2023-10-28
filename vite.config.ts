@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 import react from '@vitejs/plugin-react-swc';
-import {defineConfig} from 'vite';
+import {type ConfigEnv, defineConfig, type UserConfig} from 'vite';
 
 // https://vitejs.dev/config/
-export default defineConfig(({mode}) => {
+export default defineConfig(({mode}: ConfigEnv): UserConfig => {
 	switch (mode) {
 		case 'live':
 			return {
