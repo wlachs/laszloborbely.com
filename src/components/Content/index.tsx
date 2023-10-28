@@ -10,7 +10,6 @@ function Content(props: {
 		'align-items-center',
 		'h-100',
 		'flex-grow-1',
-		'mt-5',
 		/* Responsive */
 		'col-12',
 		'col-md-10',

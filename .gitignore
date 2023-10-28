@@ -20,6 +20,7 @@ lerna-debug.log*
 .vscode/*
 .DS_Store
 .envrc
+.npmrc
 .idea
 !.vscode/extensions.json
 *.local

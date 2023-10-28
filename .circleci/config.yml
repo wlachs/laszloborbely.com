@@ -9,8 +9,7 @@ jobs:
       tag: 'lts'
     steps:
       - checkout
-      - node/install-packages:
-          pkg-manager: npm
+      - node/install-packages
       - run:
           name: Build app
           command: npm run build
@@ -32,7 +31,6 @@ jobs:
           name: Deploy over SSH
           command: |
             ssh $SSH_USER@$SSH_HOST "portfolio/deploy.sh"
-
 
 workflows:
   build-and-deploy:

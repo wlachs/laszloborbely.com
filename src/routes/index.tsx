@@ -28,9 +28,7 @@ export const routes: RouteProps[] = [
 		path: '/blog',
 		element: <Blog/>,
 		async loader() {
-			return queryClient.fetchQuery(['posts'], getPosts(), {
-				staleTime: 3_600_000, // 1 hour
-			});
+			return queryClient.fetchQuery({queryKey: ['posts'], queryFn: getPosts(), staleTime: 3_600_000});
 		},
 	},
 	{
@@ -40,9 +38,7 @@ export const routes: RouteProps[] = [
 		path: '/blog/:postId',
 		element: <BlogPost/>,
 		async loader({params}) {
-			return queryClient.fetchQuery([`posts/${params.postId}`], getPost(params.postId ?? ''), {
-				staleTime: 3_600_000, // 1 hour
-			});
+			return queryClient.fetchQuery({queryKey: [`posts/${params.postId}`], queryFn: getPost(params.postId ?? '')});
 		},
 	},
 	{
