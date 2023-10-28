@@ -16,12 +16,12 @@ import PostTitle from '../components/PostTitle';
 import Separator from '../components/Separator';
 
 // Config imports
-import {pageTitlePrefix} from '../config.js';
+import {pageTitleSuffix} from '../config.js';
 import {type BlogPostData} from '../network/types/blog.ts';
 
 function BlogPost() {
 	const post: BlogPostData = useLoaderData() as BlogPostData;
-	const pageTitle = pageTitlePrefix + post.title;
+	const pageTitle = post.title + pageTitleSuffix;
 
 	return (
 		<Frame>

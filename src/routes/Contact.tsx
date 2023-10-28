@@ -9,11 +9,11 @@ import Frame from '../components/Frame';
 import PureButton from '../components/PureButton/index.jsx';
 
 // Config imports
-import {pageTitlePrefix} from '../config.js';
+import {pageTitleSuffix} from '../config.js';
 
 function Contact() {
 	const name = 'Contact';
-	const pageTitle = pageTitlePrefix + name;
+	const pageTitle = name + pageTitleSuffix;
 
 	return (
 		<Frame>

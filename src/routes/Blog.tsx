@@ -12,12 +12,12 @@ import Frame from '../components/Frame';
 import Posts from '../components/Posts';
 
 // Config imports
-import {pageTitlePrefix} from '../config.js';
+import {pageTitleSuffix} from '../config.js';
 import {type BlogPostData} from '../network/types/blog.ts';
 
 function Blog() {
 	const name = 'Blog';
-	const pageTitle = pageTitlePrefix + name;
+	const pageTitle = name + pageTitleSuffix;
 	const posts: BlogPostData[] = (useLoaderData() || []) as BlogPostData[];
 
 	return (

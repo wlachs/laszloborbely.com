@@ -8,11 +8,11 @@ import ContentRow from '../components/ContentRow/index.jsx';
 import Frame from '../components/Frame';
 
 // Config imports
-import {pageTitlePrefix} from '../config.js';
+import {pageTitleSuffix} from '../config.js';
 
 function NotFound() {
 	const name = '404';
-	const pageTitle = pageTitlePrefix + name;
+	const pageTitle = name + pageTitleSuffix;
 	return (
 		<Frame>
 			<Container>
