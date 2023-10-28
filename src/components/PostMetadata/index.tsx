@@ -5,11 +5,11 @@ import {type BlogPostData} from '../../network/types/blog.ts';
 function PostMetadata({post}: {
 	post: BlogPostData;
 }) {
-	const dateFormat = 'DD.MM.YYYY | HH:mm';
+	const dateFormat = 'DD.MM.YYYY, HH:mm';
 	const timestamp = moment(post.creationTime).format(dateFormat);
 	return (
-		<div className='small'>
-			{timestamp} | <NavLink to='/contact'>{post.author}</NavLink>
+		<div className='small d-inline'>
+			{timestamp} - <NavLink to='/contact'>{post.author}</NavLink>
 		</div>
 	);
 }
