@@ -15,6 +15,11 @@ export default defineConfig(({mode}) => {
 							changeOrigin: true,
 							secure: false,
 						},
+						'/static': {
+							target: 'https://laszloborbely.com',
+							changeOrigin: true,
+							secure: false,
+						},
 					},
 				},
 			};
