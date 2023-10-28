@@ -14,7 +14,7 @@ function Post({post}: {
 				<h3 className='title mb-1'>{post.title}</h3>
 				<div className='summary mt-1 fst-italic small'>{post.summary}</div>
 			</div>
-			<div className='right-segment small'>
+			<div className='right-segment small d-none d-md-block'>
 				<div>{moment(post.creationTime).fromNow()}</div>
 			</div>
 		</NavLink>
