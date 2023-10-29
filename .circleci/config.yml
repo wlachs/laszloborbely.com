@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  node: circleci/node@5.0.2
+  node: circleci/node@5.1.0
 
 jobs:
   build:
@@ -33,6 +33,12 @@ jobs:
             ssh $SSH_USER@$SSH_HOST "portfolio/deploy.sh"
 
 workflows:
+  test:
+    jobs:
+      - node/test:
+          version: 'lts'
+      - node/test:
+          version: '20.9'
   build-and-deploy:
     jobs:
       - build
