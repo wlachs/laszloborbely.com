@@ -38,7 +38,11 @@ export const routes: RouteProps[] = [
 		path: '/blog/:postId',
 		element: <BlogPost/>,
 		async loader({params}) {
-			return queryClient.fetchQuery({queryKey: [`posts/${params.postId}`], queryFn: getPost(params.postId ?? '')});
+			return queryClient.fetchQuery({
+				queryKey: [`posts/${params.postId}`],
+				queryFn: getPost(params.postId ?? ''),
+				staleTime: 3_600_000,
+			});
 		},
 	},
 	{
