@@ -39,9 +39,13 @@ workflows:
           version: 'lts'
       - node/test:
           version: '20.9'
-  build-and-deploy:
-    jobs:
       - build
+  deploy:
+    jobs:
+      - build:
+          filters:
+            branches:
+              only: release
       - deploy:
           requires:
             - build
