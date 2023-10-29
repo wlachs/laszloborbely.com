@@ -12,7 +12,7 @@ import {pageTitleSuffix} from '../config.js';
 
 function Contact() {
 	const name = 'Contact';
-	const pageTitle = name + pageTitleSuffix;
+	const pageTitle = [name, pageTitleSuffix].join(' | ');
 
 	return (
 		<Frame>

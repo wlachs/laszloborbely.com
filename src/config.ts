@@ -1,1 +1,1 @@
-export const pageTitleSuffix = ' | László\'s developer blog';
+export const pageTitleSuffix = 'László\'s dev-blog';
