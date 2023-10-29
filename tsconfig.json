@@ -3,6 +3,7 @@
     "target": "ESNext",
     "lib": [
       "DOM",
+      "dom",
       "DOM.Iterable",
       "ESNext"
     ],
@@ -20,7 +21,8 @@
   },
   "include": [
     "src",
-    "vite.config.ts"
+    "vite.config.ts",
+    "vitest.config.ts"
   ],
   "references": [
     {

@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`PostMetadata component > should match snapshot 1`] = `
+<div>
+  <div>
+    <a
+      class=""
+      href="/contact"
+    >
+      me myself and I
+    </a>
+     • 
+    January 1, 1970
+  </div>
+  ,
+</div>
+`;

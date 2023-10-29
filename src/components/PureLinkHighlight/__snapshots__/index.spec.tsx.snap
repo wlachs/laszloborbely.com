@@ -1,0 +1,14 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`PureLinkHighlight component > should match snapshot 1`] = `
+<div>
+  <a
+    aria-current="page"
+    class="link link_active"
+    href="/"
+  >
+    child
+  </a>
+  ,
+</div>
+`;
