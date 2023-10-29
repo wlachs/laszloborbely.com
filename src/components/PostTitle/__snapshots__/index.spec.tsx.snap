@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`PostTitle component > should match snapshot 1`] = `
+<div>
+  <h1>
+    very very long test post
+  </h1>
+</div>
+`;

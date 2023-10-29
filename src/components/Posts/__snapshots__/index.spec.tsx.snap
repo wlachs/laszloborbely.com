@@ -1,0 +1,37 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Posts component > should match snapshot 1`] = `
+<div>
+  <div
+    class="posts w-100"
+  >
+    <a
+      class="post w-100 py-3"
+      href="/blog/test-post"
+    >
+      <div
+        class="left-segment"
+      >
+        <h3
+          class="title mb-1"
+        >
+          very very long test post
+        </h3>
+        <div
+          class="summary mt-1"
+        >
+          a summery summary
+        </div>
+      </div>
+      <div
+        class="right-segment d-none d-md-block"
+      >
+        <div>
+          54 years ago
+        </div>
+      </div>
+    </a>
+  </div>
+  ,
+</div>
+`;
