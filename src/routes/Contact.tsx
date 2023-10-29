@@ -25,11 +25,7 @@ function Contact() {
 				<Content>
 					<ContentRow>
 						<h1>Contact</h1>
-					</ContentRow>
-					<ContentRow>
-						<p>
-							<h2>László Borbély</h2>
-						</p>
+						<h2>László Borbély</h2>
 						<p>
                             Full-Stack Software Engineer @ mgm technology partners
 						</p>

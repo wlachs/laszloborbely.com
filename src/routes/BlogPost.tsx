@@ -33,8 +33,6 @@ function BlogPost() {
 				<Content>
 					<ContentRow>
 						<PostTitle post={post}/>
-					</ContentRow>
-					<ContentRow>
 						<PostMetadata post={post}/>
 					</ContentRow>
 					<ContentRow>
