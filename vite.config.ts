@@ -4,37 +4,36 @@ import {type ConfigEnv, defineConfig, type UserConfig} from 'vite';
 
 // https://vitejs.dev/config/
 export default defineConfig(({mode}: ConfigEnv): UserConfig => {
-	switch (mode) {
-		case 'live':
-			return {
-				plugins: [react()],
-				server: {
-					proxy: {
-						'/api/blog': {
-							target: 'https://laszloborbely.com',
-							changeOrigin: true,
-							secure: false,
-						},
-						'/static': {
-							target: 'https://laszloborbely.com',
-							changeOrigin: true,
-							secure: false,
-						},
+	if (mode === 'live') {
+		return {
+			plugins: [react()],
+			server: {
+				proxy: {
+					'/api/blog': {
+						target: 'https://laszloborbely.com',
+						changeOrigin: true,
+						secure: false,
+					},
+					'/static': {
+						target: 'https://laszloborbely.com',
+						changeOrigin: true,
+						secure: false,
 					},
 				},
-			};
-		default:
-			return {
-				plugins: [react()],
-				server: {
-					proxy: {
-						'/api/blog': {
-							target: 'http://localhost:8080',
-							changeOrigin: true,
-							rewrite: path => path.replace(/^\/api\/blog/, ''),
-						},
-					},
-				},
-			};
+			},
+		};
 	}
+
+	return {
+		plugins: [react()],
+		server: {
+			proxy: {
+				'/api/blog': {
+					target: 'http://localhost:8080',
+					changeOrigin: true,
+					rewrite: path => path.replace(/^\/api\/blog/, ''),
+				},
+			},
+		},
+	};
 });
