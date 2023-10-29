@@ -20,7 +20,7 @@ import {type BlogPostData} from '../network/types/blog.ts';
 
 function BlogPost() {
 	const post: BlogPostData = useLoaderData() as BlogPostData;
-	const pageTitle = post.title + pageTitleSuffix;
+	const pageTitle = [post.title, pageTitleSuffix].join(' | ');
 
 	return (
 		<Frame>
@@ -33,8 +33,6 @@ function BlogPost() {
 				<Content>
 					<ContentRow>
 						<PostTitle post={post}/>
-					</ContentRow>
-					<ContentRow>
 						<PostMetadata post={post}/>
 					</ContentRow>
 					<ContentRow>

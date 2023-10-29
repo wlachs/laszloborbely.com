@@ -12,7 +12,7 @@ import {pageTitleSuffix} from '../config.js';
 
 function NotFound() {
 	const name = '404';
-	const pageTitle = name + pageTitleSuffix;
+	const pageTitle = [name, pageTitleSuffix].join(' | ');
 	return (
 		<Frame>
 			<Container>

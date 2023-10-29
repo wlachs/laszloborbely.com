@@ -16,8 +16,7 @@ import {pageTitleSuffix} from '../config.js';
 import {type BlogPostData} from '../network/types/blog.ts';
 
 function Blog() {
-	const name = 'Blog';
-	const pageTitle = name + pageTitleSuffix;
+	const pageTitle = pageTitleSuffix;
 	const posts: BlogPostData[] = (useLoaderData() || []) as BlogPostData[];
 
 	return (
@@ -29,7 +28,7 @@ function Blog() {
 				</Helmet>
 				{/* Page content */}
 				<ContentRow>
-					<p><h1>László&apos;s developer blog</h1></p>
+					<h1>László&apos;s dev-blog</h1>
 					<p>
                         Feel free to check out my latest posts. Who knows, perhaps you&apos;ll find something interesting.
 					</p>
