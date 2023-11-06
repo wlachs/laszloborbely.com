@@ -3,7 +3,7 @@
 exports[`Frame component > should always render child elements 1`] = `
 <div>
   <div
-    class="frame-container m-0 mx-auto p-0 py-lg-4 min-vh-100 col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-5"
+    class="frame-container m-0 mx-auto p-0 py-lg-4 min-vh-100"
   >
     <div
       class="col-11 col-lg-12 m-auto"
