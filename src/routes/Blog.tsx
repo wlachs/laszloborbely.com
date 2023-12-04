@@ -28,7 +28,7 @@ function Blog() {
 				</Helmet>
 				{/* Page content */}
 				<ContentRow>
-					<h1>László&apos;s dev-blog</h1>
+					<h1>László Borbély</h1>
 					<p>
                         Feel free to check out my latest posts. Who knows, perhaps you&apos;ll find something interesting.
 					</p>
