@@ -1,7 +1,7 @@
 import {type ReactNode} from 'react';
 
 // Assets
-import logo from '../../assets/logo.svg';
+import logo from '../../assets/images/logo.svg';
 import Links from '../Links/index.jsx';
 import PureLinkHighlight from '../PureLinkHighlight/index.jsx';
 import Separator from '../Separator';

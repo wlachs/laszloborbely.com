@@ -1,79 +1,55 @@
 @import '../global.css';
 
-body {
-  overflow-x: hidden;
+@font-face {
+  font-family: 'Consolas';
+  src: url('/src/assets/fonts/CONSOLA.TTF');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Consolas';
+  src: url('/src/assets/fonts/CONSOLAB.TTF');
+  font-weight: bold;
+  font-style: normal;
 }
 
 .frame-container {
-  font-family: "Roboto", sans-serif;
-  font-weight: 300;
-  font-size: 1.1rem;
+  font-family: "Consolas", sans-serif;
   max-width: 50em;
+}
+
+body {
+  overflow-x: hidden;
+  font-size: .9rem;
 }
 
 h1 {
   color: var(--off-color);
-  font-weight: 500;
+  font-weight: bold;
+  font-size: 1.2rem;
   margin: 0 0 1rem 0;
 }
 
 h2 {
-  color: var(--secondary-color);
-  font-weight: 500;
+  color: var(--off-color);
+  font-weight: bold;
+  font-size: 1rem;
   margin: 0 0 1rem 0;
 }
 
 h3 {
-  font-weight: 500;
+  color: var(--off-color);
+  font-weight: bold;
+  font-size: 1rem;
   margin: 0;
 }
 
 p {
-  font-weight: 300;
+  color: var(--secondary-color);
 }
 
-@media (min-width: 1200px) {
-  h1 {
-    font-size: 3rem !important;
-  }
-
-  h2 {
-    font-size: 1.5rem !important;
-  }
-
-  h3 {
-    font-size: 1.25rem !important;
-  }
-}
-
-@media (max-width: 1199px) {
-  h1 {
-    font-size: 2.5rem !important;
-  }
-
-  h2 {
-    font-size: 1.4rem !important;
-  }
-
-  h3 {
-    font-size: 1.25rem !important;
-  }
-}
-
-@media (max-width: 991px) {
-  h1 {
-    font-size: 2rem !important;
-  }
-
-  h2 {
-    font-size: 1.25rem !important;
-  }
-
-  h3 {
-    font-size: 1.1rem !important;
-  }
-
-  .frame-container {
-    font-size: 1rem;
-  }
+label {
+  color: var(--ternary-color);
+  font-weight: lighter;
 }

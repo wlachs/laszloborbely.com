@@ -12,6 +12,10 @@
   color: var(--primary-color);
 }
 
+.post h3 {
+  color: inherit;
+}
+
 .left-segment {
   display: flex;
   flex-direction: column;

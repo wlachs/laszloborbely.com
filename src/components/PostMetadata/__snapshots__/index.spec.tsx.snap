@@ -2,15 +2,17 @@
 
 exports[`PostMetadata component > should match snapshot 1`] = `
 <div>
-  <div>
-    <a
-      class=""
-      href="/contact"
+  <div
+    class="d-flex justify-content-between gap-3"
+  >
+    <h1>
+      very very long test post
+    </h1>
+    <label
+      class="timestamp"
     >
-      me myself and I
-    </a>
-     • 
-    January 1, 1970
+      January 1, 1970
+    </label>
   </div>
   ,
 </div>

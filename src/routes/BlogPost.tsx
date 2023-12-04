@@ -12,7 +12,6 @@ import ContentRow from '../components/ContentRow/index.jsx';
 import Frame from '../components/Frame';
 import MarkdownRenderer from '../components/MarkdownRenderer';
 import PostMetadata from '../components/PostMetadata';
-import PostTitle from '../components/PostTitle';
 
 // Config imports
 import {pageTitleSuffix} from '../config.js';
@@ -32,7 +31,6 @@ function BlogPost() {
 				{/* Page content */}
 				<Content>
 					<ContentRow>
-						<PostTitle post={post}/>
 						<PostMetadata post={post}/>
 					</ContentRow>
 					<ContentRow>

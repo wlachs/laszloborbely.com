@@ -16,9 +16,9 @@ function ContentRow(props: {
 		'w-100',
 		...center ? centerClasses : [],
 		/* Desktop */
-		'mt-lg-3',
+		'mt-lg-1',
 		/* Phone */
-		'mb-3',
+		'mb-2',
 	].join(' ');
 	return (
 		<div className={classes}>
