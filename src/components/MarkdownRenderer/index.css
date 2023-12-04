@@ -5,3 +5,25 @@
   max-width: 50em;
   font-size: .9rem;
 }
+
+.markdown-body h1 {
+  color: var(--off-color);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.markdown-body h2 {
+  color: var(--off-color);
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.markdown-body h3 {
+  color: var(--off-color);
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.markdown-body p {
+  color: var(--secondary-color);
+}
