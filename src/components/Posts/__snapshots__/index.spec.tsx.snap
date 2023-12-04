@@ -26,9 +26,9 @@ exports[`Posts component > should match snapshot 1`] = `
       <div
         class="right-segment d-none d-md-block"
       >
-        <div>
+        <label>
           54 years ago
-        </div>
+        </label>
       </div>
     </a>
   </div>

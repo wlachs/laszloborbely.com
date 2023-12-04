@@ -19,7 +19,7 @@ exports[`Frame component > should always render child elements 1`] = `
             alt="László Borbély - Full-Stack Software Engineer"
             class="navbar-logo"
             height="40"
-            src="/src/assets/logo.svg"
+            src="/src/assets/images/logo.svg"
           />
         </a>
         <div

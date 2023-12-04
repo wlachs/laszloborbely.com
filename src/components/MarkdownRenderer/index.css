@@ -1,12 +1,29 @@
 @import '../../../node_modules/github-markdown-css/github-markdown-light.css';
 
 .markdown-body {
-  width: 100%;
-  font-size: 1.1rem;
+  font-family: "Consolas", sans-serif;
+  max-width: 50em;
+  font-size: .9rem;
 }
 
-@media (max-width: 991px) {
-  .markdown-body {
-    font-size: 1rem;
-  }
+.markdown-body h1 {
+  color: var(--off-color);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.markdown-body h2 {
+  color: var(--off-color);
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.markdown-body h3 {
+  color: var(--off-color);
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.markdown-body p {
+  color: var(--secondary-color);
 }

@@ -15,7 +15,7 @@ function Post({post}: {
 				<div className='summary mt-1'>{post.summary}</div>
 			</div>
 			<div className='right-segment d-none d-md-block'>
-				<div>{moment(post.creationTime).fromNow()}</div>
+				<label>{moment(post.creationTime).fromNow()}</label>
 			</div>
 		</NavLink>
 	);

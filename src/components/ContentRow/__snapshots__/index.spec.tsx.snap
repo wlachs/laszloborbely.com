@@ -3,7 +3,7 @@
 exports[`ContentRow component > should align center 1`] = `
 <div>
   <div
-    class="w-100 d-flex flex-row justify-content-center align-items-center mt-lg-3 mb-3"
+    class="w-100 d-flex flex-row justify-content-center align-items-center mt-lg-1 mb-2"
   />
 </div>
 `;
@@ -11,7 +11,7 @@ exports[`ContentRow component > should align center 1`] = `
 exports[`ContentRow component > should align left 1`] = `
 <div>
   <div
-    class="w-100 mt-lg-3 mb-3"
+    class="w-100 mt-lg-1 mb-2"
   />
 </div>
 `;
@@ -19,7 +19,7 @@ exports[`ContentRow component > should align left 1`] = `
 exports[`ContentRow component > should always render child elements 1`] = `
 <div>
   <div
-    class="w-100 mt-lg-3 mb-3"
+    class="w-100 mt-lg-1 mb-2"
   >
     child
   </div>

@@ -1,6 +1,6 @@
 import moment from 'moment/moment';
-import {NavLink} from 'react-router-dom';
 import {type BlogPostData} from '../../network/types/blog.ts';
+import './index.css';
 
 function PostMetadata({post}: {
 	post: BlogPostData;
@@ -8,8 +8,9 @@ function PostMetadata({post}: {
 	const dateFormat = 'LL';
 	const timestamp = moment(post.creationTime).format(dateFormat);
 	return (
-		<div>
-			<NavLink to='/contact'>{post.author}</NavLink> • {timestamp}
+		<div className='d-flex justify-content-between gap-3'>
+			<h1>{post.title}</h1>
+			<label className='timestamp'>{timestamp}</label>
 		</div>
 	);
 }
