@@ -9,7 +9,7 @@
     "build": "tsc && vite build",
     "lint": "eslint src --ext js,ts,jsx,tsx,html,vue,cjs --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "test": "vitest"
+    "test": "vitest run"
   },
   "dependencies": {
     "@tanstack/react-query": "5.12.2",
@@ -23,8 +23,7 @@
     "react-markdown": "9.0.1",
     "react-router-dom": "6.20.1",
     "react-syntax-highlighter": "15.5.0",
-    "remark-gfm": "4.0.0",
-    "typeface-roboto": "1.1.13"
+    "remark-gfm": "4.0.0"
   },
   "devDependencies": {
     "@tanstack/eslint-plugin-query": "5.12.1",
