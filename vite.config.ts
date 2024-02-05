@@ -57,8 +57,4 @@ const manualChunksOptions: ManualChunksOption = (id: string) => {
 	if (id.includes('moment')) {
 		return 'moment';
 	}
-
-	if (id.includes('refractor')) {
-		return 'refractor';
-	}
 };
