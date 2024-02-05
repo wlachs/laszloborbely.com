@@ -1,11 +1,7 @@
-// React imports
-import React, {type ReactNode} from 'react';
+import { type ReactNode } from 'react';
 
-function ContentRow(props: {
-	center?: boolean;
-	children?: ReactNode;
-}) {
-	const {children, center} = props;
+function ContentRow(props: { center?: boolean; children?: ReactNode }) {
+	const { children, center } = props;
 	const centerClasses = [
 		'd-flex',
 		'flex-row',
@@ -14,7 +10,7 @@ function ContentRow(props: {
 	];
 	const classes = [
 		'w-100',
-		...center ? centerClasses : [],
+		...(center ? centerClasses : []),
 		/* Desktop */
 		'mt-lg-1',
 		/* Phone */

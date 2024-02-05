@@ -1,10 +1,10 @@
-import moment from 'moment/moment';
-import {type BlogPostData} from '../../network/types/blog.ts';
 import './index.css';
 
-function PostMetadata({post}: {
-	post: BlogPostData;
-}) {
+import moment from 'moment/moment';
+
+import { type BlogPostData } from '../../network/types/blog.ts';
+
+function PostMetadata({ post }: { post: BlogPostData }) {
 	const dateFormat = 'LL';
 	const timestamp = moment(post.creationTime).format(dateFormat);
 	return (

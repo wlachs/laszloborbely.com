@@ -1,13 +1,14 @@
-import {HelmetProvider} from 'react-helmet-async';
-import {createBrowserRouter, RouterProvider} from 'react-router-dom';
-import {routes} from './routes';
+import { HelmetProvider } from 'react-helmet-async';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+
+import { routes } from './routes';
 
 function Router() {
 	const router = createBrowserRouter(routes);
 
 	return (
 		<HelmetProvider>
-			<RouterProvider router={router}/>
+			<RouterProvider router={router} />
 		</HelmetProvider>
 	);
 }

@@ -1,9 +1,7 @@
-import React, {type ReactNode} from 'react';
+import { type ReactNode } from 'react';
 
-function Content(props: {
-	children?: React.JSX.Element | ReactNode | string;
-}) {
-	const {children} = props;
+function Content(props: { children?: React.JSX.Element | ReactNode | string }) {
+	const { children } = props;
 	const classes = [
 		'd-flex',
 		'flex-column',
@@ -12,11 +10,7 @@ function Content(props: {
 		'flex-grow-1',
 		'col-12',
 	].join(' ');
-	return (
-		<div className={classes}>
-			{children}
-		</div>
-	);
+	return <div className={classes}>{children}</div>;
 }
 
 export default Content;

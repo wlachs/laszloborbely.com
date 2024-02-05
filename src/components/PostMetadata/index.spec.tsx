@@ -1,7 +1,8 @@
-import {cleanup, render} from '@testing-library/react';
-import {MemoryRouter} from 'react-router-dom';
-import {afterEach, describe, expect, it} from 'vitest';
-import {type BlogPostData} from '../../network/types/blog.ts';
+import { cleanup, render } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
+import { afterEach, describe, expect, it } from 'vitest';
+
+import { type BlogPostData } from '../../network/types/blog.ts';
 import PostMetadata from './index.tsx';
 
 const post: BlogPostData = {
@@ -19,9 +20,9 @@ describe('PostMetadata component', () => {
 	});
 
 	it('should match snapshot', () => {
-		const {container} = render(
+		const { container } = render(
 			<MemoryRouter>
-				<PostMetadata post={post}/>,
+				<PostMetadata post={post} />,
 			</MemoryRouter>,
 		);
 		expect(container).toMatchSnapshot();

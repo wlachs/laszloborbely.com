@@ -1,11 +1,11 @@
-import moment from 'moment';
-import {NavLink} from 'react-router-dom';
-import {type BlogPostData} from '../../network/types/blog.ts';
 import './index.css';
 
-function Post({post}: {
-	post: BlogPostData;
-}) {
+import moment from 'moment';
+import { NavLink } from 'react-router-dom';
+
+import { type BlogPostData } from '../../network/types/blog.ts';
+
+function Post({ post }: { post: BlogPostData }) {
 	const link = `/blog/${post.urlHandle}`;
 
 	return (
@@ -21,16 +21,16 @@ function Post({post}: {
 	);
 }
 
-function Posts(props: {
-	posts: BlogPostData[];
-}) {
-	const posts = props.posts.map(p => <Post key={p.urlHandle} post={p}/>);
+function Posts(props: { posts: BlogPostData[] }) {
+	const posts = props.posts.map(p => <Post key={p.urlHandle} post={p} />);
 
 	return (
 		<div className='posts w-100'>
-			{posts.length > 0
-				? posts
-				: <p className='text-center mt-3'>No posts found, come back later!</p>
+			{posts.length > 0 ?
+				posts
+			:	<p className='text-center mt-3'>
+					No posts found, come back later!
+				</p>
 			}
 		</div>
 	);

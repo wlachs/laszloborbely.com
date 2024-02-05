@@ -1,5 +1,6 @@
-import {cleanup, render, screen} from '@testing-library/react';
-import {afterEach, describe, expect, it} from 'vitest';
+import { cleanup, render, screen } from '@testing-library/react';
+import { afterEach, describe, expect, it } from 'vitest';
+
 import Content from './index.tsx';
 
 describe('Content component', () => {
@@ -9,7 +10,7 @@ describe('Content component', () => {
 
 	it('should always render child elements', () => {
 		const child = 'child';
-		const {container} = render(<Content>{child}</Content>);
+		const { container } = render(<Content>{child}</Content>);
 		expect(screen.getByText(child)).toBeDefined();
 		expect(container).toMatchSnapshot();
 	});

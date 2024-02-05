@@ -1,7 +1,7 @@
-import React from 'react';
-import {Navigate, type RouteObject} from 'react-router-dom';
+import { Navigate, type RouteObject } from 'react-router-dom';
+
 import queryClient from '../network';
-import {getPost, getPosts} from '../network/queries.ts';
+import { getPost, getPosts } from '../network/queries.ts';
 import Blog from './Blog.tsx';
 import BlogPost from './BlogPost.tsx';
 import Contact from './Contact.jsx';
@@ -19,16 +19,20 @@ export const routes: RouteProps[] = [
 		display: false,
 		name: '404',
 		path: '/not-found',
-		element: <NotFound/>,
+		element: <NotFound />,
 	},
 	{
 		id: '0',
 		display: true,
 		name: 'Blog',
 		path: '/blog',
-		element: <Blog/>,
+		element: <Blog />,
 		async loader() {
-			return queryClient.fetchQuery({queryKey: ['posts'], queryFn: getPosts(), staleTime: 3_600_000});
+			return queryClient.fetchQuery({
+				queryKey: ['posts'],
+				queryFn: getPosts(),
+				staleTime: 3_600_000,
+			});
 		},
 	},
 	{
@@ -36,8 +40,8 @@ export const routes: RouteProps[] = [
 		display: false,
 		name: 'Blog',
 		path: '/blog/:postId',
-		element: <BlogPost/>,
-		async loader({params}) {
+		element: <BlogPost />,
+		async loader({ params }) {
 			return queryClient.fetchQuery({
 				queryKey: [`posts/${params.postId}`],
 				queryFn: getPost(params.postId ?? ''),
@@ -50,13 +54,13 @@ export const routes: RouteProps[] = [
 		display: true,
 		name: 'Contact',
 		path: '/contact',
-		element: <Contact/>,
+		element: <Contact />,
 	},
 	{
 		id: '3',
 		display: false,
 		name: '',
 		path: '*',
-		element: <Navigate to='/blog'/>,
+		element: <Navigate to='/blog' />,
 	},
 ];

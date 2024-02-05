@@ -1,14 +1,10 @@
-// React imports
-import {Helmet} from 'react-helmet-async';
+import { Helmet } from 'react-helmet-async';
 
-// Component imports
 import Container from '../components/Container';
 import Content from '../components/Content';
-import ContentRow from '../components/ContentRow/index.jsx';
+import ContentRow from '../components/ContentRow';
 import Frame from '../components/Frame';
-
-// Config imports
-import {pageTitleSuffix} from '../config.js';
+import { pageTitleSuffix } from '../config';
 
 function Contact() {
 	const name = 'Contact';
@@ -27,16 +23,34 @@ function Contact() {
 						<h1>Contact</h1>
 						<h2>László Borbély</h2>
 						<p>
-                            Full-Stack Software Engineer @ mgm technology partners
+							Full-Stack Software Engineer @ mgm technology
+							partners
 						</p>
 						<p>
-                            Mainly working with Spring and React, but always eager to learn new things! <br/>
-                            Feel free to <a href='mailto:hello@laszloborbely.com'>send me an e-mail</a> if you have any questions, comments,
-                            or suggestions.
+							Mainly working with Spring and React, but always
+							eager to learn new things! <br />
+							Feel free to{' '}
+							<a href='mailto:hello@laszloborbely.com'>
+								send me an e-mail
+							</a>{' '}
+							if you have any questions, comments, or suggestions.
 						</p>
 						<p>
-                            You can also find me on <a href='https://github.com/wlchs' target='_blank' rel='noreferrer'>GitHub</a> or <a
-								href='https://www.linkedin.com/in/lászló-borbély-678a34138/' target='_blank' rel='noreferrer'>LinkedIn</a>.
+							You can also find me on{' '}
+							<a
+								href='https://github.com/wlchs'
+								target='_blank'
+								rel='noreferrer'>
+								GitHub
+							</a>{' '}
+							or{' '}
+							<a
+								href='https://www.linkedin.com/in/lászló-borbély-678a34138/'
+								target='_blank'
+								rel='noreferrer'>
+								LinkedIn
+							</a>
+							.
 						</p>
 					</ContentRow>
 				</Content>

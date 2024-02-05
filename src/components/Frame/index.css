@@ -1,55 +1,55 @@
 @import '../global.css';
 
 @font-face {
-  font-family: 'Consolas';
-  src: url('/src/assets/fonts/CONSOLA.TTF');
-  font-weight: normal;
-  font-style: normal;
+	font-family: 'Consolas';
+	src: url('/src/assets/fonts/CONSOLA.TTF');
+	font-weight: normal;
+	font-style: normal;
 }
 
 @font-face {
-  font-family: 'Consolas';
-  src: url('/src/assets/fonts/CONSOLAB.TTF');
-  font-weight: bold;
-  font-style: normal;
+	font-family: 'Consolas';
+	src: url('/src/assets/fonts/CONSOLAB.TTF');
+	font-weight: bold;
+	font-style: normal;
 }
 
 .frame-container {
-  font-family: "Consolas", sans-serif;
-  max-width: 50em;
+	font-family: 'Consolas', sans-serif;
+	max-width: 50em;
 }
 
 body {
-  overflow-x: hidden;
-  font-size: .9rem;
+	overflow-x: hidden;
+	font-size: 0.9rem;
 }
 
 h1 {
-  color: var(--off-color);
-  font-weight: bold;
-  font-size: 1.2rem;
-  margin: 0 0 1rem 0;
+	color: var(--off-color);
+	font-weight: bold;
+	font-size: 1.2rem;
+	margin: 0 0 1rem 0;
 }
 
 h2 {
-  color: var(--off-color);
-  font-weight: bold;
-  font-size: 1rem;
-  margin: 0 0 1rem 0;
+	color: var(--off-color);
+	font-weight: bold;
+	font-size: 1rem;
+	margin: 0 0 1rem 0;
 }
 
 h3 {
-  color: var(--off-color);
-  font-weight: bold;
-  font-size: 1rem;
-  margin: 0;
+	color: var(--off-color);
+	font-weight: bold;
+	font-size: 1rem;
+	margin: 0;
 }
 
 p {
-  color: var(--secondary-color);
+	color: var(--secondary-color);
 }
 
 label {
-  color: var(--ternary-color);
-  font-weight: lighter;
+	color: var(--ternary-color);
+	font-weight: lighter;
 }

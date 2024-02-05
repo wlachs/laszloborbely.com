@@ -1,6 +1,7 @@
-import {cleanup, render, screen} from '@testing-library/react';
-import {MemoryRouter} from 'react-router-dom';
-import {afterEach, describe, expect, it, vi} from 'vitest';
+import { cleanup, render, screen } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
+import { afterEach, describe, expect, it, vi } from 'vitest';
+
 import Links from './index.tsx';
 
 vi.mock('../../routes', () => ({
@@ -10,28 +11,28 @@ vi.mock('../../routes', () => ({
 			display: true,
 			name: 'Route #2',
 			path: '/2',
-			element: <div/>,
+			element: <div />,
 		},
 		{
 			id: '1',
 			display: false,
 			name: 'Route #1',
 			path: '/hidden',
-			element: <div/>,
+			element: <div />,
 		},
 		{
 			id: '3',
 			display: true,
 			name: 'Route #3',
 			path: '/3',
-			element: <div/>,
+			element: <div />,
 		},
 		{
 			id: '0',
 			display: true,
 			name: 'Route #0',
 			path: '/0',
-			element: <div/>,
+			element: <div />,
 		},
 	],
 }));
@@ -42,18 +43,18 @@ describe('Links component', () => {
 	});
 
 	it('should match snapshot', () => {
-		const {container} = render(
+		const { container } = render(
 			<MemoryRouter>
-				<Links/>
+				<Links />
 			</MemoryRouter>,
 		);
 		expect(container).toMatchSnapshot();
 	});
 
 	it('should only show routes with display property', () => {
-		const {container} = render(
+		const { container } = render(
 			<MemoryRouter>
-				<Links/>
+				<Links />
 			</MemoryRouter>,
 		);
 		expect(screen.queryByText('Route #1')).toBeNull();
@@ -61,9 +62,9 @@ describe('Links component', () => {
 	});
 
 	it('should sort routes by ID', async () => {
-		const {container} = render(
+		const { container } = render(
 			<MemoryRouter>
-				<Links/>
+				<Links />
 			</MemoryRouter>,
 		);
 		const res = screen.getAllByText(/Route #[0-9]/);

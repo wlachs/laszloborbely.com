@@ -1,11 +1,12 @@
-import {cleanup, render} from '@testing-library/react';
-import {MemoryRouter} from 'react-router-dom';
-import {afterEach, describe, expect, it, vi} from 'vitest';
+import { cleanup, render } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
+import { afterEach, describe, expect, it, vi } from 'vitest';
+
 import Navbar from './index.tsx';
 
 const mocked = vi.hoisted(() => ({
 	component: () => ({
-		default: () => <div/>,
+		default: () => <div />,
 	}),
 }));
 
@@ -18,9 +19,9 @@ describe('Navbar component', () => {
 	});
 
 	it('should match snapshot', () => {
-		const {container} = render(
+		const { container } = render(
 			<MemoryRouter>
-				<Navbar/>
+				<Navbar />
 			</MemoryRouter>,
 		);
 		expect(container).toMatchSnapshot();
