@@ -11,7 +11,7 @@ function MarkdownRenderer({ content }: { content: string }) {
 			className='markdown-body'
 			remarkPlugins={[remarkGfm]}
 			components={{
-				code({ node, className, children, ...props }) {
+				code({ className, children, ...props }) {
 					const match = /language-(\w+)/.exec(className ?? '');
 					return match ?
 							<SyntaxHighlighter

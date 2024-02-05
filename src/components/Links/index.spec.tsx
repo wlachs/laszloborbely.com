@@ -62,7 +62,7 @@ describe('Links component', () => {
 	});
 
 	it('should sort routes by ID', async () => {
-		const { container } = render(
+		render(
 			<MemoryRouter>
 				<Links />
 			</MemoryRouter>,

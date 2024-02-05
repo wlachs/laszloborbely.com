@@ -1,6 +1,6 @@
-import { type ReactNode } from 'react';
+import { ReactElement, type ReactNode } from 'react';
 
-function Content(props: { children?: React.JSX.Element | ReactNode | string }) {
+function Content(props: { children?: ReactElement | ReactNode | string }) {
 	const { children } = props;
 	const classes = [
 		'd-flex',
