@@ -1,0 +1,14 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`Spinner component > should render spinner 1`] = `
+<div>
+  <div
+    class="d-flex justify-content-center"
+  >
+    <span
+      class="spinner-border primary-text"
+      role="status"
+    />
+  </div>
+</div>
+`;
