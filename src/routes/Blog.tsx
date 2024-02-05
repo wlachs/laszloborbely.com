@@ -1,5 +1,4 @@
 import { Helmet } from 'react-helmet-async';
-import { useLoaderData } from 'react-router-dom';
 
 import { Container } from '../components/Container';
 import { Content } from '../components/Content';
@@ -7,11 +6,9 @@ import { ContentRow } from '../components/ContentRow';
 import { Frame } from '../components/Frame';
 import { Posts } from '../components/Posts';
 import { pageTitleSuffix } from '../config';
-import { type BlogPostData } from '../network/types/blog';
 
 export function Blog() {
 	const pageTitle = pageTitleSuffix;
-	const posts: BlogPostData[] = (useLoaderData() || []) as BlogPostData[];
 
 	return (
 		<Frame>
@@ -30,7 +27,7 @@ export function Blog() {
 				</ContentRow>
 				<Content>
 					<ContentRow>
-						<Posts posts={posts} />
+						<Posts />
 					</ContentRow>
 				</Content>
 			</Container>

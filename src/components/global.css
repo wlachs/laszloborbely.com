@@ -20,3 +20,7 @@
 .link_active {
 	color: var(--primary-color);
 }
+
+.primary-text {
+	color: var(--primary-color);
+}

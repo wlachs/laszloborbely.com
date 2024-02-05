@@ -1,11 +1,13 @@
 import './index.css';
 
 import moment from 'moment';
+import { ReactElement } from 'react';
 import { NavLink } from 'react-router-dom';
 
+import { useGetPosts } from '../../network/hooks';
 import { type BlogPostData } from '../../network/types/blog';
 
-function Post({ post }: { post: BlogPostData }) {
+function Post({ post }: { post: BlogPostData }): ReactElement {
 	const link = `/blog/${post.urlHandle}`;
 
 	return (
@@ -21,8 +23,18 @@ function Post({ post }: { post: BlogPostData }) {
 	);
 }
 
-export function Posts(props: { posts: BlogPostData[] }) {
-	const posts = props.posts.map(p => <Post key={p.urlHandle} post={p} />);
+export function Posts(): ReactElement {
+	const { data = [], isLoading } = useGetPosts();
+
+	if (isLoading) {
+		return (
+			<div className='d-flex justify-content-center'>
+				<span className='spinner-border primary-text' role='status' />
+			</div>
+		);
+	}
+
+	const posts = data.map(p => <Post key={p.urlHandle} post={p} />);
 
 	return (
 		<div className='posts w-100'>
