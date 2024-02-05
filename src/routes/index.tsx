@@ -15,52 +15,52 @@ export type RouteProps = {
 
 export const routes: RouteProps[] = [
 	{
-		id: '-1',
 		display: false,
+		element: <NotFound />,
+		id: '-1',
 		name: '404',
 		path: '/not-found',
-		element: <NotFound />,
 	},
 	{
-		id: '0',
 		display: true,
-		name: 'Blog',
-		path: '/blog',
 		element: <Blog />,
+		id: '0',
 		async loader() {
 			return queryClient.fetchQuery({
-				queryKey: ['posts'],
 				queryFn: getPosts(),
+				queryKey: ['posts'],
 				staleTime: 3_600_000,
 			});
 		},
+		name: 'Blog',
+		path: '/blog',
 	},
 	{
-		id: '1',
 		display: false,
-		name: 'Blog',
-		path: '/blog/:postId',
 		element: <BlogPost />,
+		id: '1',
 		async loader({ params }) {
 			return queryClient.fetchQuery({
-				queryKey: [`posts/${params.postId}`],
 				queryFn: getPost(params.postId ?? ''),
+				queryKey: [`posts/${params.postId}`],
 				staleTime: 3_600_000,
 			});
 		},
+		name: 'Blog',
+		path: '/blog/:postId',
 	},
 	{
-		id: '2',
 		display: true,
+		element: <Contact />,
+		id: '2',
 		name: 'Contact',
 		path: '/contact',
-		element: <Contact />,
 	},
 	{
-		id: '3',
 		display: false,
+		element: <Navigate to='/blog' />,
+		id: '3',
 		name: '',
 		path: '*',
-		element: <Navigate to='/blog' />,
 	},
 ];

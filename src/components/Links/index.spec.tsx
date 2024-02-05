@@ -7,32 +7,32 @@ import Links from './index.tsx';
 vi.mock('../../routes', () => ({
 	routes: [
 		{
-			id: '2',
 			display: true,
+			element: <div />,
+			id: '2',
 			name: 'Route #2',
 			path: '/2',
-			element: <div />,
 		},
 		{
-			id: '1',
 			display: false,
+			element: <div />,
+			id: '1',
 			name: 'Route #1',
 			path: '/hidden',
-			element: <div />,
 		},
 		{
-			id: '3',
 			display: true,
+			element: <div />,
+			id: '3',
 			name: 'Route #3',
 			path: '/3',
-			element: <div />,
 		},
 		{
-			id: '0',
 			display: true,
+			element: <div />,
+			id: '0',
 			name: 'Route #0',
 			path: '/0',
-			element: <div />,
 		},
 	],
 }));
