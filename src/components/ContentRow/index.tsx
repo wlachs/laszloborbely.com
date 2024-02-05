@@ -1,7 +1,14 @@
-import { type ReactNode } from 'react';
+import { ReactElement, type ReactNode } from 'react';
 
-export function ContentRow(props: { center?: boolean; children?: ReactNode }) {
-	const { children, center } = props;
+interface ContentRowProps {
+	center?: boolean;
+	children?: ReactNode;
+}
+
+export function ContentRow({
+	children,
+	center,
+}: ContentRowProps): ReactElement {
 	const centerClasses = [
 		'd-flex',
 		'flex-row',

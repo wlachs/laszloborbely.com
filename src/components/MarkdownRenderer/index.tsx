@@ -1,11 +1,18 @@
 import './index.css';
 
+import { ReactElement } from 'react';
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus as style } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import remarkGfm from 'remark-gfm';
 
-export function MarkdownRenderer({ content }: { content: string }) {
+interface MarkdownRendererProps {
+	content: string;
+}
+
+export function MarkdownRenderer({
+	content,
+}: MarkdownRendererProps): ReactElement {
 	return (
 		<ReactMarkdown
 			className='markdown-body'

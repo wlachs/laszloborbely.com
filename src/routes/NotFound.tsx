@@ -1,3 +1,4 @@
+import { ReactElement } from 'react';
 import { Helmet } from 'react-helmet-async';
 
 import { Container } from '../components/Container';
@@ -6,7 +7,7 @@ import { ContentRow } from '../components/ContentRow';
 import { Frame } from '../components/Frame';
 import { pageTitleSuffix } from '../config';
 
-export function NotFound() {
+export function NotFound(): ReactElement {
 	const name = '404';
 	const pageTitle = [name, pageTitleSuffix].join(' | ');
 	return (

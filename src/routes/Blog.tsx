@@ -12,7 +12,7 @@ import { Spinner } from '../components/Spinner';
 import { postsQueryOptions } from '../network/queryOptions';
 import { getPageTitle } from '../utils/title';
 
-export function Blog() {
+export function Blog(): ReactElement {
 	return (
 		<Frame>
 			<Container>

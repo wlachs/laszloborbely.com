@@ -1,11 +1,14 @@
 import './index.css';
 
-import { type ReactNode } from 'react';
+import { ReactElement, type ReactNode } from 'react';
 
 import { Navbar } from '../Navbar';
 
-export function Frame(props: { children?: ReactNode }) {
-	const { children } = props;
+interface FrameProps {
+	children?: ReactNode;
+}
+
+export function Frame({ children }: FrameProps): ReactElement {
 	const classes = [
 		'frame-container',
 		'm-0',

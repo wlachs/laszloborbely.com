@@ -1,14 +1,13 @@
 import './index.css';
 
-import { type ReactNode } from 'react';
+import { ReactElement, type ReactNode } from 'react';
 
-// Assets
 import logo from '../../assets/images/logo.svg';
 import { Links } from '../Links';
 import { PureLinkHighlight } from '../PureLinkHighlight';
 import { Separator } from '../Separator';
 
-export function Navbar() {
+export function Navbar(): ReactElement {
 	return (
 		<CommonNavbar>
 			<div className='d-flex flex-row-reverse align-items-center gap-3'>
@@ -18,9 +17,11 @@ export function Navbar() {
 	);
 }
 
-function CommonNavbar(props: { children?: ReactNode }) {
-	const { children } = props;
+interface CommonNavbarProps {
+	children?: ReactNode;
+}
 
+function CommonNavbar({ children }: CommonNavbarProps): ReactElement {
 	return (
 		<div className='col-11 col-lg-12 m-auto'>
 			<div className='w-100 d-flex justify-content-between align-items-center mb-2'>
