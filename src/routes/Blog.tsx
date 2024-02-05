@@ -6,16 +6,17 @@ import { ContentRow } from '../components/ContentRow';
 import { Frame } from '../components/Frame';
 import { Posts } from '../components/Posts';
 import { pageTitleSuffix } from '../config';
+import { useGetPosts } from '../network/hooks';
 
 export function Blog() {
-	const pageTitle = pageTitleSuffix;
+	const getPostsQueryData = useGetPosts();
 
 	return (
 		<Frame>
 			<Container>
 				{/* Page title */}
 				<Helmet>
-					<title>{pageTitle}</title>
+					<title>{pageTitleSuffix}</title>
 				</Helmet>
 				{/* Page content */}
 				<ContentRow>
@@ -27,7 +28,7 @@ export function Blog() {
 				</ContentRow>
 				<Content>
 					<ContentRow>
-						<Posts />
+						<Posts {...getPostsQueryData} />
 					</ContentRow>
 				</Content>
 			</Container>
