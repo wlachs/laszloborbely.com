@@ -21,6 +21,7 @@ module.exports = {
 	plugins: ['react', 'import', 'simple-import-sort', 'sort-keys-fix'],
 	root: true,
 	rules: {
+		'@typescript-eslint/explicit-function-return-type': 'error',
 		'import/first': 'error',
 		'import/newline-after-import': 'error',
 		'import/no-default-export': 'error',

@@ -1,8 +1,15 @@
-import { type ReactNode } from 'react';
+import { ReactElement, type ReactNode } from 'react';
 import { NavLink } from 'react-router-dom';
 
-export function PureLinkHighlight(props: { to: string; children?: ReactNode }) {
-	const { to, children } = props;
+interface PureLinkHighlightProps {
+	to: string;
+	children?: ReactNode;
+}
+
+export function PureLinkHighlight({
+	to,
+	children,
+}: PureLinkHighlightProps): ReactElement {
 	return (
 		<NavLink
 			to={to}

@@ -1,9 +1,10 @@
 import { ReactElement, type ReactNode } from 'react';
 
-export function Content(props: {
+interface ContentProps {
 	children?: ReactElement | ReactNode | string;
-}) {
-	const { children } = props;
+}
+
+export function Content({ children }: ContentProps): ReactElement {
 	const classes = [
 		'd-flex',
 		'flex-column',

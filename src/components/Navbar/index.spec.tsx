@@ -1,11 +1,12 @@
 import { cleanup, render } from '@testing-library/react';
+import { ReactElement } from 'react';
 import { MemoryRouter } from 'react-router-dom';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
 import { Navbar } from './';
 
 const mocked = vi.hoisted(() => ({
-	component: () => <div />,
+	component: (): ReactElement => <div />,
 }));
 
 vi.mock('../Links', () => ({

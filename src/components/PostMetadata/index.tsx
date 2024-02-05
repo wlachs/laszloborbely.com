@@ -1,10 +1,15 @@
 import './index.css';
 
 import moment from 'moment/moment';
+import { ReactElement } from 'react';
 
 import { type BlogPostData } from '../../network/types/blog';
 
-export function PostMetadata({ post }: { post: BlogPostData }) {
+interface PostMetadataProps {
+	post: BlogPostData;
+}
+
+export function PostMetadata({ post }: PostMetadataProps): ReactElement {
 	const dateFormat = 'LL';
 	const timestamp = moment(post.creationTime).format(dateFormat);
 	return (
