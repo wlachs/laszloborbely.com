@@ -22,7 +22,7 @@ describe('Posts component', () => {
 	it('should match snapshot', () => {
 		const { container } = render(
 			<MemoryRouter>
-				<Posts posts={[post]} />,
+				<Posts data={[post]} />,
 			</MemoryRouter>,
 		);
 		expect(container).toMatchSnapshot();
@@ -31,7 +31,7 @@ describe('Posts component', () => {
 	it('should display post metadata', () => {
 		render(
 			<MemoryRouter>
-				<Posts posts={[post]} />,
+				<Posts data={[post]} />,
 			</MemoryRouter>,
 		);
 		expect(screen.getByText(post.title)).toBeDefined();
@@ -41,7 +41,7 @@ describe('Posts component', () => {
 	it('should display message if there are no posts', () => {
 		render(
 			<MemoryRouter>
-				<Posts posts={[]} />,
+				<Posts data={[]} />,
 			</MemoryRouter>,
 		);
 		expect(

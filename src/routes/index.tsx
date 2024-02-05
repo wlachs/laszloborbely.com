@@ -1,7 +1,5 @@
 import { Navigate, type RouteObject } from 'react-router-dom';
 
-import { queryClient } from '../network';
-import { getPost, getPosts } from '../network/queries';
 import { Blog } from './Blog';
 import { BlogPost } from './BlogPost';
 import { Contact } from './Contact';
@@ -25,13 +23,6 @@ export const routes: RouteProps[] = [
 		display: true,
 		element: <Blog />,
 		id: '0',
-		async loader() {
-			return queryClient.fetchQuery({
-				queryFn: getPosts(),
-				queryKey: ['posts'],
-				staleTime: 3_600_000,
-			});
-		},
 		name: 'Blog',
 		path: '/blog',
 	},
@@ -39,13 +30,6 @@ export const routes: RouteProps[] = [
 		display: false,
 		element: <BlogPost />,
 		id: '1',
-		async loader({ params }) {
-			return queryClient.fetchQuery({
-				queryFn: getPost(params.postId ?? ''),
-				queryKey: [`posts/${params.postId}`],
-				staleTime: 3_600_000,
-			});
-		},
 		name: 'Blog',
 		path: '/blog/:postId',
 	},

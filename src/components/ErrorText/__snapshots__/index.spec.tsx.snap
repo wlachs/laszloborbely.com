@@ -1,0 +1,31 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`ErrorText component > should align center 1`] = `
+<div>
+  <p
+    class="text-center"
+  >
+    child
+  </p>
+</div>
+`;
+
+exports[`ErrorText component > should align left 1`] = `
+<div>
+  <p
+    class=""
+  >
+    child
+  </p>
+</div>
+`;
+
+exports[`ErrorText component > should always render child elements 1`] = `
+<div>
+  <p
+    class=""
+  >
+    child
+  </p>
+</div>
+`;

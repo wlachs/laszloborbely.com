@@ -1,39 +1,71 @@
+import { useQuery } from '@tanstack/react-query';
+import { ReactElement } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useLoaderData } from 'react-router-dom';
 
 import { Container } from '../components/Container';
 import { Content } from '../components/Content';
 import { ContentRow } from '../components/ContentRow';
+import { ErrorText } from '../components/ErrorText';
 import { Frame } from '../components/Frame';
 import { Posts } from '../components/Posts';
-import { pageTitleSuffix } from '../config';
-import { type BlogPostData } from '../network/types/blog';
+import { Spinner } from '../components/Spinner';
+import { postsQueryOptions } from '../network/queryOptions';
+import { getPageTitle } from '../utils/title';
 
 export function Blog() {
-	const pageTitle = pageTitleSuffix;
-	const posts: BlogPostData[] = (useLoaderData() || []) as BlogPostData[];
-
 	return (
 		<Frame>
 			<Container>
 				{/* Page title */}
 				<Helmet>
-					<title>{pageTitle}</title>
+					<title>{getPageTitle()}</title>
 				</Helmet>
 				{/* Page content */}
-				<ContentRow>
-					<h1>Hi! I&apos;m László.</h1>
-					<p>
-						Feel free to check out my latest posts. Who knows,
-						perhaps you&apos;ll find something interesting.
-					</p>
-				</ContentRow>
 				<Content>
-					<ContentRow>
-						<Posts posts={posts} />
-					</ContentRow>
+					<BlogContentHeader />
+					<BlogContent />
 				</Content>
 			</Container>
 		</Frame>
+	);
+}
+
+function BlogContentHeader(): ReactElement {
+	return (
+		<ContentRow>
+			<h1>Hi! I&apos;m László.</h1>
+			<p>
+				Feel free to check out my latest posts. Who knows, perhaps
+				you&apos;ll find something interesting.
+			</p>
+		</ContentRow>
+	);
+}
+
+function BlogContent(): ReactElement {
+	const { data = [], isLoading } = useQuery(postsQueryOptions());
+
+	if (isLoading) {
+		return (
+			<ContentRow>
+				<Spinner />
+			</ContentRow>
+		);
+	}
+
+	if (!data) {
+		return (
+			<ContentRow>
+				<ErrorText center>
+					Oh no, there was a problem loading the posts!
+				</ErrorText>
+			</ContentRow>
+		);
+	}
+
+	return (
+		<ContentRow>
+			<Posts data={data} />
+		</ContentRow>
 	);
 }
