@@ -54,11 +54,13 @@ function BlogContent(): ReactElement {
 	}
 
 	if (!data) {
-		<ContentRow>
-			<ErrorText center>
-				Oh no, there was a problem loading the posts!
-			</ErrorText>
-		</ContentRow>;
+		return (
+			<ContentRow>
+				<ErrorText center>
+					Oh no, there was a problem loading the posts!
+				</ErrorText>
+			</ContentRow>
+		);
 	}
 
 	return (
