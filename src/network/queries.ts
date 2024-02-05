@@ -3,17 +3,13 @@ import axios from 'axios';
 import { type BlogPostData } from './types/blog';
 
 export async function getPosts(): Promise<BlogPostData[]> {
-	try {
-		const { data } = await axios.get<BlogPostData[]>('/api/blog/posts');
-		return data;
-	} catch (ignored) {
-		return [];
-	}
+	const { data } = await axios.get<BlogPostData[]>('/api/blog/posts');
+	return data;
 }
 
-export function getPost(id: string) {
-	return async function (): Promise<BlogPostData | undefined> {
-		const { data } = await axios.get<BlogPostData>(`/api/blog/posts/${id}`);
-		return data;
-	};
+export async function getPost(urlHandle: string): Promise<BlogPostData> {
+	const { data } = await axios.get<BlogPostData>(
+		`/api/blog/posts/${urlHandle}`,
+	);
+	return data;
 }

@@ -7,19 +7,10 @@ import { NavLink } from 'react-router-dom';
 import { type BlogPostData } from '../../network/types/blog';
 
 interface PostsProps {
-	data?: BlogPostData[];
-	isLoading: boolean;
+	data: BlogPostData[];
 }
 
-export function Posts({ data = [], isLoading }: PostsProps): ReactElement {
-	if (isLoading) {
-		return (
-			<div className='d-flex justify-content-center'>
-				<span className='spinner-border primary-text' role='status' />
-			</div>
-		);
-	}
-
+export function Posts({ data }: PostsProps): ReactElement {
 	const posts = data.map(p => <Post key={p.urlHandle} post={p} />);
 
 	return (

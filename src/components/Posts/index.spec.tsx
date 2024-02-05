@@ -22,7 +22,7 @@ describe('Posts component', () => {
 	it('should match snapshot', () => {
 		const { container } = render(
 			<MemoryRouter>
-				<Posts data={[post]} isLoading={false} />,
+				<Posts data={[post]} />,
 			</MemoryRouter>,
 		);
 		expect(container).toMatchSnapshot();
@@ -31,7 +31,7 @@ describe('Posts component', () => {
 	it('should display post metadata', () => {
 		render(
 			<MemoryRouter>
-				<Posts data={[post]} isLoading={false} />,
+				<Posts data={[post]} />,
 			</MemoryRouter>,
 		);
 		expect(screen.getByText(post.title)).toBeDefined();
@@ -41,20 +41,11 @@ describe('Posts component', () => {
 	it('should display message if there are no posts', () => {
 		render(
 			<MemoryRouter>
-				<Posts data={[]} isLoading={false} />,
+				<Posts data={[]} />,
 			</MemoryRouter>,
 		);
 		expect(
 			screen.getByText('No posts found, come back later!'),
 		).toBeDefined();
-	});
-
-	it('should display loading spinner if posts are not yet loaded', () => {
-		render(
-			<MemoryRouter>
-				<Posts isLoading={true} />,
-			</MemoryRouter>,
-		);
-		expect(screen.getByRole('status')).toBeDefined();
 	});
 });

@@ -1,36 +1,68 @@
+import { ReactElement } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { useLoaderData } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 
 import { Container } from '../components/Container';
 import { Content } from '../components/Content';
 import { ContentRow } from '../components/ContentRow';
+import { ErrorText } from '../components/ErrorText';
 import { Frame } from '../components/Frame';
 import { MarkdownRenderer } from '../components/MarkdownRenderer';
 import { PostMetadata } from '../components/PostMetadata';
-import { pageTitleSuffix } from '../config';
-import { type BlogPostData } from '../network/types/blog';
+import { Spinner } from '../components/Spinner';
+import { useGetPost } from '../network/hooks';
+import { getPageTitle } from '../utils/title';
 
-export function BlogPost() {
-	const post: BlogPostData = useLoaderData() as BlogPostData;
-	const pageTitle = [post.title, pageTitleSuffix].join(' | ');
+export function BlogPost(): ReactElement {
+	const { postId = '' } = useParams();
+	const { data } = useGetPost(postId);
 
 	return (
 		<Frame>
 			<Container>
 				{/* Page title */}
 				<Helmet>
-					<title>{pageTitle}</title>
+					<title>{getPageTitle(data?.title)}</title>
 				</Helmet>
 				{/* Page content */}
 				<Content>
-					<ContentRow>
-						<PostMetadata post={post} />
-					</ContentRow>
-					<ContentRow>
-						<MarkdownRenderer content={post.body} />
-					</ContentRow>
+					<BlogPostContent />
 				</Content>
 			</Container>
 		</Frame>
+	);
+}
+
+function BlogPostContent(): ReactElement {
+	const { postId = '' } = useParams();
+	const { data, isLoading } = useGetPost(postId);
+
+	if (isLoading) {
+		return (
+			<ContentRow>
+				<Spinner />
+			</ContentRow>
+		);
+	}
+
+	if (!data) {
+		return (
+			<ContentRow>
+				<ErrorText center>
+					Oh no, the post you are trying to load is not available!
+				</ErrorText>
+			</ContentRow>
+		);
+	}
+
+	return (
+		<>
+			<ContentRow>
+				<PostMetadata post={data} />
+			</ContentRow>
+			<ContentRow>
+				<MarkdownRenderer content={data.body} />
+			</ContentRow>
+		</>
 	);
 }
