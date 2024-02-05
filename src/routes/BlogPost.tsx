@@ -1,3 +1,4 @@
+import { useQuery } from '@tanstack/react-query';
 import { ReactElement } from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useParams } from 'react-router-dom';
@@ -10,12 +11,12 @@ import { Frame } from '../components/Frame';
 import { MarkdownRenderer } from '../components/MarkdownRenderer';
 import { PostMetadata } from '../components/PostMetadata';
 import { Spinner } from '../components/Spinner';
-import { useGetPost } from '../network/hooks';
+import { postQueryOptions } from '../network/queryOptions';
 import { getPageTitle } from '../utils/title';
 
 export function BlogPost(): ReactElement {
 	const { postId = '' } = useParams();
-	const { data } = useGetPost(postId);
+	const { data } = useQuery(postQueryOptions(postId));
 
 	return (
 		<Frame>
@@ -35,7 +36,7 @@ export function BlogPost(): ReactElement {
 
 function BlogPostContent(): ReactElement {
 	const { postId = '' } = useParams();
-	const { data, isLoading } = useGetPost(postId);
+	const { data, isLoading } = useQuery(postQueryOptions(postId));
 
 	if (isLoading) {
 		return (

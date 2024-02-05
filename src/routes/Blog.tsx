@@ -1,3 +1,4 @@
+import { useQuery } from '@tanstack/react-query';
 import { ReactElement } from 'react';
 import { Helmet } from 'react-helmet-async';
 
@@ -8,7 +9,7 @@ import { ErrorText } from '../components/ErrorText';
 import { Frame } from '../components/Frame';
 import { Posts } from '../components/Posts';
 import { Spinner } from '../components/Spinner';
-import { useGetPosts } from '../network/hooks';
+import { postsQueryOptions } from '../network/queryOptions';
 import { getPageTitle } from '../utils/title';
 
 export function Blog() {
@@ -42,7 +43,7 @@ function BlogContentHeader(): ReactElement {
 }
 
 function BlogContent(): ReactElement {
-	const { data = [], isLoading } = useGetPosts();
+	const { data = [], isLoading } = useQuery(postsQueryOptions());
 
 	if (isLoading) {
 		return (
