@@ -1,11 +1,11 @@
 import { Navigate, type RouteObject } from 'react-router-dom';
 
-import queryClient from '../network';
-import { getPost, getPosts } from '../network/queries.ts';
-import Blog from './Blog.tsx';
-import BlogPost from './BlogPost.tsx';
-import Contact from './Contact.jsx';
-import NotFound from './NotFound.tsx';
+import { queryClient } from '../network';
+import { getPost, getPosts } from '../network/queries';
+import { Blog } from './Blog';
+import { BlogPost } from './BlogPost';
+import { Contact } from './Contact';
+import { NotFound } from './NotFound';
 
 export type RouteProps = {
 	display: boolean;

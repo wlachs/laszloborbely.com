@@ -2,8 +2,8 @@ import { cleanup, render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { afterEach, describe, expect, it } from 'vitest';
 
-import { type BlogPostData } from '../../network/types/blog.ts';
-import PostMetadata from './index.tsx';
+import { type BlogPostData } from '../../network/types/blog';
+import { PostMetadata } from './';
 
 const post: BlogPostData = {
 	author: 'me myself and I',

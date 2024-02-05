@@ -1,6 +1,8 @@
 import { ReactElement, type ReactNode } from 'react';
 
-function Content(props: { children?: ReactElement | ReactNode | string }) {
+export function Content(props: {
+	children?: ReactElement | ReactNode | string;
+}) {
 	const { children } = props;
 	const classes = [
 		'd-flex',
@@ -12,5 +14,3 @@ function Content(props: { children?: ReactElement | ReactNode | string }) {
 	].join(' ');
 	return <div className={classes}>{children}</div>;
 }
-
-export default Content;

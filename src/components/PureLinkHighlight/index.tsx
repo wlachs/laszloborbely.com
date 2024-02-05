@@ -1,7 +1,7 @@
 import { type ReactNode } from 'react';
 import { NavLink } from 'react-router-dom';
 
-function PureLinkHighlight(props: { to: string; children?: ReactNode }) {
+export function PureLinkHighlight(props: { to: string; children?: ReactNode }) {
 	const { to, children } = props;
 	return (
 		<NavLink
@@ -13,5 +13,3 @@ function PureLinkHighlight(props: { to: string; children?: ReactNode }) {
 		</NavLink>
 	);
 }
-
-export default PureLinkHighlight;

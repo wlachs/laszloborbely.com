@@ -5,7 +5,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { vscDarkPlus as style } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import remarkGfm from 'remark-gfm';
 
-function MarkdownRenderer({ content }: { content: string }) {
+export function MarkdownRenderer({ content }: { content: string }) {
 	return (
 		<ReactMarkdown
 			className='markdown-body'
@@ -28,5 +28,3 @@ function MarkdownRenderer({ content }: { content: string }) {
 		</ReactMarkdown>
 	);
 }
-
-export default MarkdownRenderer;

@@ -1,6 +1,6 @@
 import { type ReactNode } from 'react';
 
-function ContentRow(props: { center?: boolean; children?: ReactNode }) {
+export function ContentRow(props: { center?: boolean; children?: ReactNode }) {
 	const { children, center } = props;
 	const centerClasses = [
 		'd-flex',
@@ -23,5 +23,3 @@ function ContentRow(props: { center?: boolean; children?: ReactNode }) {
 		</div>
 	);
 }
-
-export default ContentRow;

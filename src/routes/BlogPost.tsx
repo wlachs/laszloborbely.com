@@ -1,16 +1,16 @@
 import { Helmet } from 'react-helmet-async';
 import { useLoaderData } from 'react-router-dom';
 
-import Container from '../components/Container';
-import Content from '../components/Content';
-import ContentRow from '../components/ContentRow/index.jsx';
-import Frame from '../components/Frame';
-import MarkdownRenderer from '../components/MarkdownRenderer';
-import PostMetadata from '../components/PostMetadata';
-import { pageTitleSuffix } from '../config.js';
-import { type BlogPostData } from '../network/types/blog.ts';
+import { Container } from '../components/Container';
+import { Content } from '../components/Content';
+import { ContentRow } from '../components/ContentRow';
+import { Frame } from '../components/Frame';
+import { MarkdownRenderer } from '../components/MarkdownRenderer';
+import { PostMetadata } from '../components/PostMetadata';
+import { pageTitleSuffix } from '../config';
+import { type BlogPostData } from '../network/types/blog';
 
-function BlogPost() {
+export function BlogPost() {
 	const post: BlogPostData = useLoaderData() as BlogPostData;
 	const pageTitle = [post.title, pageTitleSuffix].join(' | ');
 
@@ -34,5 +34,3 @@ function BlogPost() {
 		</Frame>
 	);
 }
-
-export default BlogPost;

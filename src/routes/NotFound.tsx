@@ -1,12 +1,12 @@
 import { Helmet } from 'react-helmet-async';
 
-import Container from '../components/Container';
-import Content from '../components/Content/index.jsx';
-import ContentRow from '../components/ContentRow/index.jsx';
-import Frame from '../components/Frame';
-import { pageTitleSuffix } from '../config.js';
+import { Container } from '../components/Container';
+import { Content } from '../components/Content';
+import { ContentRow } from '../components/ContentRow';
+import { Frame } from '../components/Frame';
+import { pageTitleSuffix } from '../config';
 
-function NotFound() {
+export function NotFound() {
 	const name = '404';
 	const pageTitle = [name, pageTitleSuffix].join(' | ');
 	return (
@@ -36,5 +36,3 @@ function NotFound() {
 		</Frame>
 	);
 }
-
-export default NotFound;

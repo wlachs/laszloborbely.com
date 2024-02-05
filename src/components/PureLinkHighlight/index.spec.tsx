@@ -2,7 +2,7 @@ import { cleanup, render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { afterEach, describe, expect, it } from 'vitest';
 
-import PureLinkHighlight from './index.tsx';
+import { PureLinkHighlight } from './';
 
 describe('PureLinkHighlight component', () => {
 	afterEach(() => {

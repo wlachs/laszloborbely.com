@@ -1,7 +1,7 @@
 import { cleanup, render, screen } from '@testing-library/react';
 import { afterEach, describe, expect, it } from 'vitest';
 
-import ContentRow from './index.tsx';
+import { ContentRow } from './';
 
 describe('ContentRow component', () => {
 	afterEach(() => {

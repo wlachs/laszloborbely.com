@@ -1,9 +1,9 @@
 import { Fragment } from 'react';
 
 import { type RouteProps, routes } from '../../routes';
-import PureLinkHighlight from '../PureLinkHighlight/index.jsx';
+import { PureLinkHighlight } from '../PureLinkHighlight';
 
-function Links() {
+export function Links() {
 	const elements = routes
 		.sort((a, b) => Number(b.id) - Number(a.id))
 		.filter((route: RouteProps) => route.display)
@@ -15,5 +15,3 @@ function Links() {
 
 	return <Fragment>{elements}</Fragment>;
 }
-
-export default Links;

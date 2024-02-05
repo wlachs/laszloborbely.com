@@ -3,7 +3,7 @@ import './index.css';
 import moment from 'moment';
 import { NavLink } from 'react-router-dom';
 
-import { type BlogPostData } from '../../network/types/blog.ts';
+import { type BlogPostData } from '../../network/types/blog';
 
 function Post({ post }: { post: BlogPostData }) {
 	const link = `/blog/${post.urlHandle}`;
@@ -21,7 +21,7 @@ function Post({ post }: { post: BlogPostData }) {
 	);
 }
 
-function Posts(props: { posts: BlogPostData[] }) {
+export function Posts(props: { posts: BlogPostData[] }) {
 	const posts = props.posts.map(p => <Post key={p.urlHandle} post={p} />);
 
 	return (
@@ -35,5 +35,3 @@ function Posts(props: { posts: BlogPostData[] }) {
 		</div>
 	);
 }
-
-export default Posts;

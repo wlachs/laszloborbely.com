@@ -2,9 +2,9 @@ import './index.css';
 
 import moment from 'moment/moment';
 
-import { type BlogPostData } from '../../network/types/blog.ts';
+import { type BlogPostData } from '../../network/types/blog';
 
-function PostMetadata({ post }: { post: BlogPostData }) {
+export function PostMetadata({ post }: { post: BlogPostData }) {
 	const dateFormat = 'LL';
 	const timestamp = moment(post.creationTime).format(dateFormat);
 	return (
@@ -14,5 +14,3 @@ function PostMetadata({ post }: { post: BlogPostData }) {
 		</div>
 	);
 }
-
-export default PostMetadata;

@@ -1,12 +1,12 @@
 import { Helmet } from 'react-helmet-async';
 
-import Container from '../components/Container';
-import Content from '../components/Content';
-import ContentRow from '../components/ContentRow';
-import Frame from '../components/Frame';
+import { Container } from '../components/Container';
+import { Content } from '../components/Content';
+import { ContentRow } from '../components/ContentRow';
+import { Frame } from '../components/Frame';
 import { pageTitleSuffix } from '../config';
 
-function Contact() {
+export function Contact() {
 	const name = 'Contact';
 	const pageTitle = [name, pageTitleSuffix].join(' | ');
 
@@ -58,5 +58,3 @@ function Contact() {
 		</Frame>
 	);
 }
-
-export default Contact;

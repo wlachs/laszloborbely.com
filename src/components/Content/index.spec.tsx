@@ -1,7 +1,7 @@
 import { cleanup, render, screen } from '@testing-library/react';
 import { afterEach, describe, expect, it } from 'vitest';
 
-import Content from './index.tsx';
+import { Content } from './';
 
 describe('Content component', () => {
 	afterEach(() => {

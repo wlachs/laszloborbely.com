@@ -2,16 +2,19 @@ import { cleanup, render } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 
-import Navbar from './index.tsx';
+import { Navbar } from './';
 
 const mocked = vi.hoisted(() => ({
-	component: () => ({
-		default: () => <div />,
-	}),
+	component: () => <div />,
 }));
 
-vi.mock('../Links', mocked.component);
-vi.mock('../PureLinkHighlight', mocked.component);
+vi.mock('../Links', () => ({
+	Links: mocked.component,
+}));
+
+vi.mock('../PureLinkHighlight', () => ({
+	PureLinkHighlight: mocked.component,
+}));
 
 describe('Navbar component', () => {
 	afterEach(() => {

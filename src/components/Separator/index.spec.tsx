@@ -1,7 +1,7 @@
 import { cleanup, render } from '@testing-library/react';
 import { afterEach, describe, expect, it } from 'vitest';
 
-import Separator from './index.tsx';
+import { Separator } from './';
 
 describe('Separator component', () => {
 	afterEach(() => {

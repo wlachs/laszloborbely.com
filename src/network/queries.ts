@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { type BlogPostData } from './types/blog.ts';
+import { type BlogPostData } from './types/blog';
 
 export function getPosts() {
 	return async function (): Promise<BlogPostData[]> {

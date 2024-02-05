@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import { routes } from './routes';
 
-function Router() {
+export function Router() {
 	const router = createBrowserRouter(routes);
 
 	return (
@@ -12,5 +12,3 @@ function Router() {
 		</HelmetProvider>
 	);
 }
-
-export default Router;

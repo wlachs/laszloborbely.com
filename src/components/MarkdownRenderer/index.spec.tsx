@@ -1,7 +1,7 @@
 import { cleanup, render } from '@testing-library/react';
 import { afterEach, describe, expect, it } from 'vitest';
 
-import MarkdownRenderer from './index.tsx';
+import { MarkdownRenderer } from './';
 
 describe('MarkdownRenderer component', () => {
 	afterEach(() => {
