@@ -6,6 +6,7 @@ module.exports = {
 	},
 	extends: [
 		'eslint:recommended',
+		'plugin:@typescript-eslint/recommended',
 		'plugin:react/recommended',
 		'plugin:import/recommended',
 		'plugin:import/typescript',
@@ -18,6 +19,7 @@ module.exports = {
 		sourceType: 'module',
 	},
 	plugins: ['react', 'import', 'simple-import-sort', 'sort-keys-fix'],
+	root: true,
 	rules: {
 		'import/first': 'error',
 		'import/newline-after-import': 'error',
