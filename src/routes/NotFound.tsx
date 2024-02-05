@@ -1,16 +1,12 @@
-// React imports
-import {Helmet} from 'react-helmet-async';
+import { Helmet } from 'react-helmet-async';
 
-// Component imports
-import Container from '../components/Container';
-import Content from '../components/Content/index.jsx';
-import ContentRow from '../components/ContentRow/index.jsx';
-import Frame from '../components/Frame';
+import { Container } from '../components/Container';
+import { Content } from '../components/Content';
+import { ContentRow } from '../components/ContentRow';
+import { Frame } from '../components/Frame';
+import { pageTitleSuffix } from '../config';
 
-// Config imports
-import {pageTitleSuffix} from '../config.js';
-
-function NotFound() {
+export function NotFound() {
 	const name = '404';
 	const pageTitle = [name, pageTitleSuffix].join(' | ');
 	return (
@@ -26,15 +22,17 @@ function NotFound() {
 						<h1>Oh no...</h1>
 					</ContentRow>
 					<ContentRow>
-						<h2>The page you are looking for doesn&apos;t exist!</h2>
+						<h2>
+							The page you are looking for doesn&apos;t exist!
+						</h2>
 					</ContentRow>
 					<ContentRow>
-						<p><i>Finger weg, Clemens!</i></p>
+						<p>
+							<i>Finger weg, Clemens!</i>
+						</p>
 					</ContentRow>
 				</Content>
 			</Container>
 		</Frame>
 	);
 }
-
-export default NotFound;

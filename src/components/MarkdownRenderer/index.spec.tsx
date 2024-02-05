@@ -1,6 +1,7 @@
-import {cleanup, render} from '@testing-library/react';
-import {afterEach, describe, expect, it} from 'vitest';
-import MarkdownRenderer from './index.tsx';
+import { cleanup, render } from '@testing-library/react';
+import { afterEach, describe, expect, it } from 'vitest';
+
+import { MarkdownRenderer } from './';
 
 describe('MarkdownRenderer component', () => {
 	afterEach(() => {
@@ -9,9 +10,7 @@ describe('MarkdownRenderer component', () => {
 
 	it('should highlight code syntax', () => {
 		const code = '```js\nconsole.log()\n```';
-		const {container} = render(
-			<MarkdownRenderer content={code}/>,
-		);
+		const { container } = render(<MarkdownRenderer content={code} />);
 		expect(container.querySelector('code')).not.toBeNull();
 	});
 });

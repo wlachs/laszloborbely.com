@@ -1,7 +1,8 @@
-import {cleanup, render, screen} from '@testing-library/react';
-import {MemoryRouter} from 'react-router-dom';
-import {afterEach, describe, expect, it} from 'vitest';
-import Frame from './index.tsx';
+import { cleanup, render, screen } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
+import { afterEach, describe, expect, it } from 'vitest';
+
+import { Frame } from './';
 
 describe('Frame component', () => {
 	afterEach(() => {
@@ -10,7 +11,7 @@ describe('Frame component', () => {
 
 	it('should always render child elements', () => {
 		const child = 'child';
-		const {container} = render(
+		const { container } = render(
 			<MemoryRouter>
 				<Frame>{child}</Frame>,
 			</MemoryRouter>,

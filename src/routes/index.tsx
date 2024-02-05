@@ -1,11 +1,11 @@
-import React from 'react';
-import {Navigate, type RouteObject} from 'react-router-dom';
-import queryClient from '../network';
-import {getPost, getPosts} from '../network/queries.ts';
-import Blog from './Blog.tsx';
-import BlogPost from './BlogPost.tsx';
-import Contact from './Contact.jsx';
-import NotFound from './NotFound.tsx';
+import { Navigate, type RouteObject } from 'react-router-dom';
+
+import { queryClient } from '../network';
+import { getPost, getPosts } from '../network/queries';
+import { Blog } from './Blog';
+import { BlogPost } from './BlogPost';
+import { Contact } from './Contact';
+import { NotFound } from './NotFound';
 
 export type RouteProps = {
 	display: boolean;
@@ -15,48 +15,52 @@ export type RouteProps = {
 
 export const routes: RouteProps[] = [
 	{
-		id: '-1',
 		display: false,
+		element: <NotFound />,
+		id: '-1',
 		name: '404',
 		path: '/not-found',
-		element: <NotFound/>,
 	},
 	{
-		id: '0',
 		display: true,
-		name: 'Blog',
-		path: '/blog',
-		element: <Blog/>,
+		element: <Blog />,
+		id: '0',
 		async loader() {
-			return queryClient.fetchQuery({queryKey: ['posts'], queryFn: getPosts(), staleTime: 3_600_000});
-		},
-	},
-	{
-		id: '1',
-		display: false,
-		name: 'Blog',
-		path: '/blog/:postId',
-		element: <BlogPost/>,
-		async loader({params}) {
 			return queryClient.fetchQuery({
-				queryKey: [`posts/${params.postId}`],
-				queryFn: getPost(params.postId ?? ''),
+				queryFn: getPosts(),
+				queryKey: ['posts'],
 				staleTime: 3_600_000,
 			});
 		},
+		name: 'Blog',
+		path: '/blog',
 	},
 	{
-		id: '2',
+		display: false,
+		element: <BlogPost />,
+		id: '1',
+		async loader({ params }) {
+			return queryClient.fetchQuery({
+				queryFn: getPost(params.postId ?? ''),
+				queryKey: [`posts/${params.postId}`],
+				staleTime: 3_600_000,
+			});
+		},
+		name: 'Blog',
+		path: '/blog/:postId',
+	},
+	{
 		display: true,
+		element: <Contact />,
+		id: '2',
 		name: 'Contact',
 		path: '/contact',
-		element: <Contact/>,
 	},
 	{
-		id: '3',
 		display: false,
+		element: <Navigate to='/blog' />,
+		id: '3',
 		name: '',
 		path: '*',
-		element: <Navigate to='/blog'/>,
 	},
 ];

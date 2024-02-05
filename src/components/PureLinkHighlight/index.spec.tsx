@@ -1,7 +1,8 @@
-import {cleanup, render} from '@testing-library/react';
-import {MemoryRouter} from 'react-router-dom';
-import {afterEach, describe, expect, it} from 'vitest';
-import PureLinkHighlight from './index.tsx';
+import { cleanup, render } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
+import { afterEach, describe, expect, it } from 'vitest';
+
+import { PureLinkHighlight } from './';
 
 describe('PureLinkHighlight component', () => {
 	afterEach(() => {
@@ -10,7 +11,7 @@ describe('PureLinkHighlight component', () => {
 
 	it('should match snapshot', () => {
 		const child = 'child';
-		const {container} = render(
+		const { container } = render(
 			<MemoryRouter>
 				<PureLinkHighlight to='/'>{child}</PureLinkHighlight>,
 			</MemoryRouter>,
@@ -20,21 +21,25 @@ describe('PureLinkHighlight component', () => {
 
 	it('should highlight link if on matching route', () => {
 		const child = 'child';
-		const {container} = render(
+		const { container } = render(
 			<MemoryRouter>
 				<PureLinkHighlight to='/'>{child}</PureLinkHighlight>,
 			</MemoryRouter>,
 		);
-		expect(container.querySelector('a')?.className).toContain('link_active');
+		expect(container.querySelector('a')?.className).toContain(
+			'link_active',
+		);
 	});
 
 	it('should not highlight link on non-matching routes', () => {
 		const child = 'child';
-		const {container} = render(
+		const { container } = render(
 			<MemoryRouter>
 				<PureLinkHighlight to='/blog'>{child}</PureLinkHighlight>,
 			</MemoryRouter>,
 		);
-		expect(container.querySelector('a')?.className).not.toContain('link_active');
+		expect(container.querySelector('a')?.className).not.toContain(
+			'link_active',
+		);
 	});
 });

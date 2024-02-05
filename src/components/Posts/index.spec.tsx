@@ -1,16 +1,17 @@
-import {cleanup, render, screen} from '@testing-library/react';
-import {MemoryRouter} from 'react-router-dom';
-import {afterEach, describe, expect, it} from 'vitest';
-import {type BlogPostData} from '../../network/types/blog.ts';
-import Posts from './index.tsx';
+import { cleanup, render, screen } from '@testing-library/react';
+import { MemoryRouter } from 'react-router-dom';
+import { afterEach, describe, expect, it } from 'vitest';
+
+import { type BlogPostData } from '../../network/types/blog';
+import { Posts } from './';
 
 const post: BlogPostData = {
-	urlHandle: 'test-post',
-	title: 'very very long test post',
 	author: 'me myself and I',
-	summary: 'a summery summary',
 	body: 'body with a six-pack of beer',
 	creationTime: new Date(0),
+	summary: 'a summery summary',
+	title: 'very very long test post',
+	urlHandle: 'test-post',
 };
 
 describe('Posts component', () => {
@@ -19,9 +20,9 @@ describe('Posts component', () => {
 	});
 
 	it('should match snapshot', () => {
-		const {container} = render(
+		const { container } = render(
 			<MemoryRouter>
-				<Posts posts={[post]}/>,
+				<Posts posts={[post]} />,
 			</MemoryRouter>,
 		);
 		expect(container).toMatchSnapshot();
@@ -30,7 +31,7 @@ describe('Posts component', () => {
 	it('should display post metadata', () => {
 		render(
 			<MemoryRouter>
-				<Posts posts={[post]}/>,
+				<Posts posts={[post]} />,
 			</MemoryRouter>,
 		);
 		expect(screen.getByText(post.title)).toBeDefined();
@@ -40,9 +41,11 @@ describe('Posts component', () => {
 	it('should display message if there are no posts', () => {
 		render(
 			<MemoryRouter>
-				<Posts posts={[]}/>,
+				<Posts posts={[]} />,
 			</MemoryRouter>,
 		);
-		expect(screen.getByText('No posts found, come back later!')).toBeDefined();
+		expect(
+			screen.getByText('No posts found, come back later!'),
+		).toBeDefined();
 	});
 });

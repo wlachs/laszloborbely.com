@@ -1,39 +1,39 @@
 @import '../global.css';
 
 .post {
-  display: flex;
-  justify-content: space-between;
-  color: var(--secondary-color);
-  text-decoration: none;
-  transition: .1s;
+	display: flex;
+	justify-content: space-between;
+	color: var(--secondary-color);
+	text-decoration: none;
+	transition: 0.1s;
 }
 
 .post:hover {
-  color: var(--primary-color);
+	color: var(--primary-color);
 }
 
 .post h3 {
-  color: inherit;
+	color: inherit;
 }
 
 .left-segment {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 }
 
 .right-segment {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  text-align: right;
-  white-space: nowrap;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	text-align: right;
+	white-space: nowrap;
 }
 
 .post:not(:last-child) {
-  border-bottom: 1px solid var(--primary-color);
+	border-bottom: 1px solid var(--primary-color);
 }
 
 .posts {
-  border-top: 1px solid var(--primary-color);
+	border-top: 1px solid var(--primary-color);
 }

@@ -1,10 +1,11 @@
 import axios from 'axios';
-import {type BlogPostData} from './types/blog.ts';
+
+import { type BlogPostData } from './types/blog';
 
 export function getPosts() {
 	return async function (): Promise<BlogPostData[]> {
 		try {
-			const {data} = await axios.get<BlogPostData[]>('/api/blog/posts');
+			const { data } = await axios.get<BlogPostData[]>('/api/blog/posts');
 			return data;
 		} catch (ignored) {
 			return [];
@@ -14,8 +15,7 @@ export function getPosts() {
 
 export function getPost(id: string) {
 	return async function (): Promise<BlogPostData | undefined> {
-		const {data} = await axios.get<BlogPostData>(`/api/blog/posts/${id}`);
+		const { data } = await axios.get<BlogPostData>(`/api/blog/posts/${id}`);
 		return data;
 	};
 }
-

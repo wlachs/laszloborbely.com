@@ -1,21 +1,15 @@
-// React imports
-import {Helmet} from 'react-helmet-async';
+import { Helmet } from 'react-helmet-async';
+import { useLoaderData } from 'react-router-dom';
 
-// Router imports
-import {useLoaderData} from 'react-router-dom';
+import { Container } from '../components/Container';
+import { Content } from '../components/Content';
+import { ContentRow } from '../components/ContentRow';
+import { Frame } from '../components/Frame';
+import { Posts } from '../components/Posts';
+import { pageTitleSuffix } from '../config';
+import { type BlogPostData } from '../network/types/blog';
 
-// Component imports
-import Container from '../components/Container';
-import Content from '../components/Content/index.jsx';
-import ContentRow from '../components/ContentRow/index.jsx';
-import Frame from '../components/Frame';
-import Posts from '../components/Posts';
-
-// Config imports
-import {pageTitleSuffix} from '../config.js';
-import {type BlogPostData} from '../network/types/blog.ts';
-
-function Blog() {
+export function Blog() {
 	const pageTitle = pageTitleSuffix;
 	const posts: BlogPostData[] = (useLoaderData() || []) as BlogPostData[];
 
@@ -30,17 +24,16 @@ function Blog() {
 				<ContentRow>
 					<h1>Hi! I&apos;m László.</h1>
 					<p>
-                        Feel free to check out my latest posts. Who knows, perhaps you&apos;ll find something interesting.
+						Feel free to check out my latest posts. Who knows,
+						perhaps you&apos;ll find something interesting.
 					</p>
 				</ContentRow>
 				<Content>
 					<ContentRow>
-						<Posts posts={posts}/>
+						<Posts posts={posts} />
 					</ContentRow>
 				</Content>
 			</Container>
 		</Frame>
 	);
 }
-
-export default Blog;

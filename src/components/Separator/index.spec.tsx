@@ -1,6 +1,7 @@
-import {cleanup, render} from '@testing-library/react';
-import {afterEach, describe, expect, it} from 'vitest';
-import Separator from './index.tsx';
+import { cleanup, render } from '@testing-library/react';
+import { afterEach, describe, expect, it } from 'vitest';
+
+import { Separator } from './';
 
 describe('Separator component', () => {
 	afterEach(() => {
@@ -8,7 +9,7 @@ describe('Separator component', () => {
 	});
 
 	it('should match snapshot', () => {
-		const {container} = render(<Separator/>);
+		const { container } = render(<Separator />);
 		expect(container).toMatchSnapshot();
 	});
 });

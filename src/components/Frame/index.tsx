@@ -1,9 +1,11 @@
-import {type ReactNode} from 'react';
-import Navbar from '../Navbar/index.jsx';
 import './index.css';
 
-function Frame(props: {children?: ReactNode}) {
-	const {children} = props;
+import { type ReactNode } from 'react';
+
+import { Navbar } from '../Navbar';
+
+export function Frame(props: { children?: ReactNode }) {
+	const { children } = props;
 	const classes = [
 		'frame-container',
 		'm-0',
@@ -14,10 +16,8 @@ function Frame(props: {children?: ReactNode}) {
 	].join(' ');
 	return (
 		<div className={classes}>
-			<Navbar/>
+			<Navbar />
 			{children}
 		</div>
 	);
 }
-
-export default Frame;
