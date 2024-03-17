@@ -1,7 +1,8 @@
-// eslint-disable-next-line import/no-default-export
+/* eslint-disable import/no-default-export */
 export default {
 	plugins: {
 		autoprefixer: {},
 		tailwindcss: {},
+		'tailwindcss/nesting': {},
 	},
 };
