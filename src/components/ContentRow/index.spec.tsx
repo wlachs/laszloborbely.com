@@ -17,17 +17,13 @@ describe('ContentRow component', () => {
 
 	it('should align left', () => {
 		const { container } = render(<ContentRow />);
-		expect(container.children[0].className).not.toContain(
-			'justify-content-center',
-		);
+		expect(container.children[0].className).not.toContain('justify-center');
 		expect(container).toMatchSnapshot();
 	});
 
 	it('should align center', () => {
 		const { container } = render(<ContentRow center />);
-		expect(container.children[0].className).toContain(
-			'justify-content-center',
-		);
+		expect(container.children[0].className).toContain('items-center');
 		expect(container).toMatchSnapshot();
 	});
 });
