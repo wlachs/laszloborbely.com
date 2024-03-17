@@ -13,9 +13,9 @@ export function PostMetadata({ post }: PostMetadataProps): ReactElement {
 	const dateFormat = 'LL';
 	const timestamp = moment(post.creationTime).format(dateFormat);
 	return (
-		<div className='d-flex flex-column flex-lg-row justify-content-lg-between gap-lg-3 pb-3 pb-lg-0'>
+		<div className='pb-2'>
 			<h1>{post.title}</h1>
-			<label className='timestamp'>{timestamp}</label>
+			<span className='timestamp'>{timestamp}</span>
 		</div>
 	);
 }

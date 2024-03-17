@@ -3,16 +3,16 @@
 exports[`PostMetadata component > should match snapshot 1`] = `
 <div>
   <div
-    class="d-flex flex-column flex-lg-row justify-content-lg-between gap-lg-3 pb-3 pb-lg-0"
+    class="pb-2"
   >
     <h1>
       very very long test post
     </h1>
-    <label
+    <span
       class="timestamp"
     >
       January 1, 1970
-    </label>
+    </span>
   </div>
   ,
 </div>

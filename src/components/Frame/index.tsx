@@ -9,16 +9,8 @@ interface FrameProps {
 }
 
 export function Frame({ children }: FrameProps): ReactElement {
-	const classes = [
-		'frame-container',
-		'm-0',
-		'mx-auto',
-		'p-0',
-		'py-lg-4',
-		'min-vh-100',
-	].join(' ');
 	return (
-		<div className={classes}>
+		<div className='container mx-auto px-4 sm:max-w-[50rem] lg:px-0 lg:py-2'>
 			<Navbar />
 			{children}
 		</div>

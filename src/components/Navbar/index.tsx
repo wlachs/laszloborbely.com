@@ -10,7 +10,7 @@ import { Separator } from '../Separator';
 export function Navbar(): ReactElement {
 	return (
 		<CommonNavbar>
-			<div className='d-flex flex-row-reverse align-items-center gap-3'>
+			<div className='flex flex-row-reverse items-center gap-3'>
 				<Links />
 			</div>
 		</CommonNavbar>
@@ -23,19 +23,18 @@ interface CommonNavbarProps {
 
 function CommonNavbar({ children }: CommonNavbarProps): ReactElement {
 	return (
-		<div className='col-11 col-lg-12 m-auto'>
-			<div className='w-100 d-flex justify-content-between align-items-center mb-2'>
+		<>
+			<div className='flex items-center justify-between py-4'>
 				<PureLinkHighlight to='/blog'>
 					<img
 						src={logo}
-						height='40'
-						className='navbar-logo'
+						className='w-12'
 						alt='László Borbély - Full-Stack Software Engineer'
 					/>
 				</PureLinkHighlight>
 				{children}
 			</div>
 			<Separator />
-		</div>
+		</>
 	);
 }

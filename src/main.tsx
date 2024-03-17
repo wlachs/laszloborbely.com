@@ -1,4 +1,3 @@
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './components/global.css';
 
 import { QueryClientProvider } from '@tanstack/react-query';

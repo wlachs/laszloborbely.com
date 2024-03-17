@@ -3,10 +3,10 @@
 exports[`Posts component > should match snapshot 1`] = `
 <div>
   <div
-    class="posts w-100"
+    class="posts"
   >
     <a
-      class="post w-100 py-3"
+      class="post py-3"
       href="/blog/test-post"
     >
       <div
@@ -24,11 +24,11 @@ exports[`Posts component > should match snapshot 1`] = `
         </div>
       </div>
       <div
-        class="right-segment d-none d-md-block"
+        class="right-segment hidden md:block"
       >
-        <label>
+        <span>
           54 years ago
-        </label>
+        </span>
       </div>
     </a>
   </div>

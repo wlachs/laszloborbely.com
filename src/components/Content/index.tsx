@@ -5,13 +5,9 @@ interface ContentProps {
 }
 
 export function Content({ children }: ContentProps): ReactElement {
-	const classes = [
-		'd-flex',
-		'flex-column',
-		'align-items-center',
-		'h-100',
-		'flex-grow-1',
-		'col-12',
-	].join(' ');
-	return <div className={classes}>{children}</div>;
+	return (
+		<div className='flex w-full flex-grow flex-col items-center'>
+			{children}
+		</div>
+	);
 }
