@@ -5,9 +5,5 @@ interface ContainerProps {
 }
 
 export function Container({ children }: ContainerProps): ReactElement {
-	return (
-		<div className='d-flex flex-column align-items-center h-100 col-11 col-lg-12 m-auto flex-grow-1'>
-			{children}
-		</div>
-	);
+	return <div className='m-auto flex flex-col items-center'>{children}</div>;
 }

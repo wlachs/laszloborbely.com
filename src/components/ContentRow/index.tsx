@@ -10,16 +10,16 @@ export function ContentRow({
 	center,
 }: ContentRowProps): ReactElement {
 	const centerClasses = [
-		'd-flex',
+		'flex',
 		'flex-row',
-		'justify-content-center',
-		'align-items-center',
+		'content-center',
+		'items-center',
 	];
 	const classes = [
-		'w-100',
+		'w-full',
 		...(center ? centerClasses : []),
 		/* Desktop */
-		'mt-lg-1',
+		'lg:mt-1',
 		/* Phone */
 		'mb-2',
 	].join(' ');

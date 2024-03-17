@@ -14,42 +14,44 @@
 	font-style: normal;
 }
 
-.frame-container {
-	font-family: 'Consolas', sans-serif;
-	max-width: 50em;
-}
-
 body {
+	font-family: 'Consolas', sans-serif;
 	overflow-x: hidden;
-	font-size: 0.9rem;
 }
 
-h1 {
-	color: var(--off-color);
-	font-weight: bold;
-	font-size: 1.2rem;
-	margin: 0 0 1rem 0;
-}
+.container {
+	h1 {
+		color: var(--off-color);
+		font-weight: bold;
+		font-size: 1.2rem;
+		margin: 0 0 1rem 0;
+	}
 
-h2 {
-	color: var(--off-color);
-	font-weight: bold;
-	font-size: 1rem;
-	margin: 0 0 1rem 0;
-}
+	h2 {
+		color: var(--off-color);
+		font-weight: bold;
+		font-size: 1rem;
+		margin: 0 0 1rem 0;
+	}
 
-h3 {
-	color: var(--off-color);
-	font-weight: bold;
-	font-size: 1rem;
-	margin: 0;
-}
+	h3 {
+		color: var(--off-color);
+		font-weight: bold;
+		font-size: 1rem;
+		margin: 0;
+	}
 
-p {
-	color: var(--secondary-color);
-}
+	p {
+		color: var(--secondary-color);
+		margin-bottom: 1rem;
+	}
 
-label {
-	color: var(--ternary-color);
-	font-weight: lighter;
+	label {
+		color: var(--ternary-color);
+		font-weight: lighter;
+	}
+
+	p > a {
+		color: var(--primary-color);
+	}
 }

@@ -2,28 +2,30 @@
 
 .markdown-body {
 	font-family: 'Consolas', sans-serif;
-	max-width: 50em;
-	font-size: 0.9rem;
-}
 
-.markdown-body h1 {
-	color: var(--off-color);
-	font-weight: bold;
-	font-size: 1.2rem;
-}
+	h1 {
+		color: var(--off-color);
+		font-weight: bold;
+		font-size: 1.2rem;
+	}
 
-.markdown-body h2 {
-	color: var(--off-color);
-	font-weight: bold;
-	font-size: 1rem;
-}
+	h2 {
+		color: var(--off-color);
+		font-weight: bold;
+		font-size: 1rem;
+	}
 
-.markdown-body h3 {
-	color: var(--off-color);
-	font-weight: bold;
-	font-size: 1rem;
-}
+	h3 {
+		color: var(--off-color);
+		font-weight: bold;
+		font-size: 1rem;
+	}
 
-.markdown-body p {
-	color: var(--secondary-color);
+	p {
+		color: var(--secondary-color);
+	}
+
+	ul {
+		list-style: outside;
+	}
 }
