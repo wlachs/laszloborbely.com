@@ -1,8 +1,8 @@
-/* eslint-disable import/no-default-export */
+/* eslint-disable import/no-default-export, sort-keys-fix/sort-keys-fix */
 export default {
 	plugins: {
 		autoprefixer: {},
-		tailwindcss: {},
 		'tailwindcss/nesting': {},
+		tailwindcss: {},
 	},
 };
