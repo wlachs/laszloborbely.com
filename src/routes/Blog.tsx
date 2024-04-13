@@ -33,7 +33,7 @@ export function Blog(): ReactElement {
 function BlogContentHeader(): ReactElement {
 	return (
 		<ContentRow>
-			<h1>Hi!</h1>
+			<h1>Hi, welcome to my blog!</h1>
 			<p>
 				Feel free to check out my latest posts. Who knows, perhaps
 				you&apos;ll find something interesting.
