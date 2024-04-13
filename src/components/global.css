@@ -4,27 +4,14 @@
 
 :root {
 	--primary-color: #66cc33;
-	--off-color: #222222;
-	--secondary-color: #333333;
-	--ternary-color: #555555;
-	--background-color: #ffffff;
+	--secondary-color: #222222;
+	--background-color: #f1f1f1;
 }
 
-.link {
-	color: var(--secondary-color);
-	font-weight: 300;
-	text-decoration: none !important;
-	transition: 0.2s;
-}
-
-.link:hover {
-	color: var(--primary-color);
-}
-
-.link_active {
-	color: var(--primary-color);
-}
-
-.primary-text {
-	color: var(--primary-color);
+@media (prefers-color-scheme: dark) {
+	:root {
+		--primary-color: #66cc33;
+		--secondary-color: #cccccc;
+		--background-color: #222222;
+	}
 }
