@@ -32,4 +32,20 @@
 	pre {
 		background-color: inherit;
 	}
+
+	table {
+		color: var(--secondary-color);
+
+		tr {
+			background-color: inherit;
+		}
+
+		tr:nth-child(2n) {
+			background-color: inherit;
+		}
+	}
+
+	span {
+		color: inherit;
+	}
 }
