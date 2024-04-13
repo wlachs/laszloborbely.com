@@ -18,25 +18,26 @@
 body {
 	font-family: 'Consolas', sans-serif;
 	overflow-x: hidden;
+	background-color: var(--background-color);
 }
 
 .container {
 	h1 {
-		color: var(--off-color);
+		color: var(--secondary-color);
+		font-weight: bold;
+		font-size: 1.5rem;
+		margin: 0 0 1rem 0;
+	}
+
+	h2 {
+		color: var(--secondary-color);
 		font-weight: bold;
 		font-size: 1.2rem;
 		margin: 0 0 1rem 0;
 	}
 
-	h2 {
-		color: var(--off-color);
-		font-weight: bold;
-		font-size: 1rem;
-		margin: 0 0 1rem 0;
-	}
-
 	h3 {
-		color: var(--off-color);
+		color: var(--secondary-color);
 		font-weight: bold;
 		font-size: 1rem;
 		margin: 0;
@@ -48,11 +49,15 @@ body {
 	}
 
 	label {
-		color: var(--ternary-color);
+		color: var(--secondary-color);
 		font-weight: lighter;
 	}
 
 	p > a {
 		color: var(--primary-color);
+	}
+
+	span {
+		color: var(--secondary-color);
 	}
 }

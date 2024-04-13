@@ -1,0 +1,16 @@
+@import '../global.css';
+
+.link, a {
+	color: var(--secondary-color);
+	font-weight: 300;
+	text-decoration: none !important;
+	transition: 0.2s;
+}
+
+.link:hover {
+	color: var(--primary-color);
+}
+
+.link_active {
+	color: var(--primary-color);
+}
