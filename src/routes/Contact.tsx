@@ -39,7 +39,7 @@ export function Contact(): ReactElement {
 						<p>
 							You can also find me on{' '}
 							<a
-								href='https://github.com/wlchs'
+								href='https://github.com/wlachs'
 								target='_blank'
 								rel='noreferrer'>
 								GitHub
