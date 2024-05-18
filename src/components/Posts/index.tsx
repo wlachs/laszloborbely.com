@@ -11,7 +11,7 @@ interface PostsProps {
 }
 
 export function Posts({ data }: PostsProps): ReactElement {
-	const posts = data.map(p => <Post key={p.urlHandle} post={p} />);
+	const posts = data.map(p => <Post key={p.id} post={p} />);
 
 	return (
 		<div className='posts'>
@@ -30,7 +30,7 @@ interface PostProps {
 }
 
 function Post({ post }: PostProps): ReactElement {
-	const link = `/blog/${post.urlHandle}`;
+	const link = `/blog/${post.id}`;
 
 	return (
 		<NavLink className='post py-3' to={link}>
