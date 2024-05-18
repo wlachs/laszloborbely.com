@@ -31,7 +31,7 @@ export default defineConfig(
 const proxyOptions = ({ mode }: ConfigEnv): Record<string, ProxyOptions> => {
 	if (mode === 'live') {
 		return {
-			'/api/blog': {
+			'/api/v0': {
 				changeOrigin: true,
 				secure: false,
 				target: 'https://laszloborbely.com',
@@ -45,9 +45,8 @@ const proxyOptions = ({ mode }: ConfigEnv): Record<string, ProxyOptions> => {
 	}
 
 	return {
-		'/api/blog': {
+		'/api/v0': {
 			changeOrigin: true,
-			rewrite: path => path.replace(/^\/api\/blog/, ''),
 			target: 'http://localhost:8080',
 		},
 	};

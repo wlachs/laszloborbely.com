@@ -9,9 +9,9 @@ const post: BlogPostData = {
 	author: 'me myself and I',
 	body: 'body with a six-pack of beer',
 	creationTime: new Date(0),
+	id: 'test-post',
 	summary: 'a summery summary',
 	title: 'very very long test post',
-	urlHandle: 'test-post',
 };
 
 describe('PostMetadata component', () => {
