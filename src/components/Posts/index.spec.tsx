@@ -1,6 +1,6 @@
 import { cleanup, render, screen } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
-import { afterEach, describe, expect, it } from 'vitest';
+import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 
 import { type BlogPostData } from '../../network/types/blog';
 import { Posts } from './';
@@ -15,7 +15,14 @@ const post: BlogPostData = {
 };
 
 describe('Posts component', () => {
+	beforeEach(() => {
+		vi.useFakeTimers();
+		const date = new Date(2024, 1, 1, 1);
+		vi.setSystemTime(date);
+	});
+
 	afterEach(() => {
+		vi.useRealTimers();
 		cleanup();
 	});
 
