@@ -1,5 +1,3 @@
-import './index.css';
-
 import { ReactElement, type ReactNode } from 'react';
 
 import logo from '../../assets/images/logo.svg';
