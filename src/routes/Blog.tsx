@@ -35,23 +35,16 @@ function BlogContentHeader(): ReactElement {
 	return (
 		<ContentRow>
 			<h1>Hi, welcome to my blog!</h1>
-			<p>
-				Feel free to check out my latest posts. Who knows, perhaps
-				you&apos;ll find something interesting.
-			</p>
+			<p>Feel free to check out my latest posts. Who knows, perhaps you&apos;ll find something interesting.</p>
 		</ContentRow>
 	);
 }
 
 function BlogContent(): ReactElement {
-	const { data, isLoading, fetchNextPage } =
-		useInfiniteQuery(postsQueryOptions());
+	const { data, isLoading, fetchNextPage } = useInfiniteQuery(postsQueryOptions());
 
 	const fetchNextPageIfBottomIsVisible = (): void => {
-		if (
-			window.innerHeight + Math.round(window.scrollY) >=
-			document.body.offsetHeight
-		) {
+		if (window.innerHeight + Math.round(window.scrollY) >= document.body.offsetHeight) {
 			fetchNextPage().then();
 		}
 	};
@@ -70,17 +63,12 @@ function BlogContent(): ReactElement {
 	if (!data || !data.pages) {
 		return (
 			<ContentRow>
-				<ErrorText center>
-					Oh no, there was a problem loading the posts!
-				</ErrorText>
+				<ErrorText center>Oh no, there was a problem loading the posts!</ErrorText>
 			</ContentRow>
 		);
 	}
 
-	const allData = data.pages.reduce(
-		(acc, d) => acc.concat(d.posts),
-		[] as BlogPostData[],
-	);
+	const allData = data.pages.reduce((acc, d) => acc.concat(d.posts), [] as BlogPostData[]);
 
 	return (
 		<ContentRow>
