@@ -10,9 +10,7 @@ interface MarkdownRendererProps {
 	content: string;
 }
 
-export function MarkdownRenderer({
-	content,
-}: MarkdownRendererProps): ReactElement {
+export function MarkdownRenderer({ content }: MarkdownRendererProps): ReactElement {
 	return (
 		<ReactMarkdown
 			className='markdown-body'
@@ -21,9 +19,7 @@ export function MarkdownRenderer({
 				code({ className, children, ...props }) {
 					const match = /language-(\w+)/.exec(className ?? '');
 					return match ?
-							<SyntaxHighlighter
-								language={match[1]}
-								style={style}>
+							<SyntaxHighlighter language={match[1]} style={style}>
 								{String(children).replace(/\n$/, '')}
 							</SyntaxHighlighter>
 						:	<code {...props} className={className}>

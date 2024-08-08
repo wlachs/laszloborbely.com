@@ -15,8 +15,6 @@ describe('Spinner component', () => {
 
 	it('should align center', () => {
 		const { container } = render(<Spinner />);
-		expect(container.children[0].className).toContain(
-			'flex justify-center',
-		);
+		expect(container.children[0].className).toContain('flex justify-center');
 	});
 });

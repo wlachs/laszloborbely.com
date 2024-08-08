@@ -23,9 +23,7 @@ export function NotFound(): ReactElement {
 						<h1>Oh no...</h1>
 					</ContentRow>
 					<ContentRow>
-						<h2>
-							The page you are looking for doesn&apos;t exist!
-						</h2>
+						<h2>The page you are looking for doesn&apos;t exist!</h2>
 					</ContentRow>
 					<ContentRow>
 						<p>

@@ -24,11 +24,7 @@ function CommonNavbar({ children }: CommonNavbarProps): ReactElement {
 		<>
 			<div className='flex items-center justify-between py-4'>
 				<PureLinkHighlight to='/blog'>
-					<img
-						src={logo}
-						className='w-12'
-						alt='László Borbély - Full-Stack Software Engineer'
-					/>
+					<img src={logo} className='w-12' alt='László Borbély - Full-Stack Software Engineer' />
 				</PureLinkHighlight>
 				{children}
 			</div>
