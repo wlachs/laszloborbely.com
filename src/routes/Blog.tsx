@@ -41,10 +41,10 @@ function BlogContentHeader(): ReactElement {
 }
 
 function BlogContent(): ReactElement {
-	const { data, isLoading, fetchNextPage } = useInfiniteQuery(postsQueryOptions());
+	const { data, isLoading, isFetchingNextPage, fetchNextPage } = useInfiniteQuery(postsQueryOptions());
 
 	const fetchNextPageIfBottomIsVisible = (): void => {
-		if (window.innerHeight + Math.round(window.scrollY) >= document.body.offsetHeight) {
+		if (window.innerHeight + Math.round(window.scrollY) >= document.body.offsetHeight && !isFetchingNextPage) {
 			fetchNextPage().then();
 		}
 	};
@@ -73,6 +73,7 @@ function BlogContent(): ReactElement {
 	return (
 		<ContentRow>
 			<Posts data={allData} />
+			{isFetchingNextPage && <Spinner />}
 		</ContentRow>
 	);
 }
