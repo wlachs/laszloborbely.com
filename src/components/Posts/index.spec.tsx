@@ -51,8 +51,6 @@ describe('Posts component', () => {
 				<Posts data={[]} />,
 			</MemoryRouter>,
 		);
-		expect(
-			screen.getByText('No posts found, come back later!'),
-		).toBeDefined();
+		expect(screen.getByText('No posts found, come back later!')).toBeDefined();
 	});
 });

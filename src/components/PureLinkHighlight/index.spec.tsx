@@ -26,9 +26,7 @@ describe('PureLinkHighlight component', () => {
 				<PureLinkHighlight to='/'>{child}</PureLinkHighlight>,
 			</MemoryRouter>,
 		);
-		expect(container.querySelector('a')?.className).toContain(
-			'link_active',
-		);
+		expect(container.querySelector('a')?.className).toContain('link_active');
 	});
 
 	it('should not highlight link on non-matching routes', () => {
@@ -38,8 +36,6 @@ describe('PureLinkHighlight component', () => {
 				<PureLinkHighlight to='/blog'>{child}</PureLinkHighlight>,
 			</MemoryRouter>,
 		);
-		expect(container.querySelector('a')?.className).not.toContain(
-			'link_active',
-		);
+		expect(container.querySelector('a')?.className).not.toContain('link_active');
 	});
 });

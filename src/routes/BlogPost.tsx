@@ -49,9 +49,7 @@ function BlogPostContent(): ReactElement {
 	if (!data) {
 		return (
 			<ContentRow>
-				<ErrorText center>
-					Oh no, the post you are trying to load is not available!
-				</ErrorText>
+				<ErrorText center>Oh no, the post you are trying to load is not available!</ErrorText>
 			</ContentRow>
 		);
 	}

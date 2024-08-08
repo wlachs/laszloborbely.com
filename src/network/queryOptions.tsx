@@ -1,10 +1,4 @@
-import {
-	InfiniteData,
-	infiniteQueryOptions,
-	queryOptions,
-	UseInfiniteQueryOptions,
-	UseQueryOptions,
-} from '@tanstack/react-query';
+import { InfiniteData, infiniteQueryOptions, queryOptions, UseInfiniteQueryOptions, UseQueryOptions } from '@tanstack/react-query';
 
 import { getPost, getPosts } from './queries';
 import { BlogPostData, BlogPostResponseData } from './types/blog';
@@ -31,9 +25,7 @@ export function postsQueryOptions(): UseInfiniteQueryOptions<
 	});
 }
 
-export function postQueryOptions(
-	urlHandle: string,
-): UseQueryOptions<BlogPostData, Error, BlogPostData, string[]> {
+export function postQueryOptions(urlHandle: string): UseQueryOptions<BlogPostData, Error, BlogPostData, string[]> {
 	return queryOptions({
 		queryFn: () => getPost(urlHandle),
 		queryKey: ['posts', urlHandle],

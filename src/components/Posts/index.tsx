@@ -13,16 +13,7 @@ interface PostsProps {
 export function Posts({ data }: PostsProps): ReactElement {
 	const posts = data.map(p => <Post key={p.id} post={p} />);
 
-	return (
-		<div className='posts'>
-			{posts.length > 0 ?
-				posts
-			:	<p className='mt-3 text-center'>
-					No posts found, come back later!
-				</p>
-			}
-		</div>
-	);
+	return <div className='posts'>{posts.length > 0 ? posts : <p className='mt-3 text-center'>No posts found, come back later!</p>}</div>;
 }
 
 interface PostProps {

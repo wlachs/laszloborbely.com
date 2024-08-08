@@ -8,16 +8,9 @@ interface PureLinkHighlightProps {
 	children?: ReactNode;
 }
 
-export function PureLinkHighlight({
-	to,
-	children,
-}: PureLinkHighlightProps): ReactElement {
+export function PureLinkHighlight({ to, children }: PureLinkHighlightProps): ReactElement {
 	return (
-		<NavLink
-			to={to}
-			className={({ isActive }) =>
-				isActive ? 'link link_active' : 'link'
-			}>
+		<NavLink to={to} className={({ isActive }) => (isActive ? 'link link_active' : 'link')}>
 			{children}
 		</NavLink>
 	);

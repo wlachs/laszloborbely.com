@@ -5,16 +5,8 @@ interface ContentRowProps {
 	children?: ReactNode;
 }
 
-export function ContentRow({
-	children,
-	center,
-}: ContentRowProps): ReactElement {
-	const centerClasses = [
-		'flex',
-		'flex-row',
-		'content-center',
-		'items-center',
-	];
+export function ContentRow({ children, center }: ContentRowProps): ReactElement {
+	const centerClasses = ['flex', 'flex-row', 'content-center', 'items-center'];
 	const classes = [
 		'w-full',
 		...(center ? centerClasses : []),
