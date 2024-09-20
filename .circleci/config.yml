@@ -19,7 +19,7 @@ jobs:
             - dist
   deploy:
     machine:
-      image: ubuntu-2204:2023.07.2
+      image: ubuntu-2204:current
     steps:
       - attach_workspace:
           at: ~/project
