@@ -5,7 +5,7 @@ import { ReactElement, type ReactNode } from 'react';
 import { Navbar } from '../Navbar';
 
 interface FrameProps {
-	children?: ReactNode;
+	readonly children?: ReactNode;
 }
 
 export function Frame({ children }: FrameProps): ReactElement {

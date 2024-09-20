@@ -7,7 +7,7 @@ import { vscDarkPlus as style } from 'react-syntax-highlighter/dist/esm/styles/p
 import remarkGfm from 'remark-gfm';
 
 interface MarkdownRendererProps {
-	content: string;
+	readonly content: string;
 }
 
 export function MarkdownRenderer({ content }: MarkdownRendererProps): ReactElement {

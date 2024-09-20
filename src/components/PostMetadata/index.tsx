@@ -6,7 +6,7 @@ import { ReactElement } from 'react';
 import { type BlogPostData } from '../../network/types/blog';
 
 interface PostMetadataProps {
-	post: BlogPostData;
+	readonly post: BlogPostData;
 }
 
 export function PostMetadata({ post }: PostMetadataProps): ReactElement {
