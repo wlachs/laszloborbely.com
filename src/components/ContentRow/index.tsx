@@ -1,8 +1,8 @@
 import { ReactElement, type ReactNode } from 'react';
 
 interface ContentRowProps {
-	center?: boolean;
-	children?: ReactNode;
+	readonly center?: boolean;
+	readonly children?: ReactNode;
 }
 
 export function ContentRow({ children, center }: ContentRowProps): ReactElement {

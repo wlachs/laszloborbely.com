@@ -1,8 +1,8 @@
 import { ReactElement } from 'react';
 
 interface ErrorTextProps {
-	center?: boolean;
-	children: string;
+	readonly center?: boolean;
+	readonly children: string;
 }
 
 export function ErrorText({ center, children }: ErrorTextProps): ReactElement {

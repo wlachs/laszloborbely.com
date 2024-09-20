@@ -1,7 +1,7 @@
 import { ReactElement, type ReactNode } from 'react';
 
 interface ContainerProps {
-	children?: ReactElement | ReactNode | string;
+	readonly children?: ReactElement | ReactNode | string;
 }
 
 export function Container({ children }: ContainerProps): ReactElement {

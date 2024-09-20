@@ -7,7 +7,7 @@ import { NavLink } from 'react-router-dom';
 import { type BlogPostData } from '../../network/types/blog';
 
 interface PostsProps {
-	data: BlogPostData[];
+	readonly data: BlogPostData[];
 }
 
 export function Posts({ data }: PostsProps): ReactElement {
@@ -17,7 +17,7 @@ export function Posts({ data }: PostsProps): ReactElement {
 }
 
 interface PostProps {
-	post: BlogPostData;
+	readonly post: BlogPostData;
 }
 
 function Post({ post }: PostProps): ReactElement {

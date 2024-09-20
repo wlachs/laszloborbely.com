@@ -1,7 +1,7 @@
 import { ReactElement, type ReactNode } from 'react';
 
 interface ContentProps {
-	children?: ReactElement | ReactNode | string;
+	readonly children?: ReactElement | ReactNode | string;
 }
 
 export function Content({ children }: ContentProps): ReactElement {

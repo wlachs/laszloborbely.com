@@ -30,15 +30,15 @@ export function Contact(): ReactElement {
 							or suggestions.
 						</p>
 						<p>
-							You can also find me on{' '}
+							{'You can also find me on '}
 							<a href='https://github.com/wlachs' target='_blank' rel='noreferrer'>
 								GitHub
-							</a>{' '}
-							or{' '}
+							</a>
+							{' or '}
 							<a href='https://www.linkedin.com/in/lászló-borbély-678a34138/' target='_blank' rel='noreferrer'>
 								LinkedIn
 							</a>
-							.
+							{'.'}
 						</p>
 					</ContentRow>
 				</Content>

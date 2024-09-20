@@ -16,7 +16,7 @@ export function Navbar(): ReactElement {
 }
 
 interface CommonNavbarProps {
-	children?: ReactNode;
+	readonly children?: ReactNode;
 }
 
 function CommonNavbar({ children }: CommonNavbarProps): ReactElement {

@@ -61,7 +61,7 @@ function BlogContent(): ReactElement {
 		);
 	}
 
-	if (!data || !data.pages) {
+	if (!data?.pages) {
 		return (
 			<ContentRow>
 				<ErrorText center>Oh no, there was a problem loading the posts!</ErrorText>

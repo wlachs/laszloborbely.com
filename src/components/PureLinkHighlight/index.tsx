@@ -4,8 +4,8 @@ import { ReactElement, type ReactNode } from 'react';
 import { NavLink } from 'react-router-dom';
 
 interface PureLinkHighlightProps {
-	to: string;
-	children?: ReactNode;
+	readonly to: string;
+	readonly children?: ReactNode;
 }
 
 export function PureLinkHighlight({ to, children }: PureLinkHighlightProps): ReactElement {

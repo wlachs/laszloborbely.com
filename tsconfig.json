@@ -5,7 +5,7 @@
 		"composite": true,
 		"isolatedModules": true,
 		"jsx": "react-jsx",
-		"lib": ["DOM", "ES2021"],
+		"lib": ["DOM", "ES2023"],
 		"module": "ESNext",
 		"moduleResolution": "bundler",
 		"noEmit": true,
