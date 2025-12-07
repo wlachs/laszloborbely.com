@@ -23,7 +23,7 @@ export function Contact(): ReactElement {
 					<ContentRow>
 						<h1>Contact</h1>
 						<h2>László Borbély</h2>
-						<p>Full-Stack Software Engineer @ mgm technology partners</p>
+						<p>Full-Stack Software Engineer</p>
 						<p>
 							Mainly working with Spring and React, but always eager to learn new things! <br />
 							Feel free to <a href='mailto:hello@laszloborbely.com'>send me an e-mail</a> if you have any questions, comments,
