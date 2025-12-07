@@ -15,7 +15,7 @@ exports[`Frame component > should always render child elements 1`] = `
         <img
           alt="László Borbély - Full-Stack Software Engineer"
           class="w-12"
-          src="/src/assets/images/logo.svg"
+          src="data:image/svg+xml,%3csvg%20id='ba21cabb-1c79-484a-bc5b-213f52afd355'%20data-name='Layer%201'%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20341%20288'%3e%3ctitle%3elb_minimal%3c/title%3e%3cpath%20d='M111.06,243.81H0V222.19H85.3v-178h25.76Z'%20transform='translate(0%200)'%20style='fill:%236c3'/%3e%3cpath%20d='M215.13,46.71c11.25-2.37,29-4.15,47.09-4.15C288,42.56,304.57,47,317,57.07c10.37,7.7,16.59,19.55,16.59,35.25,0,19.25-12.74,36.13-33.77,43.83v.59c19,4.74,41.17,20.44,41.17,50.06a53.81,53.81,0,0,1-16.88,40c-13.92,12.74-36.43,18.66-69,18.66a302,302,0,0,1-40-2.37Zm25.76,81.74h23.4c27.25,0,43.24-14.22,43.24-33.47,0-23.39-17.77-32.58-43.83-32.58-11.85,0-18.66.89-22.81,1.78Zm0,95.66c5,.89,12.44,1.19,21.62,1.19,26.66,0,51.24-9.77,51.24-38.8,0-27.25-23.4-38.5-51.53-38.5H240.89Z'%20transform='translate(0%200)'%20style='fill:%236c3'/%3e%3crect%20x='150.15'%20width='25.89'%20height='288'%20style='fill:%236c3'/%3e%3c/svg%3e"
         />
       </a>
       <div
