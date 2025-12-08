@@ -28,7 +28,7 @@ module.exports = {
 		'import/no-duplicates': 'error',
 		'react/react-in-jsx-scope': 'off',
 		'simple-import-sort/exports': 'error',
-		'simple-import-sort/imports': 'error'
+		'simple-import-sort/imports': 'error',
 	},
 	settings: {
 		'import/parsers': {

@@ -1,52 +1,52 @@
 version: 2.1
 orbs:
-  node: circleci/node@5.1.0
+    node: circleci/node@5.1.0
 
 jobs:
-  build:
-    executor:
-      name: node/default
-      tag: 'lts'
-    steps:
-      - checkout
-      - node/install-packages
-      - run:
-          name: Build app
-          command: npm run build
-      - persist_to_workspace:
-          root: ~/project
-          paths:
-            - dist
-  deploy:
-    machine:
-      image: ubuntu-2204:current
-    steps:
-      - attach_workspace:
-          at: ~/project
-      - run:
-          name: Copy over SSH
-          command: |
-            rsync -r ~/project/dist $SSH_USER@$SSH_HOST:~
-      - run:
-          name: Deploy over SSH
-          command: |
-            ssh $SSH_USER@$SSH_HOST "portfolio/deploy.sh"
+    build:
+        executor:
+            name: node/default
+            tag: 'lts'
+        steps:
+            - checkout
+            - node/install-packages
+            - run:
+                  name: Build app
+                  command: npm run build
+            - persist_to_workspace:
+                  root: ~/project
+                  paths:
+                      - dist
+    deploy:
+        machine:
+            image: ubuntu-2204:current
+        steps:
+            - attach_workspace:
+                  at: ~/project
+            - run:
+                  name: Copy over SSH
+                  command: |
+                      rsync -r ~/project/dist $SSH_USER@$SSH_HOST:~
+            - run:
+                  name: Deploy over SSH
+                  command: |
+                      ssh $SSH_USER@$SSH_HOST "portfolio/deploy.sh"
 
 workflows:
-  test:
-    jobs:
-      - node/test:
-          version: 'lts'
-      - build
-  deploy:
-    jobs:
-      - build:
-          filters:
-            branches:
-              only: release
-      - deploy:
-          requires:
+    test:
+        jobs:
+            - node/test:
+                  version: 'lts'
             - build
-          filters:
-            branches:
-              only: release
+    deploy:
+        jobs:
+            - build:
+                  filters:
+                      branches:
+                          only: release
+            - deploy:
+                  requires:
+                      - build
+                  filters:
+                      branches:
+                          only: release
