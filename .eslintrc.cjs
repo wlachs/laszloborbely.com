@@ -18,7 +18,7 @@ module.exports = {
 		ecmaVersion: 'latest',
 		sourceType: 'module',
 	},
-	plugins: ['react', 'import', 'simple-import-sort', 'sort-keys-fix'],
+	plugins: ['react', 'import', 'simple-import-sort'],
 	root: true,
 	rules: {
 		'@typescript-eslint/explicit-function-return-type': 'error',
@@ -28,8 +28,7 @@ module.exports = {
 		'import/no-duplicates': 'error',
 		'react/react-in-jsx-scope': 'off',
 		'simple-import-sort/exports': 'error',
-		'simple-import-sort/imports': 'error',
-		'sort-keys-fix/sort-keys-fix': 'error',
+		'simple-import-sort/imports': 'error'
 	},
 	settings: {
 		'import/parsers': {
