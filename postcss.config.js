@@ -1,4 +1,4 @@
-/* eslint-disable import/no-default-export, sort-keys-fix/sort-keys-fix */
+/* eslint-disable import/no-default-export */
 export default {
 	plugins: {
 		autoprefixer: {},

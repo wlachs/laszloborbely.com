@@ -37,8 +37,6 @@ workflows:
     jobs:
       - node/test:
           version: 'lts'
-      - node/test:
-          version: '20.9'
       - build
   deploy:
     jobs:

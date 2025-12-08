@@ -7,19 +7,18 @@ export function postsQueryOptions(): UseInfiniteQueryOptions<
 	BlogPostResponseData,
 	Error,
 	InfiniteData<BlogPostResponseData>,
-	BlogPostResponseData,
 	string[],
 	number
 > {
 	return infiniteQueryOptions({
+		initialPageParam: 1,
+		queryFn: ({ pageParam }) => getPosts(pageParam),
 		getNextPageParam(lastPage, _allPages, lastPageParam) {
 			if (lastPageParam === lastPage.pages) {
 				return undefined;
 			}
 			return lastPageParam + 1;
 		},
-		initialPageParam: 1,
-		queryFn: ({ pageParam }) => getPosts(pageParam),
 		queryKey: ['posts'],
 		staleTime: 3_600_000,
 	});
