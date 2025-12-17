@@ -1,5 +1,4 @@
 import { InfiniteData, infiniteQueryOptions, queryOptions, UseInfiniteQueryOptions, UseQueryOptions } from '@tanstack/react-query';
-
 import { getPost, getPosts } from './queries';
 import { BlogPostData, BlogPostResponseData } from './types/blog';
 
@@ -11,8 +10,8 @@ export function postsQueryOptions(): UseInfiniteQueryOptions<
 	number
 > {
 	return infiniteQueryOptions({
-		initialPageParam: 1,
 		queryFn: ({ pageParam }) => getPosts(pageParam),
+		initialPageParam: 1,
 		getNextPageParam(lastPage, _allPages, lastPageParam) {
 			if (lastPageParam === lastPage.pages) {
 				return undefined;
