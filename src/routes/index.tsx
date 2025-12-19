@@ -1,4 +1,5 @@
 import { Navigate, type RouteObject } from 'react-router-dom';
+
 import { Blog } from './Blog';
 import { BlogPost } from './BlogPost';
 import { Contact } from './Contact';

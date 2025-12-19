@@ -1,4 +1,5 @@
 import { InfiniteData, infiniteQueryOptions, queryOptions, UseInfiniteQueryOptions, UseQueryOptions } from '@tanstack/react-query';
+
 import { getPost, getPosts } from './queries';
 import { BlogPostData, BlogPostResponseData } from './types/blog';
 
