@@ -12,6 +12,8 @@ export function postsQueryOptions(): UseInfiniteQueryOptions<
 > {
 	return infiniteQueryOptions({
 		initialPageParam: 1,
+		queryKey: ['posts'],
+		staleTime: 3_600_000,
 		queryFn: ({ pageParam }) => getPosts(pageParam),
 		getNextPageParam(lastPage, _allPages, lastPageParam) {
 			if (lastPageParam === lastPage.pages) {
@@ -19,8 +21,6 @@ export function postsQueryOptions(): UseInfiniteQueryOptions<
 			}
 			return lastPageParam + 1;
 		},
-		queryKey: ['posts'],
-		staleTime: 3_600_000,
 	});
 }
 

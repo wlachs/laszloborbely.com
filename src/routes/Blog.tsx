@@ -1,5 +1,5 @@
 import { useInfiniteQuery } from '@tanstack/react-query';
-import { ReactElement, useEffect } from 'react';
+import { ReactElement, useCallback, useEffect } from 'react';
 import { Helmet } from 'react-helmet-async';
 
 import { Container } from '../components/Container';
@@ -41,17 +41,24 @@ function BlogContentHeader(): ReactElement {
 }
 
 function BlogContent(): ReactElement {
-	const { data, isLoading, isFetchingNextPage, fetchNextPage, isFetching, hasNextPage } = useInfiniteQuery(postsQueryOptions());
+	const { data, isLoading, isFetchingNextPage, fetchNextPage, hasNextPage } = useInfiniteQuery(postsQueryOptions());
 
-	const fetchNextPageIfBottomIsVisible = (): void => {
+	const fetchNextPageIfBottomIsVisible = useCallback((): void => {
 		const atPageBottom = window.innerHeight + Math.round(window.scrollY) >= document.body.offsetHeight;
 		if (atPageBottom && !isFetchingNextPage && hasNextPage) {
 			fetchNextPage().then();
 		}
-	};
+	}, [fetchNextPage, hasNextPage, isFetchingNextPage]);
 
-	window.onscroll = fetchNextPageIfBottomIsVisible;
-	useEffect(fetchNextPageIfBottomIsVisible, [isFetching]);
+	useEffect(() => {
+		window.addEventListener('scroll', fetchNextPageIfBottomIsVisible);
+
+		return (): void => {
+			window.removeEventListener('scroll', fetchNextPageIfBottomIsVisible);
+		};
+	}, [fetchNextPageIfBottomIsVisible]);
+
+	useEffect(fetchNextPageIfBottomIsVisible, [fetchNextPageIfBottomIsVisible]);
 
 	if (isLoading) {
 		return (

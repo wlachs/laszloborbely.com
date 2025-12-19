@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/naming-convention */
 import react from '@vitejs/plugin-react-swc';
 import { type ManualChunksOption } from 'rollup';
 import { visualizer } from 'rollup-plugin-visualizer';
