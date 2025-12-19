@@ -53,7 +53,7 @@ function BlogContent(): ReactElement {
 	useEffect(() => {
 		window.addEventListener('scroll', fetchNextPageIfBottomIsVisible);
 
-		return () => {
+		return (): void => {
 			window.removeEventListener('scroll', fetchNextPageIfBottomIsVisible);
 		};
 	}, [fetchNextPageIfBottomIsVisible]);

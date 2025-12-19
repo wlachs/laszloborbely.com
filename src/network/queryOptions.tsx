@@ -11,16 +11,16 @@ export function postsQueryOptions(): UseInfiniteQueryOptions<
 	number
 > {
 	return infiniteQueryOptions({
-		queryFn: ({ pageParam }) => getPosts(pageParam),
 		initialPageParam: 1,
+		queryKey: ['posts'],
+		staleTime: 3_600_000,
+		queryFn: ({ pageParam }) => getPosts(pageParam),
 		getNextPageParam(lastPage, _allPages, lastPageParam) {
 			if (lastPageParam === lastPage.pages) {
 				return undefined;
 			}
 			return lastPageParam + 1;
 		},
-		queryKey: ['posts'],
-		staleTime: 3_600_000,
 	});
 }
 
