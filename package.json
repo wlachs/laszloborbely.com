@@ -39,7 +39,7 @@
 		"eslint-plugin-react-refresh": "0.4.26",
 		"eslint-plugin-simple-import-sort": "12.1.1",
 		"jsdom": "25.0.1",
-		"postcss": "8.5.14",
+		"postcss": "8.5.26",
 		"prettier-plugin-tailwindcss": "0.7.2",
 		"rollup": "4.60.0",
 		"rollup-plugin-visualizer": "5.14.0",
